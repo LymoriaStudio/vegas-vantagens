@@ -1,0 +1,50 @@
+.btn-yellow {
+    background: #FFA606;
+}
+
+.logo-termas {
+    
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 90px;
+   
+
+
+}
+
+.logos-termas img:first-child {
+width: 206px;
+height: 120.063px;
+margin-top: 40px;
+flex-shrink: 0;
+}
+
+.cp-facil {
+    width: 72px;
+    min-width: 70px;
+    height: 49px;
+}
+
+
+@media screen and (max-width:800px) {
+    .title-copy-termas {
+    max-width: 100%;
+    padding-inline: 50px;
+    text-align: center;
+   
+    margin: 0 auto;
+}
+
+    .logos-termas {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cp-facil {
+        width: 55px;
+        min-width: 55px;
+        
+    }
+}
+

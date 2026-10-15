@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <title>Vegas Benefícios</title>
+</head>
+<body>
+    <div class="header">
+        <nav>
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="./imgs/logos/Logo.svg" alt="">
+                </a>
+            </div>
+
+          
+
+           
+            <ul class="menu-desktop">
+               
+                <li><a href="./sobrenos.html">Sobre o Clube</a></li>
+     
+              
+            </ul>
+
+            <button class="btn-header menu-desktop">
+                <a href="./cadastro-com.html">Faça Parte do Clube</a>
+            
+            </button>
+              
+
+            
+              <div class="main-menus">
+                     <ul >
+               
+                <li><a href="./sobrenos.html">Sobre o Clube</a></li>
+     
+              
+            </ul>
+
+            <button class="btn-header">
+                <a href="./cadastro-com.html">Faça Parte do Clube</a>
+            
+            </button>
+              </div>
+             <div class="menu-hamb">
+            <img src="./imgs/icons/menu.svg" alt="">
+        </div>
+
+        <div class="close-menu">
+            <img src="./imgs/icons/close.svg" alt="">
+        </div>
+        </nav>
+
+       
+    </div>
+
+<section class="search">
+              <div class="search-container">
+                <i class="fas fa-search icon-search"></i>
+                <input type="text" name="desc-input" id="desc-input">
+
+                  <button class="btn-buscar">Buscar</button>
+              </div>
+    </section>
+
+    <section class="categorias">
+        <h1 class="title-categoria">Categorias</h1>
+        <div class="cards-categorias">
+            <div class="card-categoria" data-cat="alimentacao">
+                <i class="fas fa-shopping-cart"></i>
+
+                <h2>Alimentação</h2>
+            </div>
+            <div class="card-categoria" data-cat="presentes">
+                <i class="fas fa-gift"></i>
+
+                <h2>Presentes</h2>
+            </div>
+            <div class="card-categoria" data-cat="oticas">
+               <i class="fas fa-glasses"></i>
+
+                <h2>Óticas</h2>
+            </div>
+            <div class="card-categoria" data-cat="barbearia">
+           <i class="fas fa-cut"></i>
+
+                <h2>Barbearias</h2>
+            </div>
+            <div class="card-categoria" data-cat="petshop">
+       <i class="fas fa-dog"></i>
+                <h2>Petshop</h2>
+            </div>
+            <div class="card-categoria" data-cat="bareserestaurantes">
+                <i class="fas fa-utensils"></i>
+                <h2>Bares / Restaurantes</h2>
+            </div>
+
+            <div class="card-categoria" data-cat="cosmeticos">
+          <i class="fas fa-magic"></i> 
+
+
+                <h2>Cosméticos</h2>
+            </div>
+
+            <div class="card-categoria">
+                
+               <i class="fas fa-car"></i>
+
+                <h2>Veículos</h2>
+            </div>
+
+                 <div class="card-categoria">
+                
+           
+                <h2>Mais</h2>
+            </div>
+
+            
+        </div>
+    </section>
+
+    <section class="search-section">
+ <div class="filter-btns categ">
+                <div class="search-text">
+                    <i class="fa fa-search"></i>
+
+                    <input type="text" class="textinput" id="searchInput" placeholder="Buscar por nome ou palavra-chave..." />
+                </div>
+              
+
+                <select id="filterState">
+                  <option value="">Todos os Estados</option>
+                  <option value="sp">São Paulo</option>
+                  <option value="rj">Rio de Janeiro</option>
+                  <!-- Adicione mais estados -->
+                </select>
+              
+                <select id="filterCity">
+                  <option value="">Todas as Cidades</option>
+      
+                  <!-- Preenchido dinamicamente com base no estado -->
+                </select>
+              
+                <select id="filterSegment">
+                    <option value="">Todos os Segmentos</option>
+    <option value="presentes">Presentes</option>
+    <option value="utensílios domésticos">Utensílios Domésticos</option>
+    <option value="variedades">Variedades</option>
+    <option value="brinquedos">Brinquedos</option>
+    <option value="ótica">Ótica</option>
+    <option value="barbearia">Barbearia</option>
+    <option value="petshop">Petshop</option>
+    <option value="alimentação">Alimentação</option>
+    <option value="restaurante">Restaurante</option>
+    <option value="cosméticos">Cosméticos</option>
+    <option value="veículos">Veículos</option>
+    <option value="posto de combustível">Posto de Combustível</option>
+    <option value="açougue">Açougue</option>
+                </select>
+              
+                <select id="filterCard">
+                    <option value="">Todos os Cartões</option>
+                    <option value="vegas day">Vegas Day</option>
+                    <option value="vegas plus">Vegas Plus</option>
+                    <option value="vegas alimentação">Vegas Alimentação</option>
+                    <option value="vegas refeição">Vegas Refeição</option>
+                    <option value="vegas combustível">Vegas Combustível</option>
+                </select>
+              
+              
+              </div>
+    </section>
+
+        
+
+     <section class="desc-ofertas">
+        <h1 class="title-desc">Descontos e Ofertas</h1>
+        <div class="cards-descontos">
+     
+            <div class="card-desconto" data-tag="oticas">
+                <div class="header-img">
+                    <img src="./imgs/logos/oculosmercadao.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="tag">Óculos</div>
+                    <h2>Mercadao de Oculos</h2>
+                    <p>Cliente Vegas tem 20% de desconto em armações selecionadas + exame de vista gratuito</p>
+                </div>
+                <button>Ver Mais</button>
+            </div>
+            
+            <div class="card-desconto" data-tag="barbearia">
+                <div class="header-img">
+                    <img src="./imgs/logos/intensos-barbearia.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="tag">Barbearias</div>
+                    <h2>Intensos Barbearia</h2>
+                    <p>Cliente Vegas tem 1 hidratação de cabelo no 1º corte + se fechar clube: corte gratuito</p>
+                </div>
+                <button>Ver Mais</button>
+            </div>
+
+                  <div class="card-desconto" data-tag="presentes">
+                <div class="header-img">
+                    <img src="./imgs/logos/logo-zanini.png" style="width: 80%;"  alt="">
+                </div>
+                <div class="content">
+                    <div class="tag">Brinquedos</div>
+                    <h2>Zanini</h2>
+                    <p>Cliente Vegas tem 10% de desconto em qualquer produto da loja.</p>
+                </div>
+                <button>Ver Mais</button>
+            </div>
+
+            <div class="card-desconto" data-tag="petshop">
+                <div class="header-img">
+                    <img src="./imgs/logos/caochorro-logo.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="tag">Petshop</div>
+                    <h2>Cãochorro Petshop</h2>
+                    <p>Cliente Vegas tem 10% de desconto em qualquer produto da loja</p>
+                </div>
+                <button>Ver Mais</button>
+            </div>
+
+                  <div class="card-desconto" data-tag="alimentacao">
+                <div class="header-img">
+                    <img src="./imgs/logos/beta-logo.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="tag" >Alimentação</div>
+                    <h2>Betta Suplementos</h2>
+                    <p>Cliente Vegas tem R$50 de cashback para clientes cadastrados na landing Page exclusiva</p>
+                </div>
+                <button>Ver Mais</button>
+            </div>
+
+
+            <div class="card-desconto" data-tag="bareserestaurantes">
+                <div class="header-img">
+                    <img src="./imgs/logos/boi-logo.png"  alt="">
+                </div>
+                <div class="content">
+                    <div class="tag">Bares / Restaurante</div>
+                    <h2>Boi Que Mia - Grill Bar</h2>
+                    <p>Cliente Vegas tem ganha, (1 pão de alho ou queijo coalho) por conta da casa</p>
+                </div>
+                <button>Ver Mais</button>
+            </div>
+
+                  <div class="card-desconto" data-tag="bareserestaurantes">
+                <div class="header-img">
+                    <img src="./imgs/logos/florindo-logo.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="tag">Bares / Restaurantes</div>
+                    <h2>Casa Florindo Bar e Restaurante</h2>
+                    <p>Cliente Vegas tem Desconto Especial</p>
+                </div>
+                <button>Ver Mais</button>
+            </div>
+
+                  <div class="card-desconto" data-tag="cosmeticos">
+                <div class="header-img">
+                    <img src="./imgs/logos/danny-logo.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="tag">Cosméticos</div>
+                    <h2>Danny Cosméticos</h2>
+                    <p>Cliente Vegas tem Desconto Especial</p>
+                </div>
+                <button>Ver Mais</button>
+            </div>
+        </div>
+    </section>
+
+
+   
+    
+
+ <footer>
+       <div class="content-brand">
+        <img src="./imgs/logo-white.png" class="logo-footer" style=" padding-top: 20px;" alt="" >
+        <img src="./imgs/logos/logo-abbt 1.svg" style="width: 10%;" alt="">
+        <img src="./imgs/logos/logo-empresa-brasileira.svg" alt="">
+       
+       </div>
+
+       <div class="menu-footer">
+        <div class="links-rapidos m-f locals">
+            <div class="card-footer">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <h2>Americana</h2>
+                    <p>R. Tamôio, 526 - Vila Santa Catarina | 13466-250 </p>
+                </div>
+         
+
+            </div>
+
+            <div class="card-footer">
+           <i class="fa-brands fa-whatsapp"></i>
+                <div>
+                    <h2>19 2108.2900</h2>
+                    <p>segunda a sexta 8h às 20h,
+                        aos sábados das 8h às 18h</p>
+                </div>
+         
+
+            </div>
+
+            <div class="card-footer">
+<i class="fa-solid fa-phone"></i>
+
+                <div>
+                    <h2>19 2108.2908</h2>
+                    <p>segunda a sexta 8h às 20h,
+                        aos sábados das 8h às 18h</p>
+                </div>
+               
+
+            </div>
+ 
+            <div class="card-footer">
+            <i class="fas fa-envelope"></i>
+
+
+                <div>
+               
+                    <p>atendimento@vegascard.com.br</p>
+                </div>
+               
+            </div>
+        </div>
+          
+        <div class="links-rapidos m-f menus ">
+            <div class="link-div">
+                <h2>Sobre Nós</h2>
+                <ul>
+                     <li><a href="">A Vegas</a></li>
+                     <li><a href="">Vegas Cultural</a></li>
+                     <li><a href="">Notícias</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="link-div">
+                <h2>Soluções</h2>
+                <ul>
+                     <li><a href="">PAT</a></li>
+                     <li><a href="">Convênios</a></li>
+                     <li><a href="">Bônus</a></li>
+                     <li><a href="">Mobilidade</a></li>
+                     <li><a href="">Bem-Estar e Saúde</a></li>
+                     <li><a href="">Entreterimento</a></li>
+                     <li><a href="">Gestão PME</a></li>
+                </ul>
+            </div>
+         
+        </div>
+
+        <div class="links-rapidos menus m-f footer-menus">
+            <div class="link-div">
+                <h2>Área do cliente</h2>
+                <ul>
+                     <li><a href="">Meu Cartão</a></li>
+                     <li><a href="">Portal RH</a></li>
+                     <li><a href="">Meu Estabelecimento</a></li>
+                     <li><a href="">Meu Rastreador</a></li>
+                </ul>
+            </div>
+
+            <div class="link-div">
+                <h2>Estabelecimento</h2>
+                <ul>
+                     <li><a href="">Quero ser Estabelecimento</a></li>
+                     <li><a href="">Rede Credenciada</a></li>
+                
+                </ul>
+            </div>
+
+            <div class="link-div">
+                <a href=""><h2>Trabalhe Conosco</h2></a>
+                <a href=""><h2>Tire Suas Dúvidas</h2></a>
+            </div>
+         
+        </div>
+
+        <div class="app menus m-f" >
+            <h2>Baixe o App</h2>
+            <ul>
+               <a href=""><li>IOS</li></a>
+               <a href=""><li>Android</li></a>
+            </ul>
+
+            <div class="midia-links">
+                <a href=""><i class="fab fa-instagram-square social-media"></i>  </a>
+                <a href=""><i class="fab fa-facebook-square social-media"></i> </a>
+                <a href=""><i class="fab fa-youtube-square social-media"></i>   </a>
+                <a href=""><i class="fab fa-linkedin social-media"></i>  </a>
+            </div>
+        </div>
+       </div>
+
+       
+    </footer>
+
+    <div class="down-footer">
+        <p>Acesse nossa Política de Privacidade.</p>
+        <p>Copyright ©2025 Vegas Card do Brasil. Todos os direitos reservados. Desenvolvido por RedHot Comunicação.</p>
+       </div>
+
+ 
+     
+
+   <script src="./scripts/components/categorias-filter.js"></script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+.container {
+        max-width: 900px;
+        width: 100%;
+        background: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        margin: 0 auto;
+      }
+
+      .intro-form {
+        text-align: center;
+        padding-inline: 120px;
+        width: 75%;
+        margin: 0 auto;
+        margin-bottom: 130px;
+      }
+
+      .header-intro {
+        margin-top: 80px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 40px;
+      }
+
+      .intro-form h1 {
+        color: #4B57A3;
+        text-align: center;
+        font-family: Rubik;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 0;
+      }
+
+      .intro-form h3 {
+        color:  #7E7E7E;
+      }
+
+      .intro-form p {
+        text-align: left;
+        font-size: 20px;
+      }
+
+      .form-container {
+        padding-inline: 120px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #3d4ca1;
+        margin-bottom: 30px;
+      }
+
+      h2 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        color: #222;
+      }
+
+      form label {
+        display: block;
+        margin-bottom: 15px;
+        font-weight: 500;
+        color: #333;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1.5px solid #3d4ca1;
+        border-radius: 6px;
+        font-size: 14px;
+        margin-top: 5px;
+      }
+
+      textarea {
+        height: 100px;
+        resize: none;
+      }
+
+      .form-section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin-bottom: 30px;
+      }
+
+      .column {
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .row {
+        display: flex;
+        gap: 10px;
+      }
+
+      .contact-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+      }
+
+      .terms {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 20px;
+        font-size: 14px;
+      }
+
+      .terms a {
+        color: #3d4ca1;
+        text-decoration: none;
+      }
+
+      button[type="submit"] {
+        width: 100%;
+        padding: 15px;
+        background-color: #3d4ca1;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #2b3b85;
+      }
+
+      @media (max-width: 1024px) {
+        .intro-form,
+        .form-container {
+          padding-inline: 40px;
+          width: 100%;
+        }
+        .intro-form p {
+          font-size: 18px;
+        }
+        .container {
+          padding: 20px;
+        }
+        .form-section {
+          flex-direction: column;
+          gap: 20px;
+        }
+        .contact-row {
+          flex-direction: column;
+          gap: 20px;
+        }
+        .row {
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .intro-form h1 {
+          font-size: 24px;
+          line-height: 1.2;
+        }
+        .intro-form h3 {
+          font-size: 18px;
+        }
+        .intro-form p {
+          font-size: 16px;
+        }
+        h1 {
+          font-size: 22px;
+        }
+        h2 {
+          font-size: 18px;
+        }
+        .column {
+          min-width: unset;
+        }
+        button[type="submit"] {
+          font-size: 14px;
+          padding: 12px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .intro-form,
+        .form-container {
+          padding-inline: 20px;
+        }
+        .header-intro {
+          margin-top: 40px;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+          font-size: 13px;
+          padding: 8px;
+        }
+        label {
+          font-size: 14px;
+        }
+        .terms {
+          font-size: 13px;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .menu-desktop {
+          display: none;
+        }
+        .main-menus {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }

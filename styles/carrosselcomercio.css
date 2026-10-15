@@ -1,0 +1,76 @@
+.carrossel {
+      overflow: hidden;
+      background-color: white;
+      padding: 20px 0;
+      width: 85%;/*85%*/
+      max-width:1420px;
+    margin: 0 auto;
+
+      padding-inline: var(--padding-body-desktop);
+    
+     
+    }
+
+    
+
+.carrossel-track {
+  display: flex;
+  gap: 16px;
+  /* não aplica animação por padrão */
+}
+
+.carrossel-track.animate-scroll {
+  animation: scroll 50s linear infinite;
+  width: max-content; /* ou calc(...) se precisar fixar largura duplicada */
+}
+
+     
+  .carrossel-track img {
+    width: 120px;            /* largura da caixa */
+    height: 80px;            /* altura da caixa */
+    object-fit: contain;     /* mantém proporção original */
+    background-color: white; /* fundo neutro */
+    padding: 8px;            /* espaço interno */
+    transition: filter 0.3s;
+    cursor: pointer;
+    flex-shrink: 0;
+    z-index: 500;
+}
+
+  
+     .carrossel-track img:hover {
+      filter: brightness(1.5);
+     }
+
+    .carrossel:hover .carrossel-track {
+      animation-play-state: paused;
+    }
+
+    .carrossel a {
+      display: flex;
+width: 169px;
+height: 150px;
+min-width: 169px;
+max-width: 169px;
+min-height: 90px;
+max-height: 90px;
+padding: 16px;
+justify-content: center;
+align-items: center;
+gap: 16px;
+border-radius: 8px;
+border: 1px solid #EDEDED;
+background-color: #fff;
+box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.08);
+    }
+
+    
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }

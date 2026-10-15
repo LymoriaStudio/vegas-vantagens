@@ -1,0 +1,23 @@
+.exclusivos {
+    width: 100%;
+    background-color: gray;
+    height: 60vh;
+    margin-top: 120px;
+    padding: 150px;
+    padding-inline: 120px;
+    padding: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+.exclusivo-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+    align-items: center;
+}
+
+.exclusivos button {
+    width: 200px;
+}

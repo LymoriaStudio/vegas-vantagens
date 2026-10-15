@@ -1,0 +1,222 @@
+/* PAINEL DE BOTÕES */
+.painel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+/* CABEÇALHO */
+header {
+    padding: 20px 5%;
+    border-bottom: 1px solid #4B57A3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1520px;
+    margin: 0 auto;
+}
+
+header i {
+    font-size: 24px;
+    color: #4B57A3;
+    cursor: pointer;
+}
+
+.logo-container img {
+    width: 180px;
+    max-width: 100%;
+}
+
+/* BANNER */
+.banner-desc {
+    padding-inline: 5%;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+/* BOTÕES DO PAINEL */
+.painel button {
+    width: 150px;
+    height: 80px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    border: 1px solid #4B57A3;
+    color: #4B57A3;
+    font-weight: 500;
+}
+
+.painel button:hover {
+    background-color: #878fc9;
+}
+
+/* ÁREA DAS TELAS */
+.telas {
+    padding-inline: 5%;
+    margin-top: 30px;
+}
+
+.telas > div {
+    display: none;
+    border: 1px solid rgb(206, 206, 206);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 20px 30px;
+}
+
+.telas > .active {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+button.active {
+    background-color: #4B57A3;
+    color: #fff;
+}
+
+/* FORMULÁRIO */
+#formCadastro {
+    width: 100%;
+    display: flex; 
+    gap: 80px;
+}
+
+#formCadastro label {
+    margin-top: 20px;
+}
+
+.cadastrar {
+    display: block;
+    padding: 15px 10px;
+    background-color: #4B57A3;
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    
+}
+
+/* CARDS DE ESTABELECIMENTO */
+.card-estab {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #dddddd;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    flex-wrap: wrap;
+}
+
+.card-estab img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-info {
+    flex: 1;
+    min-width: 200px;
+}
+
+.card-info h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.card-info p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.card-actions i {
+    font-size: 20px;
+    cursor: pointer;
+    color: #4B57A3;
+}
+.card-actions i:hover {
+    color: #c00;
+}
+
+/* ====== MODAL "Editar Estabelecimento" (escopado) ====== */
+
+/* Container do modal */
+#modalEditarOverlay.modal-overlay2 {
+  display: flex;              /* o JS liga/desliga via style="display:none" */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Caixa do modal (80% da largura da tela) */
+#modalEditarOverlay .modal-content {
+  width: clamp(320px, 80vw, 1200px);   /* ~80% da viewport, máx 1200px */
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  position: relative;
+  box-sizing: border-box;
+  box-shadow: 0 10px 40px rgba(0,0,0,.18);
+}
+
+/* Botão fechar (apenas dentro deste modal) */
+#modalEditarOverlay .close-modal {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #999;
+}
+
+/* Form e grid só aqui */
+#modalEditarOverlay #formEditar { width: 100%; }
+
+#modalEditarOverlay .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* 2 colunas no desktop */
+  gap: 12px 16px;
+}
+
+/* Labels/inputs ocupando a linha inteira por padrão */
+#modalEditarOverlay .grid > label { grid-column: 1 / -1; }
+#modalEditarOverlay .grid > input,
+#modalEditarOverlay .grid > select,
+#modalEditarOverlay .grid > button {
+  grid-column: 1 / -1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Responsivo */
+@media (max-width: 768px){
+  #modalEditarOverlay .modal-content{
+    width: 96vw;              /* quase a largura toda no mobile */
+    padding: 20px;
+  }
+  #modalEditarOverlay .grid{
+    grid-template-columns: 1fr; /* 1 coluna no mobile */
+  }
+
+  .painel { flex-direction: column; align-items: center; } .card-estab { flex-direction: column; align-items: flex-start; } .card-estab img { width: 100%; height: auto; } .card-info { width: 100%; } header { flex-direction: column; gap: 10px; text-align: center; } .banner-desc { padding-inline: 20px; } #formCadastro { width: 100%; display: flex; flex-direction: column; gap: 10px; }
+}

@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/global.css?v=34">
+    <link rel="icon" type="image/png" href="./imgs/Vector.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <title>Vegas Benefícios | Sobre Nós</title>
+</head>
+<body>
+   <div class="header">
+        <nav>
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="./imgs/logos/Logo.svg" alt="">
+                </a>
+            </div>
+
+          
+
+           
+          <ul class="menu-desktop">
+               <!--
+             <li><a href="./sobrenos.html">Sobre o Clube</a></li>
+               -->
+               
+     
+              
+            </ul>
+
+            <button class="btn-header menu-desktop">
+                <a href="./cadastro-com.html">Faça Parte do Clube</a>
+            
+            </button>
+              
+
+            
+              <div class="main-menus">
+                     <ul >
+               
+                <li><a href="./sobrenos.html?v=2">Sobre o Clube</a></li>
+     
+              
+            </ul>
+
+            <button class="btn-header">
+                <a href="./cadastro-com.html">Faça Parte do Clube</a>
+            
+            </button>
+              </div>
+             <div class="menu-hamb">
+            <img src="./imgs/icons/menu.svg" alt="">
+        </div>
+
+        <div class="close-menu">
+            <img src="./imgs/icons/close.svg" alt="">
+        </div>
+        </nav>
+
+              <div class="menu-overlay"></div>
+    </div>
+
+
+<section class="hero">
+  <div class="hero__container">
+    <div class="hero__copy">
+      <h1>Mais do que cliente,<br> você é parte de um clube exclusivo.</h1>
+      <p>Cashback, descontos e vantagens únicas: <br> só quem é Vegas tem.</p>
+
+      <div class="hero__actions">
+      
+        <a class="btn btn--accent btn-prod1 btn-s" href="./cadastro-com.html">
+          Fazer parte! <span class="arrow">➜</span>
+        </a>
+      </div>
+    </div>
+
+    <figure class="hero__visual">
+      <div class="blob">
+       
+        <img src="./imgs/woman-sobre2.png" alt="Cliente com tablet no comércio">
+      </div>
+    </figure>
+  </div>
+</section>
+<section class="lead">
+  <div class="lead__container">
+    <h2 class="lead__title">
+      <strong>Sempre</strong> <span>mais</span> <span class="italic">para</span> <em>você!</em>
+    </h2>
+
+    <p class="lead__desc">
+      O Clube de Vantagens da Vegas foi feito para transformar suas compras
+      em experiências melhores. Mais descontos, mais oportunidades e muito
+      mais vantagens no seu dia a dia.
+    </p>
+  </div>
+</section>
+
+<section class="stats-slider sobrenos-slider">
+  <div class="stats-slider__container">
+
+    <!-- LADO ESQUERDO: textos (fixos aqui, como no seu mock) -->
+    <div class="stats-slider__info">
+      <div class="stat">
+        <span class="stat__label">Mais de</span>
+        <h3><span class="title-high">20 anos</span><br></h3>
+        <p class="label2">cuidando de <strong>pessoas</strong></p>
+      </div>
+    
+      <div class="stat">
+        <span class="stat__label">Mais de</span>
+        <h3><span class="title-high">500 Mil</span><br></h3>
+        <p class="label2">Usuários Ativos<br>aproveitando benefícios</p>
+      </div>
+
+       
+      <div class="stat">
+        <span class="stat__label">Mais de</span>
+        <h3><span class="title-high">10 Mil</span><br></h3>
+           <p class="label2">Estabelecimentos
+parceiros a sua disposição</p>
+      </div>
+
+          
+    </div>
+
+    <!-- LADO DIREITO: pilha de cards sobrepostos -->
+    <div class="stats-slider__visual">
+      <div class="slides_">
+        <div class="slide_"><img src="./imgs/banners/latinacompra.png?v=2" alt="Slide 1"></div>
+        <div class="slide_"><img src="./imgs/banners/slide2.png?v=2" alt="Slide 2"></div>
+        <div class="slide_"><img src="./imgs/banners/slide3.png?v=2" alt="Slide 3"></div>
+
+           <div class="bullets_">
+        <span class="bullet_ active" data-slide="0"></span>
+        <span class="bullet_" data-slide="1"></span>
+        <span class="bullet_" data-slide="2"></span>
+      </div>
+      </div>
+
+      <!-- Bullets -->
+   
+    </div>
+
+  </div>
+</section>
+
+<div class="midle-line">
+  <img src="./imgs/icons/midle-line?v=2" alt="">
+</div>
+   
+<section class="howto" id="como-utilizar">
+  <div class="howto__container">
+    <h2 class="howto__title">Como utilizar?</h2>
+
+    <!-- TABS -->
+    <div class="howto__tabs" role="tablist" aria-label="Alternar público">
+      <button class="howto__tab is-active" id="tab-est" role="tab" aria-selected="true" data-target="estabelecimentos">
+        Para estabelecimentos
+      </button>
+      <button class="howto__tab" id="tab-usr" role="tab" aria-selected="false" data-target="usuarios">
+        Para usuários
+      </button>
+      <span class="howto__tabs-indicator" aria-hidden="true"></span>
+    </div>
+
+    <!-- CARD (todo o conteúdo fica dentro) -->
+    <div class="howto__card">
+
+      <!-- PANE: ESTABELECIMENTOS -->
+      <article class="howto__pane is-active" id="pane-estabelecimentos" role="tabpanel" aria-labelledby="tab-est">
+        <div class="howto__grid">
+          <figure class="howto__media">
+            <img src="./imgs/banners/estab.png?v=2" alt="Comerciante atendendo no balcão">
+          </figure>
+
+          <div class="howto__steps">
+            <ol>
+              <li>
+                <span class="step__icon"><img src="./imgs/icons/Vector.svg?v=2" alt=""></span>
+                <div class="step__txt">
+                  <h3>Realize seu Cadastro</h3>
+                  <p>Preencha os dados da sua loja e adicione as ofertas em poucos minutos.</p>
+                </div>
+              </li>
+              <li>
+                <span class="step__icon"><img src="./imgs/icons/Vector02.svg?v=2" alt=""></span>
+                <div class="step__txt">
+                  <h3>Análise de ficha</h3>
+                  <p>Validamos as informações e alinhamos as condições da parceria.</p>
+                </div>
+              </li>
+              <li>
+                <span class="step__icon"><img src="./imgs/icons/Vector03.svg?v=2" alt=""></span>
+                <div class="step__txt">
+                  <h3>Publicação e divulgação</h3>
+                  <p>Sua oferta vai ao ar no app e você recebe novos clientes.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </article>
+
+      <!-- PANE: USUÁRIOS -->
+      <article class="howto__pane" id="pane-usuarios" role="tabpanel" aria-labelledby="tab-usr">
+        <div class="howto__grid">
+          <figure class="howto__media">
+            <img src="./imgs/banners/latina-cel.png?v=2" alt="Pessoa usando o aplicativo">
+          </figure>
+
+          <div class="howto__steps">
+            <ol>
+              <li>
+                <span class="step__icon"><img src="./imgs/icons/Vector.svg?v=2" alt=""></span>
+                <div class="step__txt">
+                  <h3>Seja um cliente Vegas</h3>
+                  <p>Tenha o aplicativo Vegas instalado e seja um cliente ativo.</p>
+                </div>
+              </li>
+              <li>
+                <span class="step__icon"><img src="./imgs/icons/Vector02.svg?v=2" alt=""></span>
+                <div class="step__txt">
+                  <h3>Receba notificações sobre descontos</h3>
+                  <p>Pelo app do clube, monitore ofertas e descontos em diversos estabelecimentos.</p>
+                </div>
+              </li>
+              <li>
+                <span class="step__icon"><img src="./imgs/icons/Vector03.svg?v=2" alt=""></span>
+                <div class="step__txt">
+                  <h3>Aproveite o benefício!</h3>
+                  <p>Vá ao estabelecimento e valide a oferta no caixa.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="show-carrossel">
+  <h1>Parceiros que estão conosco!</h1>
+  <p>Marcas e lojas que você já ama estão no Clube Vegas. <br>
+E muitas outras te esperam com benefícios exclusivos.</p>
+</section>
+
+
+  <section class="carrossel" id="carrossel">
+        
+ <div class="carrossel-track" style="width:1920px" id="track">
+ 
+</div>
+
+  </section>
+
+  
+<div class="midle-line2">
+  <img src="./imgs/icons/midle-line.png?v=2" alt="">
+</div>
+
+<section class="cta-join">
+  <div class="cta-join__container">
+    <div class="cta-join__grid">
+      <!-- Visual -->
+      <figure class="cta-join__visual">
+        <div class="blob2">
+          <!-- troque o src pela sua imagem -->
+          <img src="./imgs/woman-sobre1.png" alt="Comerciante sorrindo">
+        </div>
+        <!-- curvas (decorativas) -->
+        <span class="swoosh swoosh--1" aria-hidden="true"></span>
+        <span class="swoosh swoosh--2" aria-hidden="true"></span>
+      </figure>
+
+      <!-- Copy -->
+      <div class="cta-join__copy">
+        <h2>Conecte seu negócio ao clube que transforma vendas em oportunidades.</h2>
+        <p>Ganha visibilidade, fidelize clientes e aumente sua receita junto com a Vegas!</p>
+        <a class="cta-join__btn btn-s font-s" href="./cadastro-usuario.html">Quero fazer parte!</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+    
+
+<footer>
+  <div class="content-brand">
+    <img src="./imgs/logo-white.png" class="logo-footer" style=" padding-top: 20px;" alt="">
+    <img src="./imgs/logos/logo-abbt 1.svg" href="https://www.abbt.org.br/home" style="width: 10%;" alt="">
+    <img src="./imgs/logos/logo-empresa-brasileira.svg" alt="">
+  </div>
+
+  <div class="menu-footer">
+    <div class="links-rapidos m-f locals">
+      <div class="card-footer">
+        <i class="fas fa-map-marker-alt"></i>
+        <div>
+          <h2>Americana</h2>
+          <p>R. Tamôio, 526 - Vila Santa Catarina | 13466-250</p>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <i class="fa-brands fa-whatsapp"></i>
+        <div>
+          <h2><a target="_blank" href="https://api.whatsapp.com/send/?phone=551921082900">19 2108.2900</a></h2>
+          <p>segunda a sexta 8h às 20h,<br> aos sábados das 8h às 18h</p>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <i class="fa-solid fa-phone"></i>
+        <div>
+          <h2><a target="_blank" href="tel:+551921082908">19 2108.2908</a></h2>
+          <p>segunda a sexta 8h às 20h,<br> aos sábados das 8h às 18h</p>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <i class="fas fa-envelope"></i>
+        <div>
+          <p><a href="mailto:atendimento@vegascard.com.br">atendimento@vegascard.com.br</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="line-footer"></div>
+
+    <div class="links-rapidos m-f menus">
+      <div class="link-div">
+        <h2>Sobre Nós</h2>
+        <ul>
+          <li><a href="https://vegascard.com.br/a-vegas">A Vegas</a></li>
+          <li><a href="https://vegascard.com.br/vegas-cultural">Vegas Cultural</a></li>
+          <li><a href="https://vegascard.com.br/blog">Notícias</a></li>
+        </ul>
+      </div>
+
+      <div class="link-div">
+        <h2>Soluções</h2>
+        <ul>
+          <li><a href="https://vegascard.com.br/programa-alimentacao-trabalhador">PAT</a></li>
+          <li><a href="https://vegascard.com.br/convenios">Convênios</a></li>
+          <li><a href="https://vegascard.com.br/bonus">Bônus</a></li>
+          <li><a href="https://vegascard.com.br/mobilidade">Mobilidade</a></li>
+          <li><a href="https://vegascard.com.br/bem-estar-saude">Bem-Estar e Saúde</a></li>
+          <li><a href="https://vegascard.com.br/entretenimento">Entretenimento</a></li>
+          <li><a href="https://vegascard.com.br/gestaopme">Gestão PME</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="links-rapidos menus m-f footer-menus">
+      <div class="link-div">
+        <h2>Área do cliente</h2>
+        <ul>
+          <li><a href="https://vegascard.com.br/meu-cartao">Meu Cartão</a></li>
+          <li><a href="https://vegascard.com.br/portal-rh">Portal RH</a></li>
+          <li><a href="https://vegascard.com.br/meu-estabelecimento">Meu Estabelecimento</a></li>
+          <li><a href="https://vegascard.com.br/meu-rastreador">Meu Rastreador</a></li>
+        </ul>
+      </div>
+
+      <div class="link-div">
+        <h2>Estabelecimento</h2>
+        <ul>
+          <li><a href="https://vegascard.com.br/quero-ser-estabelecimento">Quero ser Estabelecimento</a></li>
+          <li><a href="https://vegascard.com.br/rede-credenciada">Rede Credenciada</a></li>
+        </ul>
+      </div>
+
+      <div class="link-div">
+        <a href="https://vegascard.com.br/trabalhe-conosco"><h2>Trabalhe Conosco</h2></a>
+        <a href="https://vegascard.com.br/perguntas-frequentes"><h2>Tire Suas Dúvidas</h2></a>
+      </div>
+    </div>
+
+       <div class="line-footer"></div>
+
+    <div class="app menus m-f">
+      <h2>Baixe o App</h2>
+      <ul>
+        <a href="https://apps.apple.com/br/app/vegas-card/id1478167977" target="_blank" rel="noreferrer"><li>IOS</li></a>
+        <a href="https://play.google.com/store/apps/details?id=app.vegascarddobrasil.android&hl=pt_BR&gl=US" target="_blank" rel="noreferrer"><li>Android</li></a>
+      </ul>
+
+      <div class="midia-links">
+        <a href="https://www.instagram.com/vegascardbrasil/" target="_blank"><i class="fab fa-instagram-square social-media"></i></a>
+        <a href="https://www.facebook.com/VEGASCARDdoBrasil" target="_blank"><i class="fab fa-facebook-square social-media"></i></a>
+        <a href="https://www.youtube.com/@vegascardbrasil4538" target="_blank"><i class="fab fa-youtube-square social-media"></i></a>
+        <a href="https://www.linkedin.com/company/vegascardbrasil/" target="_blank"><i class="fab fa-linkedin social-media"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <div class="down-footer">
+        <p>Acesse nossa Política de Privacidade.</p>
+        <p>Copyright ©2025 Vegas Card do Brasil. Todos os direitos reservados. Desenvolvido por Lymoria Studio</p>
+       </div>
+
+<script>
+  (function(){
+  const slides  = Array.from(document.querySelectorAll('.slides_ .slide_'));
+  const bullets = Array.from(document.querySelectorAll('.bullets_ .bullet_'));
+  let current = 0, timer;
+
+  function layout(){
+    const n = slides.length;
+    slides.forEach((el, i)=>{
+      // IMPORTANTE: remova is-hidden aqui também!
+      el.classList.remove('is-front','is-second','is-third','is-hidden');
+      const rel = (i - current + n) % n; // 0=frente, 1=segundo, 2=terceiro, resto=fundo
+      if (rel === 0) el.classList.add('is-front');
+      else if (rel === 1) el.classList.add('is-second');
+      else if (rel === 2) el.classList.add('is-third');
+      else el.classList.add('is-hidden');
+    });
+    bullets.forEach((b,i)=> b.classList.toggle('active', i===current));
+  }
+
+  function goTo(index){
+    if (index === current) return;
+    const prev = current;
+    current = (index + slides.length) % slides.length;
+
+    const el = slides[prev];
+    el.classList.add('exit-left');
+
+    // Quando terminar a transição de saída:
+    const onEnd = (e)=>{
+      if (e.propertyName !== 'transform' && e.propertyName !== 'opacity') return;
+      el.removeEventListener('transitionend', onEnd);
+
+      // some e fica atrás do deck
+      el.classList.remove('exit-left','is-front','is-second','is-third');
+      el.classList.add('is-hidden');
+
+      // re-layouteia a pilha com o novo current
+      requestAnimationFrame(layout);
+    };
+    el.addEventListener('transitionend', onEnd, { once: true });
+  }
+
+  bullets.forEach((b,i)=> b.addEventListener('click', ()=>{ goTo(i); resetAutoplay(); }));
+
+  function autoplay(){ timer = setInterval(()=> goTo((current+1)%slides.length), 5000); }
+  function resetAutoplay(){ clearInterval(timer); autoplay(); }
+
+  layout(); autoplay();
+})();
+
+//estab e user
+  (function(){
+    const tabs = Array.from(document.querySelectorAll('.howto__tab'));
+    const panes = {
+      estabelecimentos: document.getElementById('pane-estabelecimentos'),
+      usuarios: document.getElementById('pane-usuarios')
+    };
+    const indicator = document.querySelector('.howto__tabs-indicator');
+    const tabsWrap  = document.querySelector('.howto__tabs');
+
+    function updateIndicator(){
+      const active = document.querySelector('.howto__tab.is-active');
+      if(!active) return;
+      // posição e largura do botão ativo (considera o padding do wrapper)
+      const left = active.offsetLeft;
+      const width = active.offsetWidth;
+      indicator.style.left = left + 'px';
+      indicator.style.width = width + 'px';
+    }
+
+    function setActive(target){
+      tabs.forEach(t=>{
+        const on = t.dataset.target === target;
+        t.classList.toggle('is-active', on);
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      Object.keys(panes).forEach(k=>{
+        panes[k].classList.toggle('is-active', k === target);
+      });
+      updateIndicator();
+    }
+
+    tabs.forEach(t=>{
+      t.addEventListener('click', ()=> setActive(t.dataset.target));
+      t.addEventListener('keydown', (e)=>{
+        if(e.key === 'ArrowRight' || e.key === 'ArrowLeft'){
+          const i = tabs.indexOf(t);
+          const next = e.key === 'ArrowRight' ? (i+1)%tabs.length : (i-1+tabs.length)%tabs.length;
+          tabs[next].focus();
+          setActive(tabs[next].dataset.target);
+        }
+      });
+    });
+
+    // init
+    setActive('estabelecimentos');
+    window.addEventListener('resize', updateIndicator, { passive: true });
+    // se carregar fontes async, reatualiza
+    document.fonts && document.fonts.ready.then(updateIndicator);
+  })();
+
+  function montarCarrossel() {
+  const track = document.getElementById('track');
+  const carrossel = document.getElementById('carrossel');
+
+  if (!track) return;
+
+  // Lista manual de parceiros com ID e imagem
+ const parceiros = [
+  { link: 'detalhes.html#store-3',    src: './imgs/logos/logo-zanini.png', nome: 'Parceiro 1' },
+  { link: 'detalhes.html#store-5',    src: './imgs/logos/boi-logo.png',    nome: 'Parceiro 2' },
+  { link: 'detalhes.html#store-6',    src: './imgs/logos/beta-logo.png',   nome: 'Parceiro 3' },
+  { link: 'detalhes.html#store-7',                        src: './imgs/logos/caochorro-logo.png', nome: 'Parceiro 4' },
+  { link: './farmacia.html', src: './imgs/logos/raia-logo.png',    nome: 'Parceiro 5' },
+  { link: 'https://app.lincredfacil.com.br/antecipacao-fgts-vegas/?utm_source=lnc_app_lp_vegas&utm_medium=botao&utm_campaign=vegas_fgts',                        src: './imgs/logos/lincred-logo.png', nome: 'Parceiro 6' },
+  { link: './farmacia.html',                        src: './imgs/logos/drogasil-logo.png', nome: 'Parceiro 7' },
+  { link: './totalpass.html',                        src: './imgs/logos/totalpass.png',    nome: 'Parceiro 8' },
+  { link: './mediquo.html',                        src: './imgs/logos/logo-med.png',     nome: 'Parceiro 9' },
+  { link: './wellhub.html',                        src: './imgs/logos/wellhub-logo.png', nome: 'Parceiro 10' },
+  { link: '',                        src: './imgs/logos/intensos-logo.png',    nome: 'Parceiro 11' },
+  { link: '',                        src: './imgs/logos/vidrovan-logo.png',     nome: 'Parceiro 12' },
+  { link: '',                        src: './imgs/logos/mercadao-logo.png', nome: 'Parceiro 13' },
+
+
+];
+
+track.innerHTML = "";
+
+parceiros.forEach(parceiro => {
+  const link = document.createElement('a');
+
+  if (parceiro.link) {
+    link.href = parceiro.link;
+  } else {
+    // Evita redirecionar se o link estiver vazio
+    link.href = 'javascript:void(0)';
+    link.style.cursor = 'default';
+  }
+
+  const img = document.createElement('img');
+  img.src = parceiro.src;
+  img.alt = `Logo ${parceiro.nome}`;
+  img.loading = "lazy";
+  
+
+  link.appendChild(img);
+  track.appendChild(link);
+  img.onerror = () => { img.src = 'src/imgs/parceiros/default-image.png'; };
+
+});
+
+  const isMobile = window.innerWidth <= 650;
+  const minItens = isMobile ? 2 : 3;
+
+  if (parceiros.length > minItens) {
+    // DUPLICA para efeito infinito
+    track.innerHTML += track.innerHTML;
+    track.classList.add('animate-scroll');
+
+    let posX = 0;
+    let animationId;
+    const speed = 0.3;
+
+    function animate() {
+      posX -= speed;
+      if (Math.abs(posX) >= track.scrollWidth / 2) {
+        posX = 0;
+      }
+      track.style.transform = `translateX(${posX}px)`;
+      animationId = requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    carrossel.addEventListener('mouseenter', () => cancelAnimationFrame(animationId));
+    carrossel.addEventListener('mouseleave', () => animate());
+  } else {
+    track.style.transform = 'translateX(0)';
+    track.classList.remove('animate-scroll');
+    track.style.animation = 'none';
+    track.style.justifyContent = 'flex-start';
+  }
+}
+
+document.addEventListener("DOMContentLoaded", montarCarrossel);
+
+
+</script>
+     
+ <script src="./scripts/components/menumobile.js"></script>
+   
+</body>
+</html>

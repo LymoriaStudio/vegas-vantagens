@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/global.css?v=37">
+    <link rel="icon" type="image/png" href="./imgs/Vector.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <title>Vegas Benefícios</title>
+</head>
+<body>
+      <div class="header">
+        <nav>
+            <div class="logo">
+                <a href="./index.html?v=2">
+                    <img src="./imgs/logos/Logo.svg" alt="">
+                </a>
+            </div>
+
+      
+             <ul class="menu-desktop">
+               
+              
+            </ul>
+
+            <button class="btn-header menu-desktop">
+               <li><a href="./sobrenos.html">Sobre o Clube</a></li>
+            
+            </button>
+              
+
+            
+              <div class="main-menus">
+                     <ul >
+               
+                <li><a href="./sobrenos.html">Sobre o Clube</a></li>
+     
+              
+            </ul>
+
+           <button>
+            
+           </button>
+              </div>
+             <div class="menu-hamb">
+            <img src="./imgs/icons/menu.svg" alt="">
+        </div>
+
+        <div class="close-menu">
+            <img src="./imgs/icons/close.svg" alt="">
+        </div>
+        </nav>
+
+              <div class="menu-overlay"></div>
+    </div>
+
+<section class="comercio">
+    <h1 class="tag-comercio">Bares e Restaurantes</h1>
+    <div class="comercio-container">
+        <div class="main-img">
+            <img src="./imgs/default-image.png" class="img-comercio" alt="">
+        </div>
+        <div class="main-info">
+            <div class="header-info-mobile">
+                <div class="header-info-mobile-head">
+                <div class="img-logo">
+                   <img src="./imgs/default-image.png" class="logo" alt="">
+                </div>
+               
+                 <div class="names-ava">
+                        <h2 class="title-comercio"></h2>
+                      
+                     
+                       
+                      
+                    </div>
+                </div>
+                <div class="inner-info">
+                 
+                  <!--
+                      <div class="btn-info">
+                                          <button class="visite"><img src="./imgs/icons/System.png" alt=""> Visitar o Site</button>
+                        <button class="mapa"><img src="./imgs/icons/location_on.svg" alt="">Ver Mapa</button>
+
+        
+                    </div>
+                  -->
+                
+                
+              
+                </div>
+                  <div class="main-img">
+            <img src="./imgs/default-image.png" class="img-comercio" alt="">
+        </div>
+                
+
+                           
+            </div>
+            <div class="header-info">
+                
+                <div class="img-logo">
+                   <img src="./imgs/default-image.png" class="logo" alt="">
+                </div>
+                <div class="inner-info">
+                    <div class="names-ava">
+                        <h2 class="title-comercio"></h2>
+                        
+                    </div>
+                  <!---
+                       <div class="btn-info">
+                        <button class="visite"><img src="./imgs/icons/System.png" alt=""> Visitar o Site</button>
+                        <button class="mapa"><img src="./imgs/icons/location_on.svg" alt="">Ver Mapa</button>
+        
+                    </div>
+                  -->
+               
+                
+              
+                </div>
+               
+            
+           
+            </div>
+
+            <div class="main-img-tablet">
+                <img src="./imgs/default-image.png"  class="img-comercio" alt="">
+            </div>
+          <div class="line line-1"></div>
+               
+            <div class="info-cards">
+                <div class="primary-infos">
+     <div class="info-card adress-card">
+                    <h3>Endereço:</h3>
+                    <p class="adress"></p>
+                </div>
+                <div class="info-card phone-card">
+                    <h3>Telefone:</h3>
+                    <p class="phone"></p>
+                </div>
+                 <div class="info-card">
+                     <h3>Sobre:</h3>
+                    <p class="avaliacao"></p>
+                </div>
+                </div>
+           
+                 
+              
+            </div>
+                  <div class="line line-last"></div>
+          
+            
+          
+        </div>
+       <div class="menu-overlay"></div>
+    </div>
+  
+
+</section>
+<div class="modal-overlay" style="display: none;">
+  <div class="modal">
+    <button class="close-btn">&times;</button>
+    <img class="modal-logo" src="" alt="" />
+    <h2 class="modal-title"></h2>
+    <p class="modal-validade"></p>
+    <p class="modal-descricao"></p>
+  </div>
+</div>
+<section class="desc-ofertas">
+      <div class="line line-desc"></div>
+        <h1 class="title-desc">Ofertas</h1>
+        <!---
+        
+       
+        <div class="coupon-grid">
+          <div class="sem-cupom">
+            <h2>Sem Cupons para esse estabelecimento no momento!</h2>
+          </div>
+           
+        </div>
+         -->
+<!-- MODAL -->
+<dialog class="coupon-modal" data-modal="zanini" aria-labelledby="coupon-modal-title-zanini">
+  <button class="cm-close" aria-label="Fechar">&times;</button>
+  <div class="cm-wrap">
+    <div class="cm-topchips">
+      <span class="cm-chip"><img src="./imgs/calender-icon.png" alt="">Validade até 31/06/2026</span>
+      <span class="cm-chip"><img src="./imgs/utils-icon.png" alt="">Utilidades</span>
+    </div>
+
+    <div class="cm-badge">
+      <img src="./imgs/icons/desconto.png" alt="10% de desconto" loading="lazy">
+    </div>
+
+    <h2 id="coupon-modal-title-zanini" class="cm-title">Tudo para sua casa e família!</h2>
+    <p class="cm-sub">Ganhe até 10% OFF em brinquedos e utilidades do dia a dia! 
+    Faça compras a partir de R$ 100,00 reais na Zanini!</p>
+
+    <p class="aceitos-cm">Cartões Aceitos:</p>
+    <div class="cm-pills">
+      <span class="cm-pill cm-pill-day">Day</span>
+      <span class="cm-pill cm-pill-alim">Alimentação</span>
+      <span class="cm-pill">Plus</span>
+      <span class="cm-pill cm-pill-day">Natal</span>
+    </div>
+
+    <div class="cm-alert">
+      <div class="flex-alert">
+        <img src="./imgs/alert-icon.png" alt=""><strong>Atenção!</strong>
+      </div>
+      <p class="valid-cm">Esta oferta é válida até 31/06/2026</p>
+      <p class="subvalid-cm">Não acumulável com outras promoções. Apresente o cupom no momento do pedido.</p>
+    </div>
+
+    <a href="#" class="cm-cta" role="button">Consultar no mapa</a>
+  </div>
+</dialog>
+
+<!-- CAOCHORRO -->
+<dialog class="coupon-modal" data-modal="caochorro" aria-labelledby="coupon-modal-title-caochorro">
+  <button class="cm-close" aria-label="Fechar">&times;</button>
+  <div class="cm-wrap">
+    <div class="cm-topchips">
+      <span class="cm-chip"><img src="./imgs/calender-icon.png" alt="">Validade até 31/06/2026</span>
+      <span class="cm-chip"><img src="./imgs/utils-icon.png" alt="">Petshop</span>
+    </div>
+
+    <div class="cm-badge">
+      <img src="./imgs/icons/desconto.png" alt="10% de desconto" loading="lazy">
+    </div>
+
+    <h2 id="coupon-modal-title-caochorro" class="cm-title">Tudo para sua casa e família!</h2>
+    <p class="cm-sub">Desconto de 10% não acumulativo em outras Promoções.</p>
+
+    <p class="aceitos-cm">Cartões Aceitos:</p>
+    <div class="cm-pills">
+      <span class="cm-pill cm-pill-day">Day</span>
+      <span class="cm-pill">Plus</span>
+      <span class="cm-pill cm-pill-day">Natal</span>
+    </div>
+
+    <div class="cm-alert">
+      <div class="flex-alert">
+        <img src="./imgs/alert-icon.png" alt=""><strong>Atenção!</strong>
+      </div>
+      <p class="valid-cm">Esta oferta é válida até 31/06/2026</p>
+      <p class="subvalid-cm">Não acumulável com outras promoções. Apresente o cupom no momento do pedido.</p>
+    </div>
+
+    <a href="#" class="cm-cta" role="button">Consultar no mapa</a>
+  </div>
+</dialog>
+
+<!-- BETTA SUPLEMENTOS -->
+<dialog class="coupon-modal" data-modal="betta suplementos" aria-labelledby="coupon-modal-title-bettasuplementos">
+  <button class="cm-close" aria-label="Fechar">&times;</button>
+  <div class="cm-wrap">
+    <div class="cm-topchips">
+      <span class="cm-chip"><img src="./imgs/calender-icon.png" alt="">Validade até 31/06/2026</span>
+      <span class="cm-chip"><img src="./imgs/utils-icon.png" alt="">Academia</span>
+    </div>
+
+    <div class="cm-badge">
+      <img src="./imgs/icons/desconto5.png" alt="5% de desconto" loading="lazy">
+    </div>
+
+    <h2 id="coupon-modal-title-caochorro" class="cm-title">Cuidar do físico ficou 5% mais barato!</h2>
+    <p class="cm-sub">Pagando com Vegas, e utilizando o cupom <span class="valid-cm">VEGAS5</span> você garante 5% de descontos na rede Betta Suplementos!</p>
+
+    <p class="aceitos-cm">Cartões Aceitos:</p>
+    <div class="cm-pills">
+      <span class="cm-pill cm-pill-day">Day</span>
+      <span class="cm-pill cm-farm">Farmacia</span>
+      <span class="cm-pill cm-pill-alim">Alimentação</span>
+      <span class="cm-pill">Refeição</span>
+
+    
+    </div>
+
+    <div class="cm-alert">
+      <div class="flex-alert">
+        <img src="./imgs/alert-icon.png" alt=""><strong>Atenção!</strong>
+      </div>
+      <p class="valid-cm">Esta oferta é válida até 31/06/2026</p>
+    
+      <p class="subvalid-cm">Não acumulável com outras promoções. Apresente o cupom no momento do pedido.</p>
+    </div>
+
+    <a href="#" class="cm-cta" role="button">Consultar no mapa</a>
+  </div>
+</dialog>
+
+
+
+<dialog class="coupon-modal" data-modal="boi que mia" aria-labelledby="coupon-modal-title-boiquemia">
+  <button class="cm-close" aria-label="Fechar">&times;</button>
+  <div class="cm-wrap">
+    <div class="cm-topchips">
+      <span class="cm-chip"><img src="./imgs/calender-icon.png" alt="">Validade até 31/06/2026</span>
+      <span class="cm-chip"><img src="./imgs/utils-icon.png" alt="">Alimentação</span>
+    </div>
+
+    <div class="cm-badge">
+        
+    </div>
+
+    <h2 id="coupon-modal-title-caochorro" class="cm-title">Entrada por conta da casa!</h2>
+    <p class="cm-sub">Pagando com o seu Vegas, você garante porções selecionadas, por conta da casa!</p>
+
+    <p class="aceitos-cm">Cartões Aceitos:</p>
+    <div class="cm-pills">
+      <span class="cm-pill cm-pill-day">Day</span>
+      <span class="cm-pill">Plus</span>
+      <span class="cm-pill cm-pill-alim">Alimentação</span>
+      <span class="cm-pill">Refeição</span>
+      <span class="cm-pill cm-pill-day">Natal</span>
+    
+    </div>
+
+    <div class="cm-alert">
+      <div class="flex-alert">
+        <img src="./imgs/alert-icon.png" alt=""><strong>Atenção!</strong>
+      </div>
+    
+      <p class="subvalid-cm">Não acumulável com outras promoções. Apresente o cupom no momento do pedido.</p>
+    </div>
+
+    <a href="#" class="cm-cta" role="button">Consultar no mapa</a>
+  </div>
+</dialog>
+
+<dialog class="coupon-modal" data-modal="pasteur" aria-labelledby="coupon-modal-title-bettasuplementos">
+  <button class="cm-close" aria-label="Fechar">&times;</button>
+  <div class="cm-wrap">
+    <div class="cm-topchips">
+      <span class="cm-chip"><img src="./imgs/calender-icon.png" alt="">Validade até 31/06/2026</span>
+      <span class="cm-chip"><img src="./imgs/utils-icon.png" alt="">Saúde</span>
+    </div>
+
+    <div class="cm-badge">
+      <img src="./imgs/icons/desconto61.png" alt="5% de desconto" loading="lazy">
+    </div>
+
+    <h2 id="coupon-modal-title-caochorro" class="cm-title">Cuide da saúde pagando até 60% mais barato! </h2>
+    <p class="cm-sub">Na Pasteur diagnósticos, usuários Vegas contam com até 60% de descontos em exames selecionados! </p>
+
+    <p class="aceitos-cm">Cartões Aceitos:</p>
+    <div class="cm-pills">
+      <p>Consultar no local</p>
+
+    
+    </div>
+
+    <div class="cm-alert">
+      <div class="flex-alert">
+        <img src="./imgs/alert-icon.png" alt=""><strong>Atenção!</strong>
+      </div>
+      <p class="valid-cm">Esta oferta é válida até 31/06/2026</p>
+    
+      <p class="subvalid-cm">Não acumulável com outras promoções. Apresente o cupom no momento do pedido.</p>
+    </div>
+
+    <a href="#" class="cm-cta" role="button">Consultar no mapa</a>
+  </div>
+</dialog>
+
+<dialog class="coupon-modal" data-modal="mercadao dos oculos" aria-labelledby="coupon-modal-title-bettasuplementos">
+  <button class="cm-close" aria-label="Fechar">&times;</button>
+  <div class="cm-wrap">
+    <div class="cm-topchips">
+      <span class="cm-chip"><img src="./imgs/calender-icon.png" alt="">Validade até 31/06/2026</span>
+      <span class="cm-chip"><img src="./imgs/icons/heart-icon.png" alt="">Bem estar</span>
+    </div>
+
+    <div class="cm-badge">
+      <img src="./imgs/icons/desconto20.png" alt="20% de desconto" loading="lazy">
+    </div>
+
+    <h2 id="coupon-modal-title-caochorro" class="cm-title">20% de descontos em armações selecionadas!</h2>
+    <p class="cm-sub">Clientes Vegas possuem 20% de descontos em armações selecionadas no Mercadão dos óculos! </p>
+
+    <p class="aceitos-cm">Cartões Aceitos:</p>
+    <div class="cm-pills">
+       <span class="cm-pill cm-pill-day">Day</span>
+      <span class="cm-pill cm-farm">Farmácia</span>
+      <span class="cm-pill">Plus</span>
+
+    
+    </div>
+
+    <div class="cm-alert">
+      <div class="flex-alert">
+        <img src="./imgs/alert-icon.png" alt=""><strong>Atenção!</strong>
+      </div>
+      <p class="valid-cm">Esta oferta é válida até 31/06/2026</p>
+    
+      <p class="subvalid-cm">Não acumulável com outras promoções. Apresente o cupom no momento do pedido.</p>
+    </div>
+
+    <a href="#" class="cm-cta" role="button">Consultar no mapa</a>
+  </div>
+</dialog>
+
+<dialog class="coupon-modal" data-modal="intensos" aria-labelledby="coupon-modal-title-bettasuplementos">
+  <button class="cm-close" aria-label="Fechar">&times;</button>
+  <div class="cm-wrap">
+    <div class="cm-topchips">
+      <span class="cm-chip"><img src="./imgs/calender-icon.png" alt="">Validade até 31/06/2026</span>
+      <span class="cm-chip"><img src="./imgs/icons/heart-icon.png" alt="">Bem estar</span>
+    </div>
+
+    <div class="cm-badge">
+      <img src="./imgs/icons/1lugardesconto.png" alt="1 corte" loading="lazy">
+    </div>
+
+    <h2 id="coupon-modal-title-caochorro" class="cm-title">O primeiro corte é por nossa conta!</h2>
+    <p class="cm-sub">Clientes Vegas que aderirem o clube intensos garante o primeiro corte grátis e hidratação no mesmo atendimento! </p>
+
+    <p class="aceitos-cm">Cartões Aceitos:</p>
+    <div class="cm-pills">
+       <span class="cm-pill cm-pill-day">Day</span>
+       <span class="cm-pill">Plus</span>
+
+    
+    </div>
+
+    <div class="cm-alert">
+      <div class="flex-alert">
+        <img src="./imgs/alert-icon.png" alt=""><strong>Atenção!</strong>
+      </div>
+      <p class="valid-cm">Esta oferta é válida até 31/06/2026</p>
+    
+      <p class="subvalid-cm">Não acumulável com outras promoções. Apresente o cupom no momento do pedido.</p>
+    </div>
+
+    <a href="#" class="cm-cta" role="button">Consultar no mapa</a>
+  </div>
+</dialog>
+
+<dialog class="coupon-modal" data-modal="vidrovan" aria-labelledby="coupon-modal-title-bettasuplementos">
+  <button class="cm-close" aria-label="Fechar">&times;</button>
+  <div class="cm-wrap">
+    <div class="cm-topchips">
+      <span class="cm-chip"><img src="./imgs/calender-icon.png" alt="">Validade até 31/06/2026</span>
+      <span class="cm-chip"><img src="./imgs/icons/car-icon.svg" alt="">Transporte</span>
+    </div>
+
+    <div class="cm-badge">
+      <img src="./imgs/icons/desconto5.png" alt="1 corte" loading="lazy">
+    </div>
+
+    <h2 id="coupon-modal-title-caochorro" class="cm-title">Dirija com com mais clareza e mais descontos!</h2>
+    <p class="cm-sub">Economize até 5% pagando com os cartões Vegas </p>
+
+    <p class="aceitos-cm">Cartões Aceitos:</p>
+    <div class="cm-pills">
+       <span class="cm-pill cm-pill-day">Day</span>
+       <span class="cm-pill">Plus</span>
+
+    
+    </div>
+
+    <div class="cm-alert">
+      <div class="flex-alert">
+        <img src="./imgs/alert-icon.png" alt=""><strong>Atenção!</strong>
+      </div>
+      <p class="valid-cm">Esta oferta é válida até 31/06/2026</p>
+    
+      <p class="subvalid-cm">Não acumulável com outras promoções. Apresente o cupom no momento do pedido.</p>
+    </div>
+
+    <a href="#" class="cm-cta" role="button">Consultar no mapa</a>
+  </div>
+</dialog>
+
+<div class="coupon-rail">
+
+  <div class="coupon-grid">
+    <p id="no-coupons-msg" class="no-coupons-msg">No momento não há cupons disponíveis para este estabelecimento.</p>
+
+
+  <article class="coupon-card" data-cupom="zanini">
+    <div class="coupon-media">
+      <img src="./imgs/zanini-cupom2.png" alt="Cliente no mercado" loading="lazy">
+      <span class="coupon-badge">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6a3 3 0 0 1 3-3h8.5a1 1 0 0 1 .7.29l4.5 4.5a1 1 0 0 1 .3.71V15a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6zM8.5 8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>
+        <strong>10% De desconto!</strong>
+      </span>
+    </div>
+
+    <div class="coupon-body">
+      <div class="coupon-meta">
+        <span class="meta-cat">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+          Utilidades
+        </span>
+        <div class="meta-pills">
+          <span class="pill">Day</span>
+          <span class="pill pill-alt">Plus</span>
+          <span>+</span>
+        </div>
+      </div>
+
+      <h3 class="coupon-title">Presentes para toda a família pagando 10% mais barato na Zanini!</h3>
+      <p class="coupon-sub">Faça a felicidade de quem você ama pagando mais barato!  </p>
+
+      <button class="coupon-cta" type="button" data-target="zanini">Ver Oferta</button>
+
+    </div>
+  </article>
+
+  <article class="coupon-card" data-cupom="caochorro">
+    <div class="coupon-media">
+      <img src="./imgs/cao-cupom.png" alt="Pessoa com animal" loading="lazy">
+      <span class="coupon-badge">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6a3 3 0 0 1 3-3h8.5a1 1 0 0 1 .7.29l4.5 4.5a1 1 0 0 1 .3.71V15a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6zM8.5 8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>
+        <strong>10% De desconto!</strong>
+      </span>
+    </div>
+
+    <div class="coupon-body">
+      <div class="coupon-meta">
+        <span class="meta-cat">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+          Petshop
+        </span>
+        <div class="meta-pills">
+          <span class="pill">Day</span>
+          <span class="pill pill-alt">Plus</span>
+          <span>+</span>
+        </div>
+      </div>
+
+      <h3 class="coupon-title">Economize até 10% em compras para o seu pet!</h3>
+      <p class="coupon-sub">Pagando com Vegas, você garante 10% de descontos na Cãochorro!</p>
+
+      <button class="coupon-cta" type="button" data-target="caochorro">Ver Oferta</button>
+
+    </div>
+  </article>
+
+  <article class="coupon-card" data-cupom="betta suplementos">
+    <div class="coupon-media">
+      <img src="./imgs/betta-cupom.png" alt="Cliente no mercado" loading="lazy">
+      <span class="coupon-badge">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6a3 3 0 0 1 3-3h8.5a1 1 0 0 1 .7.29l4.5 4.5a1 1 0 0 1 .3.71V15a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6zM8.5 8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>
+        <strong>5% De desconto!</strong>
+      </span>
+    </div>
+
+    <div class="coupon-body">
+      <div class="coupon-meta">
+        <span class="meta-cat">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+          Fitness
+        </span>
+        <div class="meta-pills">
+          <span class="pill">Day</span>
+          <span class="pill pill-alt">Plus</span>
+        </div>
+      </div>
+
+      <h3 class="coupon-title">Cuidar do físico ficou 5% mais barato!</h3>
+      <p class="coupon-sub">Pagando com Vegas, você garante 5% de descontos na rede Betta Suplementos!</p>
+
+      <button class="coupon-cta" type="button" data-target="betta suplementos">Ver Oferta</button>
+
+ 
+    </div>
+  </article>
+
+  <article class="coupon-card" data-cupom="boi que mia">
+    <div class="coupon-media">
+      <img src="./imgs/boimia-cupom.png" alt="Cliente no mercado" loading="lazy">
+      <span class="coupon-badge">
+        
+         <strong>Entrada por conta da casa!</strong>
+      </span>
+    </div>
+
+    <div class="coupon-body">
+      <div class="coupon-meta">
+        <span class="meta-cat">
+          <img src="./imgs/icons/hamb-icon.svg" alt="">
+          Alimentação
+        </span>
+        <div class="meta-pills">
+          <span class="pill">Alimentação</span>
+          <span class="pill pill-alt">Plus</span>
+          <span>+</span>
+        </div>
+      </div>
+
+      <h3 class="coupon-title">Entrada por conta da casa no Boi que Mia!</h3>
+      <p class="coupon-sub">Pagando com o seu Vegas, você garante porções selecionadas, por conta da casa!</p>
+
+      <button class="coupon-cta" type="button" data-target="boi que mia">Ver Oferta</button>
+    </div>
+  </article>
+
+  <article class="coupon-card" data-cupom="pasteur">
+    <div class="coupon-media">
+      <img src="./imgs/pasteur-cupom.png" alt="Cliente no mercado" loading="lazy">
+      <span class="coupon-badge">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6a3 3 0 0 1 3-3h8.5a1 1 0 0 1 .7.29l4.5 4.5a1 1 0 0 1 .3.71V15a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6zM8.5 8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>
+        <strong>60% De desconto!</strong>
+      </span>
+    </div>
+
+    <div class="coupon-body">
+      <div class="coupon-meta">
+        <span class="meta-cat">
+          <img src="./imgs/icons/hamb-icon.svg" alt="">
+          Saúde
+        </span>
+        <div class="meta-pills">
+          <span class="pill">Day</span>
+          <span class="pill pill-alt">Plus</span>
+          <span>+</span>
+        </div>
+      </div>
+
+      <h3 class="coupon-title">Cuide da saúde pagando até 60% mais barato! </h3>
+      <p class="coupon-sub">Na Pasteur diagnósticos, usuários Vegas contam com até 60% de descontos em exames selecionados! </p>
+
+      <button class="coupon-cta" type="button" data-target="pasteur">Ver Oferta</button>
+    </div>
+  </article>
+
+    <article class="coupon-card" data-cupom="mercadao dos oculos">
+    <div class="coupon-media">
+      <img src="./imgs/mercadao-cupom.png" alt="Cliente no mercado" loading="lazy">
+      <span class="coupon-badge">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6a3 3 0 0 1 3-3h8.5a1 1 0 0 1 .7.29l4.5 4.5a1 1 0 0 1 .3.71V15a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6zM8.5 8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>
+        <strong>20% De desconto!</strong>
+      </span>
+    </div>
+
+    <div class="coupon-body">
+      <div class="coupon-meta">
+        <span class="meta-cat">
+          <img src="./imgs/icons/heart-icon.png" alt="">
+          Bem estar
+        </span>
+        <div class="meta-pills">
+          <span class="pill">Day</span>
+          <span class="pill pill-alt">Plus</span>
+          <span>+</span>
+        </div>
+      </div>
+
+      <h3 class="coupon-title">20% de descontos em armações selecionadas!</h3>
+      <p class="coupon-sub">Clientes Vegas possuem 20% de descontos em armações selecionadas no Mercadão dos óculos!</p>
+
+      <button class="coupon-cta" type="button" data-target="mercadao dos oculos">Ver Oferta</button>
+    </div>
+  </article>
+
+    <article class="coupon-card" data-cupom="intensos">
+    <div class="coupon-media">
+      <img src="./imgs/intensos-cupom.png" alt="Cliente no mercado" loading="lazy">
+      <span class="coupon-badge">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6a3 3 0 0 1 3-3h8.5a1 1 0 0 1 .7.29l4.5 4.5a1 1 0 0 1 .3.71V15a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6zM8.5 8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>
+        <strong>1° corte por conta da casa!</strong>
+      </span>
+    </div>
+
+    <div class="coupon-body">
+      <div class="coupon-meta">
+        <span class="meta-cat">
+          <img src="./imgs/icons/heart-icon.png" alt="">
+          Bem estar
+        </span>
+        <div class="meta-pills">
+          <span class="pill">Day</span>
+          <span class="pill pill-alt">Plus</span>
+          <span>+</span>
+        </div>
+      </div>
+
+      <h3 class="coupon-title">O primeiro corte é por nossa conta!</h3>
+      <p class="coupon-sub">Clientes Vegas que aderirem o clube intensos garante o primeiro corte grátis e hidratação no mesmo atendimento!</p>
+
+      <button class="coupon-cta" type="button" data-target="intensos">Ver Oferta</button>
+    </div>
+  </article>
+
+    <article class="coupon-card" data-cupom="vidrovan">
+    <div class="coupon-media">
+      <img src="./imgs/vidrovan-cupom.png" alt="Cliente no mercado" loading="lazy">
+      <span class="coupon-badge">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6a3 3 0 0 1 3-3h8.5a1 1 0 0 1 .7.29l4.5 4.5a1 1 0 0 1 .3.71V15a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6zM8.5 8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>
+        <strong>5% De desconto!</strong>
+      </span>
+    </div>
+
+    <div class="coupon-body">
+      <div class="coupon-meta">
+        <span class="meta-cat">
+          <img src="./imgs/icons/car-icon.svg" alt="">
+          Transporte
+        </span>
+        <div class="meta-pills">
+          <span class="pill">Day</span>
+          <span class="pill pill-alt">Plus</span>
+          <span>+</span>
+        </div>
+      </div>
+
+      <h3 class="coupon-title">Dirija com com mais clareza e mais descontos!</h3>
+      <p class="coupon-sub">Economize até 5% pagando com os cartões Vegas</p>
+
+      <button class="coupon-cta" type="button" data-target="vidrovan">Ver Oferta</button>
+    </div>
+  </article>
+
+
+</div>
+ <div class="cs-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <span class="cs-thumb"></span>
+  </div>
+</div>
+
+    </section>
+
+    <section class="desc-ofertas rela-ofertas">
+      <div class="line line-desc"></div>
+        <h1 class="title-desc">Acompanhe outros Descontos</h1>
+        <!---
+        
+       
+        <div class="coupon-grid">
+          <div class="sem-cupom">
+            <h2>Sem Cupons para esse estabelecimento no momento!</h2>
+          </div>
+           
+        </div>
+         -->
+<!-- MODAL -->
+<dialog id="coupon-modal" class="coupon-modal" aria-labelledby="coupon-modal-title">
+  <button id="coupon-modal-close" class="cm-close" aria-label="Fechar">
+    &times;
+  </button>
+
+  <div class="cm-wrap">
+    <div class="cm-topchips">
+      <span class="cm-chip">
+       <img src="/imgs/icons/calender-icon.png?=v3" alt="">
+        Válido até 31/12/2026
+      </span>
+      <span class="cm-chip">
+        <img src="/imgs/icons/utils-icon.png?=v3" alt="">
+        Utilidades
+      </span>
+    </div>
+
+    <!-- sua imagem “10% de desconto” -->
+    <div class="cm-badge">
+      <img src="/imgs/icons/desconto.png?=v3" alt="10% de desconto" loading="lazy">
+    </div>
+
+    <h2 id="coupon-modal-title" class="cm-title">Tudo para sua casa e família!</h2>
+    <p class="cm-sub">
+      Garanta até <strong>10% OFF</strong> em <strong>utilidades</strong> utilizando o <strong>Vegas Day</strong>.
+      Faça compras a partir de <strong>R$ 100,00</strong> para ativar na <strong>loja Zazá</strong>.
+    </p>
+    <p class="aceitos-cm">Produtos Aceitos:</p>
+    <div class="cm-pills">
+      <span class="cm-pill cm-pill-day">Day</span>
+      <span class="cm-pill cm-pill-alim">Alimentação</span>
+      <span class="cm-pill">Plus</span>
+    </div>
+
+    <div class="cm-alert">
+      <div class="flex-alert">
+      <img src="/imgs/icons/alert-icon.png?=v2" alt="">
+      <strong>Atenção!</strong>
+      </div>
+   
+      <p class="valid-cm">Esta oferta é válida até 31/12/2026</p>
+      <p class="subvalid-cm">Não acumulável com outras promoções. Apresente o cupom no momento do pedido.</p>
+    </div>
+
+    <p class="cm-fineprint">
+      Válido para compras acima de <b>R$ 100,00</b> nos itens elegíveis. Oferta válida na loja <b>Zazá</b>.
+    </p>
+
+    <a href="#" class="cm-cta" role="button">Consultar no mapa</a>
+  </div>
+</dialog>
+
+
+<div class="coupon-rail">
+
+  <div class="coupon-grid">
+  <article class="coupon-card">
+    <div class="coupon-media">
+      <img src="./imgs/woman-card.png?v=2" alt="Cliente no mercado" loading="lazy">
+      <span class="coupon-badge">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6a3 3 0 0 1 3-3h8.5a1 1 0 0 1 .7.29l4.5 4.5a1 1 0 0 1 .3.71V15a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6zM8.5 8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>
+        <strong>15% De desconto!</strong>
+      </span>
+    </div>
+
+    <div class="coupon-body">
+      <div class="coupon-meta">
+        <span class="meta-cat">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+          Utilidades
+        </span>
+        <div class="meta-pills">
+          <span class="pill">Day</span>
+          <span class="pill pill-alt">Plus</span>
+        </div>
+      </div>
+
+      <h3 class="coupon-title">10% Desconto no Comércio</h3>
+      <p class="coupon-sub">Em compras a partir de R$ 100 no <strong>Vegas Day</strong></p>
+
+      <button class="coupon-cta" type="button">Ver Oferta</button>
+
+      <p class="coupon-valid">Válido até 31/12/2026</p>
+    </div>
+  </article>
+
+  <article class="coupon-card">
+    <div class="coupon-media">
+      <img src="./imgs/woman-card.png?v=2" alt="Cliente no mercado" loading="lazy">
+      <span class="coupon-badge">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6a3 3 0 0 1 3-3h8.5a1 1 0 0 1 .7.29l4.5 4.5a1 1 0 0 1 .3.71V15a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6zM8.5 8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>
+        <strong>15% De desconto!</strong>
+      </span>
+    </div>
+
+    <div class="coupon-body">
+      <div class="coupon-meta">
+        <span class="meta-cat">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+          Utilidades
+        </span>
+        <div class="meta-pills">
+          <span class="pill">Day</span>
+          <span class="pill pill-alt">Plus</span>
+        </div>
+      </div>
+
+      <h3 class="coupon-title">10% Desconto no Comércio</h3>
+      <p class="coupon-sub">Em compras a partir de R$ 100 no <strong>Vegas Day</strong></p>
+
+      <button class="coupon-cta" type="button">Ver Oferta</button>
+
+      <p class="coupon-valid">Válido até 31/12/2026</p>
+    </div>
+  </article>
+
+  <article class="coupon-card">
+    <div class="coupon-media">
+      <img src="./imgs/woman-card.png?v=2" alt="Cliente no mercado" loading="lazy">
+      <span class="coupon-badge">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6a3 3 0 0 1 3-3h8.5a1 1 0 0 1 .7.29l4.5 4.5a1 1 0 0 1 .3.71V15a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6zM8.5 8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>
+        <strong>15% De desconto!</strong>
+      </span>
+    </div>
+
+    <div class="coupon-body">
+      <div class="coupon-meta">
+        <span class="meta-cat">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+          Utilidades
+        </span>
+        <div class="meta-pills">
+          <span class="pill">Day</span>
+          <span class="pill pill-alt">Plus</span>
+        </div>
+      </div>
+
+      <h3 class="coupon-title">10% Desconto no Comércio</h3>
+      <p class="coupon-sub">Em compras a partir de R$ 100 no <strong>Vegas Day</strong></p>
+
+      <button class="coupon-cta" type="button">Ver Oferta</button>
+
+      <p class="coupon-valid">Válido até 31/12/2026</p>
+    </div>
+  </article>
+
+  <article class="coupon-card">
+    <div class="coupon-media">
+      <img src="./imgs/woman-card.png?v=2" alt="Cliente no mercado" loading="lazy">
+      <span class="coupon-badge">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6a3 3 0 0 1 3-3h8.5a1 1 0 0 1 .7.29l4.5 4.5a1 1 0 0 1 .3.71V15a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6zM8.5 8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>
+        <strong>15% De desconto!</strong>
+      </span>
+    </div>
+
+    <div class="coupon-body">
+      <div class="coupon-meta">
+        <span class="meta-cat">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+          Utilidades
+        </span>
+        <div class="meta-pills">
+          <span class="pill">Day</span>
+          <span class="pill pill-alt">Plus</span>
+        </div>
+      </div>
+
+      <h3 class="coupon-title">10% Desconto no Comércio</h3>
+      <p class="coupon-sub">Em compras a partir de R$ 100 no <strong>Vegas Day</strong></p>
+
+      <button class="coupon-cta" type="button">Ver Oferta</button>
+
+      <p class="coupon-valid">Válido até 31/12/2026</p>
+    </div>
+  </article>
+
+
+</div>
+ <div class="cs-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <span class="cs-thumb"></span>
+  </div>
+</div>
+
+
+
+
+
+        
+
+    </section>
+
+
+
+
+   
+    
+
+ <footer>
+  <div class="content-brand">
+    <img src="./imgs/logo-white.png" class="logo-footer" style=" padding-top: 20px;" alt="">
+    <img src="./imgs/logos/logo-abbt 1.svg" href="https://www.abbt.org.br/home" style="width: 10%;" alt="">
+    <img src="./imgs/logos/logo-empresa-brasileira.svg" alt="">
+  </div>
+
+  <div class="menu-footer">
+    <div class="links-rapidos m-f locals">
+      <div class="card-footer">
+        <i class="fas fa-map-marker-alt"></i>
+        <div>
+          <h2>Americana</h2>
+          <p>R. Tamôio, 526 - Vila Santa Catarina | 13466-250</p>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <i class="fa-brands fa-whatsapp"></i>
+        <div>
+          <h2><a target="_blank" href="https://api.whatsapp.com/send/?phone=551921082900">19 2108.2900</a></h2>
+          <p>segunda a sexta 8h às 20h,<br> aos sábados das 8h às 18h</p>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <i class="fa-solid fa-phone"></i>
+        <div>
+          <h2><a target="_blank" href="tel:+551921082908">19 2108.2908</a></h2>
+          <p>segunda a sexta 8h às 20h,<br> aos sábados das 8h às 18h</p>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <i class="fas fa-envelope"></i>
+        <div>
+          <p><a href="mailto:atendimento@vegascard.com.br">atendimento@vegascard.com.br</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="line-footer"></div>
+
+    <div class="links-rapidos m-f menus">
+      <div class="link-div">
+        <h2>Sobre Nós</h2>
+        <ul>
+          <li><a href="https://vegascard.com.br/a-vegas">A Vegas</a></li>
+          <li><a href="https://vegascard.com.br/vegas-cultural">Vegas Cultural</a></li>
+          <li><a href="https://vegascard.com.br/blog">Notícias</a></li>
+        </ul>
+      </div>
+
+      <div class="link-div">
+        <h2>Soluções</h2>
+        <ul>
+          <li><a href="https://vegascard.com.br/programa-alimentacao-trabalhador">PAT</a></li>
+          <li><a href="https://vegascard.com.br/convenios">Convênios</a></li>
+          <li><a href="https://vegascard.com.br/bonus">Bônus</a></li>
+          <li><a href="https://vegascard.com.br/mobilidade">Mobilidade</a></li>
+          <li><a href="https://vegascard.com.br/bem-estar-saude">Bem-Estar e Saúde</a></li>
+          <li><a href="https://vegascard.com.br/entretenimento">Entretenimento</a></li>
+          <li><a href="https://vegascard.com.br/gestaopme">Gestão PME</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="links-rapidos menus m-f footer-menus">
+      <div class="link-div">
+        <h2>Área do cliente</h2>
+        <ul>
+          <li><a href="https://vegascard.com.br/meu-cartao">Meu Cartão</a></li>
+          <li><a href="https://vegascard.com.br/portal-rh">Portal RH</a></li>
+          <li><a href="https://vegascard.com.br/meu-estabelecimento">Meu Estabelecimento</a></li>
+          <li><a href="https://vegascard.com.br/meu-rastreador">Meu Rastreador</a></li>
+        </ul>
+      </div>
+
+      <div class="link-div">
+        <h2>Estabelecimento</h2>
+        <ul>
+          <li><a href="https://vegascard.com.br/quero-ser-estabelecimento">Quero ser Estabelecimento</a></li>
+          <li><a href="https://vegascard.com.br/rede-credenciada">Rede Credenciada</a></li>
+        </ul>
+      </div>
+
+      <div class="link-div">
+        <a href="https://vegascard.com.br/trabalhe-conosco"><h2>Trabalhe Conosco</h2></a>
+        <a href="https://vegascard.com.br/perguntas-frequentes"><h2>Tire Suas Dúvidas</h2></a>
+      </div>
+    </div>
+
+       <div class="line-footer"></div>
+
+    <div class="app menus m-f">
+      <h2>Baixe o App</h2>
+      <ul>
+        <a href="https://apps.apple.com/br/app/vegas-card/id1478167977" target="_blank" rel="noreferrer"><li>IOS</li></a>
+        <a href="https://play.google.com/store/apps/details?id=app.vegascarddobrasil.android&hl=pt_BR&gl=US" target="_blank" rel="noreferrer"><li>Android</li></a>
+      </ul>
+
+      <div class="midia-links">
+        <a href="https://www.instagram.com/vegascardbrasil/" target="_blank"><i class="fab fa-instagram-square social-media"></i></a>
+        <a href="https://www.facebook.com/VEGASCARDdoBrasil" target="_blank"><i class="fab fa-facebook-square social-media"></i></a>
+        <a href="https://www.youtube.com/@vegascardbrasil4538" target="_blank"><i class="fab fa-youtube-square social-media"></i></a>
+        <a href="https://www.linkedin.com/company/vegascardbrasil/" target="_blank"><i class="fab fa-linkedin social-media"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+    <div class="down-footer">
+        <p>Acesse nossa Política de Privacidade.</p>
+        <p>Copyright ©2025 Vegas Card do Brasil. Todos os direitos reservados. Desenvolvido por Lymoria Studio</p>
+       </div>
+
+ 
+      <script src="./scripts/env.js"></script>
+    <script type="module" src="./scripts/pages/detalhes.js?v=68"></script>
+    <script src="./scripts/components/menumobile.js"></script>
+
+
+  
+  <div class="coupon-overlay"></div> 
+</body>
+</html>

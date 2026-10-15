@@ -1,0 +1,1010 @@
+.melhor-oferta {
+    padding-inline: 104px;
+    padding-top: 120px;
+    
+    min-height: 80vh;
+    margin-bottom: 100px;
+    
+    
+        max-width: 1520px;
+    margin: 0 auto;
+    position: relative;
+
+}
+
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #4B57A3;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 40px auto;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.filter-area {
+    
+    width: 100%;
+    height: 100%;
+    margin-top: 44px;
+    display: block;
+}
+.select-desktop {
+  opacity: 1;
+}
+
+.header-mobile-btn {
+  display: flex;
+    padding: 10px;
+  padding-inline: 20px;
+
+  justify-content: start;
+  gap: 20px;
+}
+
+
+.filter-btns {
+    display: flex;
+    
+    flex-wrap: nowrap;
+   
+    height: 50px;
+    
+    margin-bottom: 20px;
+    width: 100%;
+
+    
+
+  }
+  
+  .filter-btns select {
+    padding: 10px 14px;
+    
+    flex-grow: 1;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    
+  }
+  
+  .filter-btns select:hover {
+    border-color: #999;
+    background-color: #fff;
+  }
+  
+  .filter-btns select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.2);
+  }
+
+  .filter-btns .textinput {
+    outline: none;
+    border: none;
+    width: 100%;
+    
+  }
+
+  .search-text {
+    outline: none;
+    border-radius: 8px 0 0 8px;
+    border: 1px solid gray;
+    width: 31%;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    gap: 16px;
+    padding-right: 13px;
+  }
+
+  #filterCard {
+    border-radius: 0 8px 8px 0;
+  }
+  
+
+.filter-results {
+    margin-top: 50px;
+    display: flex;
+    gap: 25px;
+    height: 512px;
+   
+  
+}
+
+/* ---- Skeleton base ---- */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: #e5e7eb; /* cinza claro */
+  border-radius: 8px;
+}
+
+/* brilho andando */
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,.6) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  animation: shimmer 1.2s infinite;
+}
+
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
+}
+
+/* ---- Skeleton do MAPA ---- */
+.map-skeleton {
+  position: absolute;
+  inset: 0;
+}
+
+/* ---- Skeleton da LISTA (cards) ---- */
+.skel-card {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+}
+
+.skel-thumb {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+}
+
+.skel-lines {
+  flex: 1;
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.skel-line { height: 14px; border-radius: 6px; }
+.skel-line.w50 { width: 50%; }
+.skel-line.w70 { width: 70%; }
+.skel-line.w90 { width: 90%; }
+
+/* shimmer genérico */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg,#e9ecef 25%,#f8f9fa 50%,#e9ecef 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s infinite linear;
+  border-radius: 12px;
+}
+
+/* overlay do mapa */
+.map-container { position: relative; min-height: 360px; }
+#map { min-height: 360px; }
+#map-skeleton {
+  position: absolute; inset: 0;
+  display: none;
+}
+#map-skeleton.skeleton-map { display: block; }
+
+
+/* skeleton da lista (cartõezinhos placeholders) */
+.skeleton-list { display: none; padding: 8px 0; }
+.skeleton-list.active { display: grid; grid-template-columns: repeat(auto-fill,minmax(260px,1fr)); gap: 16px; }
+.skel-card {
+
+  height: 130px;
+}
+
+.skeleton-map { background: linear-gradient(90deg,#e9ecef 25%,#f8f9fa 50%,#e9ecef 75%); background-size:200% 100%; animation: shimmer 1.2s infinite linear; border-radius:12px; }
+.skel-card   { background: linear-gradient(90deg,#e9ecef 25%,#f8f9fa 50%,#e9ecef 75%); background-size:200% 100%; animation: shimmer 1.2s infinite linear; border-radius:12px; height:130px; }
+
+
+/* loader antigo (se você usa) */
+.loader { display:none; }
+
+
+.map-container {
+    flex: 1.2;
+    position: relative;
+
+}
+
+#map {
+   
+        height: 100%;  /* ou qualquer altura visível */
+        width: 100%;
+
+border-radius: 8px;
+
+      
+}
+
+.lojas {
+    flex: 1;
+    overflow-y: scroll;
+    position: relative;
+}
+
+
+/* Estilo do card */
+.place-card {
+    display: flex;
+    border-radius: 8px;
+  
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+    gap: 6px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .place-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Estilo da imagem */
+  .place-image {
+    padding: 16px;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+  }
+  
+  .place-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  /* Imagem default se não tiver imagem */
+  .place-image img[src='default-image.jpg'] {
+    background-color: #d3d3d3;
+    object-fit: cover;
+  }
+  
+  /* Estilo dos detalhes */
+  .place-details {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  .place-details h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .place-details .address {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .place-details .distance {
+    margin: 0;
+    font-size: 12px;
+    color: #888;
+  }
+  
+.container-limpar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+  .limpar {
+    border: none;
+    color: red;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+    cursor: pointer;
+    background-color: transparent;
+
+
+  }
+
+  .limpar:hover {
+    filter: brightness(1.2);
+  }
+
+  #mensagem-vazia {
+  display: none;
+  text-align: center;
+  margin-top: 30px;
+  font-weight: 500;
+  color: #333;
+}
+
+  .title-mp {
+    font-size: 32px;
+      color: #4B57A3;
+      text-align: left;
+ 
+  }
+
+  .btn-card-map {
+    border-radius: 8px;
+background: #4B57A3;
+display: flex;
+width: 100%;
+height: 18px;
+padding: 18px 12px;
+justify-content: center;
+align-items: center;
+border: none;
+color: #fff;
+cursor: pointer;
+margin-top: 10px;
+
+  }
+.mobile-btns {
+  display: none;
+}
+
+.mobile-filters {
+  display: none;
+}
+
+.distance {
+  display: flex;
+  align-items: center;
+}
+
+.mobile-filter {
+  border-radius: 0 8px 8px 0;
+  border: none;
+  background-color: #434D9C;
+  height: 100%;
+  display: flex;
+padding: 6px 6.5px 6px 5.5px;
+justify-content: center;
+align-items: center;
+}
+
+.mobile-filter img {
+  padding: 4px;
+}
+
+.search-text i {
+  color: #434D9C;
+}
+
+.mobile-filter {
+  display: none;
+}
+
+.vermais {
+  display: none;
+}
+
+.resultscount {
+
+color: #7E7E7E;
+
+
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6); /* escuro e semi-transparente */
+  z-index: 6000000; /* abaixo do menu mobile */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+  body.no-scroll {
+    overflow-y:hidden;
+    
+
+    
+  }
+
+
+
+@media screen and (max-width:796px) {
+   .mobile-filter {
+      display: flex;
+   
+    }
+
+     .filter-btns {
+    flex-wrap: wrap;
+     }
+
+    .mobile-btns {
+      display: flex;
+      z-index: 7000000;
+      flex-direction: column;
+      background-color: #fff;
+
+      
+      height: 110vh;
+      width: 70vw;
+      position: fixed;
+      top: 0;
+      right: 0;
+       transform: translateX(200%);
+    overflow-y: scroll;
+    transition: all .3s ease;
+ 
+    }
+
+    .mobile-btns.active {
+      transform: translateX(0);
+    }
+
+    .mobile-btns select {
+          width: 100px;
+    }
+   
+.place-card {
+  position: relative;
+
+}
+    .mobile-filters {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+  
+    }
+
+    .mobile-filters button {
+      width: 100%;
+      height: 42px;
+    border-radius: 4px 0px 0px 4px;
+border: 2px solid #828EC5;
+
+background: #FFF;
+color: #4B57A3;
+
+font-family: Rubik;
+font-size: 13px;
+    }
+
+    .select-desktop {
+      opacity: 0;
+    }
+
+    .resultscount {
+
+ padding-left: var(--padding-body-mobile);
+
+
+}
+
+  
+    .title-mp {
+      color: #4B57A3;
+      padding-inline: 24px;
+
+font-family: Rubik;
+font-size: 24px;
+    }
+
+    
+     .place-card {
+      margin-bottom: 30px;
+      padding: 16px;
+      height: 200px;
+     }
+    .search-text {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+
+    .search-text i {
+      padding-left: 16px;
+    }
+
+    .filter-results {
+      flex-direction: column;
+      height: 700px;
+      margin-top: 0;
+    }
+
+    .map-container {
+      order: 1;
+      flex: 0.8;
+      width: 100%;
+     
+    }
+
+    .lojas {
+     
+      order: 2;
+      height: 700px;
+      padding-inline: 24px;
+      margin-top: 30px;
+      overflow-y:auto;
+
+    }
+
+    .place-image {
+      width: 82.594px;
+      height: 70px;
+
+    }
+
+    .vermais {
+      display: flex;
+      justify-self: center;
+      margin-top: 10px;
+      display: flex;
+min-height: 40px;
+max-height: 40px;
+padding: 8px 15px;
+justify-content: center;
+align-items: center;
+gap: 4px;
+border-radius: 8px;
+background: #434D9C;
+border: none;
+color: #fff;
+font-size: 16px;
+
+
+    }
+
+    .produtoLista {
+      display: flex;
+  flex-wrap: wrap; /* permite que os itens quebrem linha */
+  gap: 20px; /* espaçamento entre as colunas e linhas */
+    }
+
+    .produtoLista li {
+       flex: calc(0.5);
+  box-sizing: border-box;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .place-details h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .place-details .address {
+    margin: 5px 0;
+    font-size: 10px;
+    color: #666;
+  }
+  
+  .place-details .distance {
+    margin: 0;
+    font-size: 8px;
+    color: #888;
+  }
+
+    .btn-card-map {
+    border-radius: 8px;
+background: #4B57A3;
+display: flex;
+width: calc(100% - 30px);
+height: 12px;
+padding: 14px 12px;
+justify-content: center;
+align-items: center;
+border: none;
+color: #fff;
+cursor: pointer;
+margin-top: 10px;
+position: absolute;
+bottom: 10px;
+left: 50%;
+transform: translateX(-50%);
+
+  }
+
+
+  .place-image {
+    height: 100px;
+    width: 100px;
+  }
+    .place-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  .melhor-oferta {
+    padding-inline: 0;
+  }
+
+  .container-limpar {
+    padding-right: 24px;
+  }
+
+  .filter-btns {
+    padding-inline: 24px;
+  }
+
+  .search-text {
+    border-radius: 8px;
+  }
+
+
+    .custom-select-group {
+    margin-bottom: 20px;
+  }
+
+  .custom-select {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    background: #fff;
+    max-width: 100%;
+  }
+
+  .custom-select-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .custom-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+ 
+  }
+
+ 
+  .custom-options li {
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #f2f2f2;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .custom-options li:hover {
+    background-color:#4B57A3;
+  }
+
+  .custom-options li.selected {
+    background-color:#434D9C;
+    font-weight: bold;
+    color: #fff;
+  }
+
+}
+
+  @media (max-width: 480px) {
+
+    .mobile-filter {
+      display: flex;
+   
+    }
+
+    .mobile-btns {
+      display: flex;
+      z-index: 7000000;
+      flex-direction: column;
+      background-color: #fff;
+      height: 100vh;
+     width: 70vw;
+      position: fixed;
+      top: 0;
+      right: 0;
+       transform: translateX(200%);
+    overflow-y: scroll;
+    transition: all .3s ease;
+ 
+    }
+
+    .mobile-btns.active {
+      transform: translateX(0);
+    }
+
+    .mobile-btns select {
+          width: 100px;
+    }
+
+    
+    .produtoLista {
+      display: flex;
+  flex-wrap: wrap; /* permite que os itens quebrem linha */
+  gap: 20px; /* espaçamento entre as colunas e linhas */
+    }
+
+    .produtoLista li {
+       flex: 1;
+  box-sizing: border-box;
+    }
+
+   
+.place-card {
+  position: relative;
+
+}
+    .mobile-filters {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+  
+    }
+
+    .mobile-filters button {
+      width: 100%;
+      height: 42px;
+    border-radius: 4px 0px 0px 4px;
+border: 2px solid #828EC5;
+
+background: #FFF;
+color: #4B57A3;
+
+font-family: Rubik;
+font-size: 13px;
+    }
+
+    .select-desktop {
+      opacity: 0;
+    }
+
+  
+    .title-mp {
+      color: #4B57A3;
+      padding-inline: 20px;
+
+font-family: Rubik;
+font-size: 24px;
+    }
+
+    
+     .place-card {
+      margin-bottom: 30px;
+      padding: 16px;
+      height: 160px;
+     }
+    .search-text {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+
+    .search-text i {
+      padding-left: 16px;
+    }
+
+    .filter-results {
+      flex-direction: column;
+      height: 700px;
+      margin-top: 0;
+    }
+
+    .map-container {
+      order: 1;
+      flex: 0.8;
+      width: 100%;
+     
+    }
+
+    .lojas {
+      order: 2;
+      height: 700px;
+      padding-inline: 24px;
+      margin-top: 30px;
+    }
+
+    .place-image {
+      width: 100px;
+      height: 100px;
+      padding: 0;
+     
+
+    }
+
+    
+    
+
+    
+
+    .vermais {
+      display: flex;
+      justify-self: center;
+      margin-top: 10px;
+      display: flex;
+min-height: 40px;
+max-height: 40px;
+padding: 8px 15px;
+justify-content: center;
+align-items: center;
+gap: 4px;
+border-radius: 8px;
+background: #434D9C;
+border: none;
+color: #fff;
+font-size: 16px;
+
+
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .place-details h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .place-details .address {
+    margin: 5px 0;
+    font-size: 10px;
+    color: #666;
+  }
+  
+  .place-details .distance {
+    margin: 0;
+    font-size: 8px;
+    color: #888;
+  }
+
+    .btn-card-map {
+    border-radius: 8px;
+background: #4B57A3;
+display: flex;
+width: calc(100% - 32px);
+height: 12px;
+padding: 14px 12px;
+justify-content: center;
+align-items: center;
+border: none;
+color: #fff;
+cursor: pointer;
+margin-top: 10px;
+position: absolute;
+bottom: 10px;
+left: 50%;
+transform: translateX(-50%);
+
+  }
+
+  
+    .place-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  .melhor-oferta {
+    padding-inline: 0;
+  }
+
+  .container-limpar {
+    padding-right: 24px;
+  }
+
+  .filter-btns {
+    padding-inline: 24px;
+  }
+
+  .search-text {
+    border-radius: 8px;
+  }
+
+
+    .custom-select-group {
+    margin-bottom: 20px;
+  }
+
+  .custom-select {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    background: #fff;
+    max-width: 300px;
+  }
+
+  .custom-select-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .custom-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .custom-options li {
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #f2f2f2;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .custom-options li:hover {
+    background-color:#4B57A3;
+  }
+
+  .custom-options li.selected {
+    background-color:#434D9C;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  
+
+}
+
+/* estilo do nome acima do marker */
+.leaflet-tooltip.marker-label {
+  background: #ffffff;
+  color: #1f2937;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 8px;
+  padding: 4px 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.12);
+  font: 600 12px/1.2 "Rubik", system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  pointer-events: none;        /* não captura clique; deixa o marker clicável */
+  white-space: nowrap;         /* uma linha só */
+  max-width: 160px;            /* limite opcional */
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* remove a setinha do tooltip (se não quiser) 
+.leaflet-tooltip.marker-label.leaflet-tooltip-top:before {
+  display: none;
+}
+
+*/
+
+.marker-label {
+    background: #ffffff;
+  color: #1f2937;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 8px;
+  padding: 4px 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.12);
+  font: 600 12px/1.2 "Rubik", system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  pointer-events: none;        /* não captura clique; deixa o marker clicável */
+  white-space: nowrap;         /* uma linha só */
+  max-width: 160px;            /* limite opcional */
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+
+

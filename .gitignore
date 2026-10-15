@@ -1,0 +1,11 @@
+# Configuração com segredos (não versionar) — use env.example.js como modelo
+env.js
+scripts/env.js
+
+# Build do backend .NET que caiu dentro de imgs/ — contém segredos de produção
+# (connection string do MySQL, chave JWT, client secret). NÃO versionar.
+imgs/VegasVantagens/
+
+# Sistema operacional
+Thumbs.db
+.DS_Store

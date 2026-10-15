@@ -1,0 +1,64 @@
+.logos-farmacia {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+
+}
+
+.logos-farmacia img:first-child {
+    width: 163px;
+height: 51px;
+flex-shrink: 0;
+}
+
+.logos-farmacia img:nth-child(2){
+    width: 258px;
+height: 50px;
+flex-shrink: 0;
+aspect-ratio: 129/25;
+}
+
+
+
+
+.logos-wellhub img {
+    width: 250px;
+
+flex-shrink: 0;
+margin-top: 20px;
+}
+
+.logos-mediquo img {
+    width: 200px;
+    margin-top: 30px;
+}
+
+.btn-purple {
+    background: #7340E2;
+}
+
+.btn-pink {
+    background: #F2496B;
+}
+
+.final-prod {
+    margin-bottom: 50px;
+}
+
+
+@media screen and (max-width:480px) {
+.logos-farmacia img:first-child {
+  width: 130px;
+  height: 41px;
+  flex-shrink: 0;
+}
+
+.logos-farmacia img:nth-child(2) {
+  width: 206px;
+  height: 40px;
+  flex-shrink: 0;
+  aspect-ratio: 129/25;
+}
+
+}

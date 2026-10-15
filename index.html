@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/global.css?v=31">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="./imgs/Vector.png">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+
+    <title>Vegas Benefícios</title>
+</head>
+<body>
+    
+
+
+    <div class="header">
+        <nav>
+            <div class="logo">
+                <a href="./index.html?v=2">
+                    <img src="./imgs/logos/Logo.svg" alt="">
+                </a>
+            </div>
+
+          
+
+  
+             <ul class="menu-desktop">
+               
+              
+            </ul>
+
+            <button class="btn-header menu-desktop">
+               <li><a href="./sobrenos.html?v=2">Sobre o Clube</a></li>
+            
+            </button>
+              
+
+            
+              <div class="main-menus">
+                     <ul >
+               
+                <li><a href="./sobrenos.html?v=2">Sobre o Clube</a></li>
+     
+              
+            </ul>
+
+           <button>
+            
+           </button>
+              </div>
+             <div class="menu-hamb">
+            <img src="./imgs/icons/menu.svg" alt="">
+        </div>
+
+        <div class="close-menu">
+            <img src="./imgs/icons/close.svg" alt="">
+        </div>
+        </nav>
+
+              <div class="menu-overlay"></div>
+    </div>
+ <section class="hero-header">
+    <section class="banner-hero">
+        <input type="radio" name="slide" id="slide1" checked>
+        <input type="radio" name="slide" id="slide2">
+        <input type="radio" name="slide" id="slide3">
+        <input type="radio" name="slide" id="slide4">
+        <input type="radio" name="slide" id="slide5">
+        <input type="radio" name="slide" id="slide6">
+        <input type="radio" name="slide" id="slide7">
+        <input type="radio" name="slide" id="slide8">
+    
+        <div class="slides">
+          <!---SLIDES-->  
+            <img src="./imgs/banners/ZANINI/ZANINI_1520X450.jpg" 
+            class="slide slide1" 
+            data-base="ZANINI"
+            data-folder="ZANINI-" 
+            alt=""
+            data-href="./detalhes.html#store-3"
+            >
+           <img 
+  src="./imgs/banners/BETTASUPLEMENTOS/BETTASUPLEMENTOS_1520X450.jpg"
+  class="slide slide2"
+  data-base="BETTASUPLEMENTOS"
+  data-folder="BETTASUPLEMENTOS"
+  alt=""
+  data-href="./detalhes.html#store-6"
+>
+            <img src="./imgs/banners/CAOCHORRO/CAOCHORRO_1520X450.jpg"
+             class="slide slide3"
+               data-base="CAOCHORRO"
+       data-folder="CAOCHORRO"
+              alt=""
+              data-href="./detalhes.html#store-7"
+              >
+
+              <img src="./imgs/banners/INTENSOSBARBEARIA/INTENSOSBARBEARIA_1520X450.jpg"
+             class="slide slide4"
+               data-base="INTENSOSBARBEARIA"
+       data-folder="INTENSOSBARBEARIA"
+       data-href="./detalhes.html#store-28"
+              alt="">
+
+               <img src="./imgs/banners/MERCADAODOSOCULOS/MERCADAODOSOCULOS_1520X450.jpg"
+             class="slide slide5"
+               data-base="MERCADAODOSOCULOS"
+       data-folder="MERCADAODOSOCULOS"
+       data-href="./detalhes.html#store-26"
+              alt="">
+
+              <img src="./imgs/banners/VIDROVAN/VIDROVAN_1520X450.jpg"
+             class="slide slide6"
+               data-base="VIDROVAN"
+       data-folder="VIDROVAN"
+       data-href="./detalhes.html#store-27"
+              alt="">
+
+               <img src="./imgs/banners/PASTEUR/PASTEUR_1520X450.png"
+             class="slide slide7"
+               data-base="PASTEUR"
+       data-folder="PASTEUR"
+              alt="">
+
+              <img src="./imgs/banners/BOIQUEMIA/BOIQUEMIA_1520X450.png"
+             class="slide slide8"
+               data-base="BOIQUEMIA"
+       data-folder="BOIQUEMIA"
+       data-href="./detalhes.html#store-5"
+              alt="">
+
+
+        </div>
+    <!-- -->
+        <div class="navigation-slides bullets">
+            <label class="bar bullet" for="slide1"></label>
+            <label class="bar bullet" for="slide2"></label>
+            <label class="bar bullet" for="slide3"></label>
+            <label class="bar bullet" for="slide4"></label>
+            <label class="bar bullet" for="slide5"></label>
+            <label class="bar bullet" for="slide6"></label>
+               <label class="bar bullet" for="slide7"></label>
+               <label class="bar bullet" for="slide8"></label>
+        </div>
+
+        <div class="arrows">
+            <div class="btn-left">
+  <img src="./imgs/icons/iconbtn.svg" alt="">
+            </div>
+          <div class="btn-right">
+            <img src="./imgs/icons/iconbtn.svg" alt="" class="right">
+
+          </div>
+        </div>
+    </section>
+    </section>
+    
+
+     </section>
+<h1 class="main-title">Parceiros Clube Vegas</h1>
+    <section class="carrossel" id="carrossel">
+        
+ <div class="carrossel-track" id="track">
+ 
+</div>
+
+  </section>
+
+
+     <!---
+      <section class="search">
+              <div class="search-container">
+                <i class="fas fa-search icon-search"></i>
+                <input type="text" name="desc-input" id="desc-input">
+
+                  <button class="btn-buscar">Buscar</button>
+              </div>
+    </section>
+
+    <section class="categorias">
+        <h1 class="title-categoria">Categorias</h1>
+        <div class="cards-categorias">
+            <div class="card-categoria" data-cat="alimentacao">
+                <i class="fas fa-shopping-cart"></i>
+
+                <h2>Alimentação</h2>
+            </div>
+            <div class="card-categoria" data-cat="presentes">
+                <i class="fas fa-gift"></i>
+
+                <h2>Presentes</h2>
+            </div>
+            <div class="card-categoria" data-cat="oticas">
+               <i class="fas fa-glasses"></i>
+
+                <h2>Óticas</h2>
+            </div>
+            <div class="card-categoria">
+           <i class="fas fa-cut"></i>
+
+                <h2>Barbearias</h2>
+            </div>
+            <div class="card-categoria">
+       <i class="fas fa-dog"></i>
+                <h2>Petshop</h2>
+            </div>
+            <div class="card-categoria">
+                <i class="fas fa-utensils"></i>
+                <h2>Bares / Restaurantes</h2>
+            </div>
+
+            <div class="card-categoria">
+          <i class="fas fa-magic"></i> 
+
+
+                <h2>Cosméticos</h2>
+            </div>
+
+            <div class="card-categoria">
+                
+               <i class="fas fa-car"></i>
+
+                <h2>Veículos</h2>
+            </div>
+
+                 <div class="card-categoria">
+                
+           
+                <h2>Mais</h2>
+            </div>
+
+            
+        </div>
+    </section>
+
+    <section class="desc-ofertas">
+        <h1 class="title-desc">Descontos e Ofertas</h1>
+        <div class="cards-descontos">
+     
+            <div class="card-desconto" data-tag="oticas">
+                <div class="header-img">
+                    <img src="./imgs/logos/oculosmercadao.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="tag">Óculos</div>
+                    <h2>Mercadao de Oculos</h2>
+                    <p>Cliente Vegas tem 20% de desconto em armações selecionadas + exame de vista gratuito</p>
+                </div>
+                <button>Ver Mais</button>
+            </div>
+            
+            <div class="card-desconto">
+                <div class="header-img">
+                    <img src="./imgs/logos/intensos-barbearia.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="tag">Barbearias</div>
+                    <h2>Intensos Barbearia</h2>
+                    <p>Cliente Vegas tem 1 hidratação de cabelo no 1º corte + se fechar clube: corte gratuito</p>
+                </div>
+                <button>Ver Mais</button>
+            </div>
+
+                  <div class="card-desconto" data-tag="presentes">
+                <div class="header-img">
+                    <img src="./imgs/logos/logo-zanini.png" style="width: 80%;"  alt="">
+                </div>
+                <div class="content">
+                    <div class="tag">Brinquedos</div>
+                    <h2>Zanini</h2>
+                    <p>Cliente Vegas tem 10% de desconto em qualquer produto da loja.</p>
+                </div>
+                <button>Ver Mais</button>
+            </div>
+
+            <div class="card-desconto">
+                <div class="header-img">
+                    <img src="./imgs/logos/caochorro-logo.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="tag">Petshop</div>
+                    <h2>Cãochorro Petshop</h2>
+                    <p>Cliente Vegas tem 10% de desconto em qualquer produto da loja</p>
+                </div>
+                <button>Ver Mais</button>
+            </div>
+
+                  <div class="card-desconto" data-tag="alimentacao">
+                <div class="header-img">
+                    <img src="./imgs/logos/beta-logo.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="tag" >Alimentação</div>
+                    <h2>Betta Suplementos</h2>
+                    <p>Cliente Vegas tem R$50 de cashback para clientes cadastrados na landing Page exclusiva</p>
+                </div>
+                <button>Ver Mais</button>
+            </div>
+
+
+            <div class="card-desconto" data-tag="alimentacao">
+                <div class="header-img">
+                    <img src="./imgs/logos/boi-logo.png"  alt="">
+                </div>
+                <div class="content">
+                    <div class="tag">Bares / Restaurante</div>
+                    <h2>Boi Que Mia - Grill Bar</h2>
+                    <p>Cliente Vegas tem ganha, (1 pão de alho ou queijo coalho) por conta da casa</p>
+                </div>
+                <button>Ver Mais</button>
+            </div>
+
+                  <div class="card-desconto">
+                <div class="header-img">
+                    <img src="./imgs/logos/florindo-logo.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="tag">Bares / Restaurantes</div>
+                    <h2>Casa Florindo Bar e Restaurante</h2>
+                    <p>Cliente Vegas tem Desconto Especial</p>
+                </div>
+                <button>Ver Mais</button>
+            </div>
+
+                  <div class="card-desconto">
+                <div class="header-img">
+                    <img src="./imgs/logos/danny-logo.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="tag">Cosméticos</div>
+                    <h2>Danny Cosméticos</h2>
+                    <p>Cliente Vegas tem Desconto Especial</p>
+                </div>
+                <button>Ver Mais</button>
+            </div>
+        </div>
+    </section>
+
+
+     
+     -->
+
+
+   
+      <section class="melhor-oferta" id="mp">
+        <h1 class="title-mp">Encontre as melhores ofertas para você</h1>
+        <div class="filter-area">
+            <div class="container-limpar">
+                <button class="limpar">
+                  Limpar Filtros <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
+              
+            <div class="filter-btns">
+                <div class="search-text">
+                    <i class="fa fa-search"></i>
+
+                    <input type="text" class="textinput" id="searchInput" placeholder="Buscar por nome ou palavra-chave..." />
+                    <button class="mobile-filter"><img src="./imgs/icons/filtericon.svg" alt=""></button>
+                </div>
+              
+<div class="overlay"></div>
+                  <div class="mobile-btns">
+                    <div class="header-mobile-btn">
+                        <span class="close-filter">X</span>
+                        <h2>Filtros</h2>
+                    </div>
+<div class="custom-select-group">
+  <div class="custom-select">
+    <div class="custom-select-title">Estado</div>
+    <ul class="custom-options" data-input-id="filterState">
+     
+    </ul>
+  </div>
+</div>
+<!-- Cidades -->
+<div class="custom-select-group">
+  <div class="custom-select">
+    <div class="custom-select-title">Cidade</div>
+    <ul class="custom-options list-ul" id="list-ul" data-input-id="filterCity">
+      <li data-value="">Todas as Cidades</li>
+   
+      <!-- Cidades dinâmicas via JS -->
+    </ul>
+  </div>
+</div>
+
+             <div class="custom-select-group">
+  <div class="custom-select">
+    <div class="custom-select-title">Segmento</div>
+    <ul class="custom-options" data-input-id="filterSegment">
+      <li data-value="">Todos os Segmentos</li>
+      
+    </ul>
+  </div>
+</div>
+
+  <!-- Cartões -->
+
+</div>
+              
+                <select id="filterState" class="select-desktop">
+                
+                  <!-- Adicione mais estados -->
+                </select>
+              
+                <select id="filterCity" class="select-desktop">
+                  <option value="">Todas as Cidades</option>
+      
+                  <!-- Preenchido dinamicamente com base no estado -->
+                </select>
+              
+                <select id="filterSegment" class="select-desktop">
+                    <option value="">Todos os Segmentos</option>
+    
+                </select>
+              
+            
+              
+              </div>
+
+                
+            
+              </div>
+                 <p class="resultscount">Foram encontrados <span></span> Resultados</p>
+              <div class="filter-results">
+          
+                <div class="lojas">
+ 
+                     <div id="list-skeleton" class="skeleton-list" aria-hidden="true"></div>
+                    <ul class="produtoLista">
+                       <div id="mensagem-vazia">Ainda nenhum resultado, filtre para ver.</div>
+                          
+                    </ul>
+
+              
+                </div>
+
+
+                
+
+                <div class="map-container">
+                   <div id="map-skeleton" class="skeleton-map" aria-hidden="true"></div>
+                    <div class="map" id="map">
+
+                    </div>
+                       
+                </div>
+
+                    
+              </div>
+                <button class="vermais">Ver Mais <img src="./imgs/icons/more_horiz.svg" alt=""></button>
+      
+    </section>
+
+
+   <section class="banner-promo">
+
+     <section class="banner-hero">
+        <input type="radio" name="slide" id="slide11" checked>
+        <input type="radio" name="slide" id="slide22">
+        <input type="radio" name="slide" id="slide33">
+        <input type="radio" name="slide" id="slide44">
+        <input type="radio" name="slide" id="slide55">
+        <input type="radio" name="slide" id="slide66">
+        <input type="radio" name="slide" id="slide77">
+    
+        <div class="slides1">
+     
+            <img src="./imgs/banners/FARMACIA/FARMACIA_1520X450.png?v=9" class="slide slide11" alt="" data-href="./farmacia.html?v=3" data-base="FARMACIA" data-folder="FARMACIA">
+            <img src="./imgs/banners/FGTS/FGTS_1520X450.png?v=9" class="slide slide22" alt="" data-href="https://app.lincredfacil.com.br/antecipacao-fgts-vegas/?utm_source=lnc_app_lp_vegas&utm_medium=botao&utm_campaign=vegas_fgts"
+            data-base="FGTS"  data-folder="FGTS" data-href="https://app.lincredfacil.com.br/antecipacao-fgts-vegas/?utm_source=lnc_app_lp_vegas&utm_medium=botao&utm_campaign=vegas_fgts"
+            >
+            <img src="./imgs/banners/MEDIQUO/MEDIQUO_1520X450.png?v=9" 
+            class="slide slide33" data-href="./mediquo.html"
+            data-base="MEDIQUO" data-folder="MEDIQUO-"
+            alt="">
+
+            <img src="./imgs/banners/TOTALPASS/TOTALPASS_1520X450.png?v=9"
+             class="slide slide44" data-href="./totalpass.html?v=3" 
+               data-base="TOTALPASS"
+       data-folder="TOTALPASS"
+              alt="">
+
+              <img src="./imgs/banners/WELLHUB/WELLHUB_1520X450.png?v=9"
+             class="slide slide55" data-href="./wellhub.html"
+               data-base="WELLHUB"
+       data-folder="WELLHUB"
+              alt="">
+
+              <img src="./imgs/banners/TERMAS/TERMAS_1520X450.png?v=11"
+             class="slide slide66" data-href="./termassp.html"
+               data-base="TERMAS"
+       data-folder="TERMAS"
+              alt="">
+
+              <img src="./imgs/banners/EWPASS/EWPASS_1520X450.png?v=1"
+     class="slide slide77"
+     data-href="./ewpass.html"
+     data-base="EWPASS"
+     data-folder="EWPASS"
+     alt="">
+
+
+        </div>
+    
+        <div class="navigation-slides">
+            <label class="bar bullet1" for="slide11"></label>
+            <label class="bar bullet1" for="slide22"></label>
+            <label class="bar bullet1" for="slide33"></label>
+            <label class="bar bullet1" for="slide44"></label>
+            <label class="bar bullet1" for="slide55"></label>
+            <label class="bar bullet1" for="slide66"></label>
+            <label class="bar bullet1" for="slide77"></label>
+            
+        </div>
+
+        <div class="arrows">
+            <div class="btn-left1">
+  <img src="./imgs/icons/iconbtn.svg" alt="">
+            </div>
+          <div class="btn-right1">
+            <img src="./imgs/icons/iconbtn.svg" alt="" class="right">
+
+          </div>
+        </div>
+    </section>
+    
+<!---
+    <div class="carrossel-nov">
+        <div class="carrossel-wrapper">
+
+     
+     
+   
+<div class="flex-content">
+        <div class="img-nov">
+            <img src="./imgs/raia-people.png" alt="" >
+        </div>
+      
+        <div class="content-nov">
+            <div class="content-nov-header">
+                <img src="./imgs/raia-logo.png" alt="">
+                <img src="./imgs/drogasil-logo.png" alt="">
+            </div>
+         
+            <h2 class="title-nov">Descontos exclusivos para clientes Vegas</h2>
+            <h3 class="subtitle-nov">Você sabia:</h3>
+            <ul>
+                <li> <img src="./imgs/check.png" alt="">+28.000 academias e estúdios em todo o Brasil</li>
+                <li> <img src="./imgs/check.png" alt="">+28.000 academias e estúdios em todo o Brasil</li>
+                <li> <img src="./imgs/check.png" alt="">+28.000 academias e estúdios em todo o Brasil</li>
+
+            </ul>
+
+            <h2 class="nov-call">Aproveite esse benefício agora mesmo. É rápido, prático e exclusivo para clientes Vegas! </h2>
+
+        </div>
+    </div>
+
+    
+    <div class="flex-content">
+       
+      
+        <div class="content-nov">
+            <div class="content-nov-header">
+                <img src="./imgs/raia-logo.png" alt="">
+                <img src="./imgs/drogasil-logo.png" alt="">
+            </div>
+         
+            <h2 class="title-nov">Descontos exclusivos para clientes Vegas</h2>
+            <h3 class="subtitle-nov">Você sabia:</h3>
+            <ul>
+                <li> <img src="./imgs/check.png" alt="">+28.000 academias e estúdios em todo o Brasil</li>
+                <li> <img src="./imgs/check.png" alt="">+28.000 academias e estúdios em todo o Brasil</li>
+                <li> <img src="./imgs/check.png" alt="">+28.000 academias e estúdios em todo o Brasil</li>
+
+            </ul>
+
+            <h2 class="nov-call">Aproveite esse benefício agora mesmo. É rápido, prático e exclusivo para clientes Vegas! </h2>
+
+        </div>
+
+        <div class="img-nov">
+            <img src="./imgs/totalpass-people.png" alt="" >
+        </div>
+    </div>
+
+     <div class="carrossel-bullets">
+        
+     </div>
+
+     
+    </div>
+ </div>
+    --> 
+   </section>
+
+   <section class="voce-sabia">
+ <div class="flex-content">
+        <div class="img-nov">
+            <img src="./imgs/womancel.png" alt="" >
+        </div>
+      
+        <div class="content-nov final-nov">
+         
+         
+            <h2 class="subtitle-nov">Veja como é rápido começar a usar seus descontos:</h2>
+            <div class="list-nov">
+                <div class="tag-nov">1º</div>
+                <h2>Seja Cliente Vegas</h2>
+                <p>Ao utilizar os serviços da Vegas, você passa a ter acesso a benefícios exclusivos em centenas de comércios parceiros.</p>
+            </div>
+            <div class="list-nov">
+                 <div class="tag-nov">2º</div>
+    <h2>Encontre o desconto ideal</h2>
+    <p>
+Navegue pelas categorias, utilize a busca ou explore os comércios no mapa. Encontre aquele que oferece o desconto ou vantagem que mais combina com você.</p>
+            </div>
+            <div class="list-nov">
+                 <div class="tag-nov">3º</div>
+    <h2>Pague com o Cartão Vegas</h2>
+    <p>Para garantir o desconto, é obrigatório pagar utilizando seu Cartão Vegas Card, informe que é cliente Vegas antes de passar no caixa e finalize a compra com o cartão.</p>
+            </div>
+               
+               
+
+
+        </div>
+    </div>
+   </section>
+    
+
+
+
+    <!--- footer -->
+
+<footer>
+  <div class="content-brand">
+    <img src="./imgs/logo-white.png" class="logo-footer" style=" padding-top: 20px;" alt="">
+    <img src="./imgs/logos/logo-abbt 1.svg" href="https://www.abbt.org.br/home" style="width: 10%;" alt="">
+    <img src="./imgs/logos/logo-empresa-brasileira.svg" alt="">
+  </div>
+
+  <div class="menu-footer">
+    <div class="links-rapidos m-f locals">
+      <div class="card-footer">
+        <i class="fas fa-map-marker-alt"></i>
+        <div>
+          <h2>Americana</h2>
+          <p>R. Tamôio, 526 - Vila Santa Catarina | 13466-250</p>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <i class="fa-brands fa-whatsapp"></i>
+        <div>
+          <h2><a target="_blank" href="https://api.whatsapp.com/send/?phone=551921082900">19 2108.2900</a></h2>
+          <p>segunda a sexta 8h às 20h,<br> aos sábados das 8h às 18h</p>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <i class="fa-solid fa-phone"></i>
+        <div>
+          <h2><a target="_blank" href="tel:+551921082908">19 2108.2908</a></h2>
+          <p>segunda a sexta 8h às 20h,<br> aos sábados das 8h às 18h</p>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <i class="fas fa-envelope"></i>
+        <div>
+          <p><a href="mailto:atendimento@vegascard.com.br">atendimento@vegascard.com.br</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="line-footer"></div>
+
+    <div class="links-rapidos m-f menus">
+      <div class="link-div sobre">
+        <h2>Sobre Nós</h2>
+        <ul>
+          <li><a href="https://vegascard.com.br/a-vegas">A Vegas</a></li>
+          <li><a href="https://vegascard.com.br/vegas-cultural">Vegas Cultural</a></li>
+          <li><a href="https://vegascard.com.br/blog">Notícias</a></li>
+        </ul>
+      </div>
+
+      <div class="link-div solucoes">
+        <h2>Soluções</h2>
+        <ul>
+          <li><a href="https://vegascard.com.br/programa-alimentacao-trabalhador">PAT</a></li>
+          <li><a href="https://vegascard.com.br/convenios">Convênios</a></li>
+          <li><a href="https://vegascard.com.br/bonus">Bônus</a></li>
+          <li><a href="https://vegascard.com.br/mobilidade">Mobilidade</a></li>
+          <li><a href="https://vegascard.com.br/bem-estar-saude">Bem-Estar e Saúde</a></li>
+          <li><a href="https://vegascard.com.br/entretenimento">Entretenimento</a></li>
+          <li><a href="https://vegascard.com.br/gestaopme">Gestão PME</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="links-rapidos menus m-f footer-menus">
+      <div class="link-div areacliente">
+        <h2>Área do cliente</h2>
+        <ul>
+          <li><a href="https://vegascard.com.br/meu-cartao">Meu Cartão</a></li>
+          <li><a href="https://vegascard.com.br/portal-rh">Portal RH</a></li>
+          <li><a href="https://vegascard.com.br/meu-estabelecimento">Meu Estabelecimento</a></li>
+          <li><a href="https://vegascard.com.br/meu-rastreador">Meu Rastreador</a></li>
+        </ul>
+      </div>
+
+      <div class="link-div estab-footer">
+        <h2>Estabelecimento</h2>
+        <ul>
+          <li><a href="https://vegascard.com.br/quero-ser-estabelecimento">Quero ser Estabelecimento</a></li>
+          <li><a href="https://vegascard.com.br/rede-credenciada">Rede Credenciada</a></li>
+        </ul>
+      </div>
+
+      <div class="link-div">
+        <a href="https://vegascard.com.br/trabalhe-conosco"><h2>Trabalhe Conosco</h2></a>
+        <a href="https://vegascard.com.br/perguntas-frequentes"><h2>Tire Suas Dúvidas</h2></a>
+      </div>
+    </div>
+
+       <div class="line-footer"></div>
+
+    <div class="app menus m-f">
+      <h2>Baixe o App</h2>
+      <ul>
+        <a href="https://apps.apple.com/br/app/vegas-card/id1478167977" target="_blank" rel="noreferrer"><li>IOS</li></a>
+        <a href="https://play.google.com/store/apps/details?id=app.vegascarddobrasil.android&hl=pt_BR&gl=US" target="_blank" rel="noreferrer"><li>Android</li></a>
+      </ul>
+
+      <div class="midia-links">
+        <a href="https://www.instagram.com/vegascardbrasil/" target="_blank"><i class="fab fa-instagram-square social-media"></i></a>
+        <a href="https://www.facebook.com/VEGASCARDdoBrasil" target="_blank"><i class="fab fa-facebook-square social-media"></i></a>
+        <a href="https://www.youtube.com/@vegascardbrasil4538" target="_blank"><i class="fab fa-youtube-square social-media"></i></a>
+        <a href="https://www.linkedin.com/company/vegascardbrasil/" target="_blank"><i class="fab fa-linkedin social-media"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <div class="down-footer">
+        <p>Acesse nossa <a href="https://vegascard.com.br/institucional/lgpd" style="color: #fff; text-decoration:underline; ">Política de Privacidade.</a></p>
+        <p>Copyright ©2025 Vegas Card do Brasil. Todos os direitos reservados. Desenvolvido por Lymoria Studio</p>
+       </div>
+
+ 
+     <script src="./scripts/env.js"></script>
+    <script type="module" src="./scripts/pages/home.js?v=37" defer></script>
+      <script type="module" src="./scripts/components/map.js?v=26" defer></script>
+   
+   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  </script>
+</body>
+</html>

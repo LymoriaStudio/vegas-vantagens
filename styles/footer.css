@@ -1,0 +1,350 @@
+ footer {
+        background: #212121;
+     
+        width: 100%;
+        margin-top: 100px;
+        padding-inline: 120px;
+        
+        
+        text-decoration: none;
+        padding-bottom: 50px;
+      }
+
+      .m-f {
+        width: 25%;
+      }
+
+      .content-brand {
+        padding-top: 30px;
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        padding-inline: 100px;
+        border-bottom: solid 1px #fff;
+        align-items: center;
+        padding-bottom: 30px;
+
+      }
+
+      .content-brand img {
+        width: 300px;
+      object-fit: contain;
+        
+
+      
+      }
+
+      .menu-footer {
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        padding-inline: 10px;
+        gap: 20px;
+        color: #fff;
+
+      }
+      .menu-footer a {
+        color: #fff;
+      }
+
+      .logo-footer {
+        width: 30%;
+        margin-bottom: 24px;
+        
+      }
+
+      .brand-info {
+        font-size: 14px;
+        margin-bottom: 24px;
+        color: #fff;
+      }
+
+      footer h2 {
+        color: #fff;
+      }
+
+      .card-footer {
+        color: #fff;
+        display: flex;
+        gap: 10px;
+        margin-bottom: 40px;
+        align-items: center;
+      }
+
+      .card-footer i {
+        font-size: 28px;
+      }
+
+      .card-footer p {
+        font-size: 12px;
+        width: 100%;
+      }
+
+      .footer-info {
+                background: linear-gradient(90deg, #828EC5 0%, #DBA092 100%);
+
+      }
+
+      .icons-footer {
+        display: flex;
+        gap: 12px;
+      }
+
+      .social-media {
+           font-size: 30px;
+           
+      }
+      .midia-links {
+        display: flex;
+        gap: 15px;
+      }
+
+      .menus {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding-left: 30px;
+
+      }
+
+      .line-footer {
+        width: 100%;
+        height: 1px;
+        background-color: #fff;
+        display: none;
+      }
+
+      .link-div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        
+      }
+
+      .link-div ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 12px;
+      }
+
+      .down-footer {
+        display: flex;
+        padding: 20px;
+        padding-inline: 140px;
+        font-size: 13px;
+        color: #fff;
+        gap: 40px;
+        background-color: #3d3d3d;
+        width: 100%;
+        justify-content: center;
+        
+      
+      }
+
+       .link-div ul li a {
+         font-size: 18px;
+       }
+
+      .app {
+        padding-left: 50px;
+      }
+
+      @media screen and (max-width:768px) {
+        footer {
+          padding-inline: 32px;
+        }
+
+        .locals {
+
+         display: flex;
+         flex-direction: column;
+        align-items: center;
+        
+        justify-self: center;
+        
+       
+
+   
+        }
+
+        .line-footer {
+            display: block;
+        }
+
+      
+
+       .menu-footer {
+        flex-direction: column;
+        gap: 32px;
+        
+       }
+
+       .link-div ul li a {
+         font-size: 16px;
+       }
+       .content-brand {
+        padding-inline: 32px;
+        justify-content: space-between;
+       }
+
+       .content-brand img {
+        width: 200px;
+       }
+
+       .m-f {
+        width: 100%;
+       }
+
+       .menus {
+      flex-direction: row;
+      justify-content: space-between;
+      padding-left: 0;
+        
+      
+   
+      }
+
+      
+
+      .footer-menus {
+        flex-wrap: wrap;
+      }
+
+            .card-footer {
+        color: #fff;
+        display: flex;
+        
+        gap: 20px;
+        margin-bottom: 40px;
+        align-items: center;
+        align-self: center;
+        padding-left: 40px;
+        width:50%;
+      }
+
+                .down-footer {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        padding-inline: 24px;
+        font-size: 13px;
+        color: #fff;
+        gap: 20px;
+        background-color: #3d3d3d;
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        
+      
+      }
+
+      .down-footer p {
+        width: 50%;
+      }
+
+  
+    
+
+      
+      }
+
+      @media (max-width: 480px){
+
+        body, html {
+                overflow-x: hidden;
+        }
+
+        footer {
+          padding-inline: 24px;
+        }
+
+        .menu-footer {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
+        
+
+          .content-brand {
+        padding-top: 30px;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        padding-inline: 24px;
+        border-bottom: solid 1px #fff;
+        align-items: center;
+        padding-bottom: 30px;
+        gap: 30px;
+
+      }
+
+      .content-brand img {
+        width: 140px;
+      }
+
+        .main-title {
+          font-size: 24px;
+          text-align: left;
+          padding-inline: 24px;
+        }
+
+         .m-f {
+        width: 90%;
+        justify-self: center;
+        align-self: center;
+     
+      }
+
+         .card-footer {
+        color: #fff;
+        display: flex;
+        padding-left: 0;
+        justify-self: center;
+        gap: 20px;
+        margin-bottom: 40px;
+        align-items: center;
+        width: 100%;
+      }
+
+      .menus {
+      flex-direction: row;
+ 
+      }
+
+      .footer-menus {
+        flex-wrap: wrap;
+      }
+
+      .app {
+        flex-direction: column;
+        align-items: start;
+        padding-left: 0;
+      
+        padding-top: 24px;
+        padding-bottom: 24px;
+        
+      }
+
+            .down-footer {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        padding-inline: 24px;
+        font-size: 13px;
+        color: #fff;
+        gap: 40px;
+        background-color: #3d3d3d;
+        width: 100%;
+        text-align: center;
+        
+      
+      }
+
+      .locals {
+        max-width: 60%;
+      }
+
+     
+      }
