@@ -5,6 +5,7 @@ const slide44 = document.getElementById('slide44');
 const slide55 = document.getElementById('slide55');
 const slide66 = document.getElementById('slide66');
 const slide77 = document.getElementById('slide77');
+const slide88 = document.getElementById('slide88');
 const slidesContainer1 = document.querySelector('.slides1');
 const bullets1 = document.querySelectorAll('.bullet1');
 
@@ -111,7 +112,7 @@ function atualizarSrcDasImagens1() {
 // Atualiza a posição dos slides
 function updateSlidePosition1() {
   const index = currentSlide1 - 1;
-  slidesContainer1.style.transform = `translateX(-${index * 14.2857}%)`; // 7 slides = 100/7
+  slidesContainer1.style.transform = `translateX(-${index * 12.5}%)`; // 8 slides = 100/8
 }
 
 // Atualiza bullets
@@ -124,7 +125,7 @@ function updateBulletClasses1() {
 // Autoplay com 7 slides
 function startAutoplay1() {
   autoPlayInterval1 = setInterval(() => {
-    currentSlide1 = currentSlide1 % 7 + 1;
+    currentSlide1 = currentSlide1 % 8 + 1;
     document.getElementById(`slide${currentSlide1}${currentSlide1}`).checked = true;
     updateSlidePosition1();
     updateBulletClasses1();
@@ -171,20 +172,25 @@ slide77.addEventListener('change', () => {
   updateSlidePosition1();
   updateBulletClasses1();
 });
+slide88.addEventListener('change', () => {
+  currentSlide1 = 8;
+  updateSlidePosition1();
+  updateBulletClasses1();
+});
 
 // Botões
 const btnLeft1 = document.querySelector('.btn-left1');
 const btnRight1 = document.querySelector('.btn-right1');
 
 btnLeft1.addEventListener('click', () => {
-  currentSlide1 = currentSlide1 === 1 ? 7 : currentSlide1 - 1;
+  currentSlide1 = currentSlide1 === 1 ? 8 : currentSlide1 - 1;
   document.getElementById(`slide${currentSlide1}${currentSlide1}`).checked = true;
   updateSlidePosition1();
   updateBulletClasses1();
 });
 
 btnRight1.addEventListener('click', () => {
-  currentSlide1 = currentSlide1 === 7 ? 1 : currentSlide1 + 1;
+  currentSlide1 = currentSlide1 === 8 ? 1 : currentSlide1 + 1;
   document.getElementById(`slide${currentSlide1}${currentSlide1}`).checked = true;
   updateSlidePosition1();
   updateBulletClasses1();
