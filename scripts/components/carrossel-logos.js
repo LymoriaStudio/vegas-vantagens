@@ -19,8 +19,8 @@ function montarCarrossel() {
   { link: 'detalhes.html#store-28',                        src: './imgs/logos/intensos-logo.png',    nome: 'Parceiro 11' },
   { link: 'detalhes.html#store-27',                        src: './imgs/logos/vidrovan-logo.png',     nome: 'Parceiro 12' },
   { link: 'detalhes.html#store-26',                        src: './imgs/logos/mercadao-logo.png', nome: 'Parceiro 13' },
-  { link: './rock-ensina.html', src: './imgs/logos/rock-logo.png', nome: 'Rock Ensina' },
-  { link: './my-moment.html', src: './imgs/logos/mymoment-logo.png', nome: 'My Moment' },
+  { link: './rock-ensina.html', src: './imgs/logos/logo-rockensina.png', nome: 'Rock Ensina' },
+  { link: './my-moment.html', src: './imgs/logos/logo-mymoment.png', nome: 'My Moment' },
 
 
 ];
