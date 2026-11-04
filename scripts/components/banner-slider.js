@@ -6,6 +6,7 @@ const slide5 = document.getElementById('slide5');
 const slide6 = document.getElementById('slide6');
 const slide7 = document.getElementById('slide7');
 const slide8 = document.getElementById('slide8');
+const slide9 = document.getElementById('slide9');
 const banners = document.querySelector('.slides');
 const bullets = document.querySelectorAll('.bullet'); // Supondo que os bullets tenham a classe '.bullet'
 
@@ -111,7 +112,7 @@ function atualizarSrcDasImagens() {
 
 
 function updateSlidePosition() {
-    const slides = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8];
+    const slides = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8, slide9];
     const totalSlides = slides.length;
 
     // Encontra o índice do slide ativo (0, 1, 2...)
@@ -140,7 +141,7 @@ function updateBulletClasses() {
 // Função de autoplay (muda o slide a cada 10 segundos)
 function startAutoplay() {
     autoPlayInterval = setInterval(() => {
-        currentSlide = currentSlide % 8 + 1; // Vai de 1 a 6 e volta para 1
+        currentSlide = currentSlide % 9 + 1; // Vai de 1 a 9 e volta para 1
         document.getElementById(`slide${currentSlide}`).checked = true;
         updateSlidePosition();
         updateBulletClasses();
@@ -196,18 +197,24 @@ slide8.addEventListener('change', () => {
     updateBulletClasses();
 });
 
+slide9.addEventListener('change', () => {
+    currentSlide = 9;
+    updateSlidePosition();
+    updateBulletClasses();
+});
+
 const btnLeft = document.querySelector('.btn-left');
 const btnRight = document.querySelector('.btn-right');
 
 btnLeft.addEventListener('click', () => {
-    currentSlide = currentSlide === 1 ? 8 : currentSlide - 1;
+    currentSlide = currentSlide === 1 ? 9 : currentSlide - 1;
     document.getElementById(`slide${currentSlide}`).checked = true;
     updateSlidePosition();
     updateBulletClasses(); // Não parar autoplay!
 });
 
 btnRight.addEventListener('click', () => {
-    currentSlide = currentSlide === 8 ? 1 : currentSlide + 1;
+    currentSlide = currentSlide === 9 ? 1 : currentSlide + 1;
     document.getElementById(`slide${currentSlide}`).checked = true;
     updateSlidePosition();
     updateBulletClasses(); // Não parar autoplay!
