@@ -8,10 +8,17 @@
     <link rel="icon" type="image/png" href="./imgs/Vector.png">
     <title>Admin Vegas Benefícios</title>
     <script>
-  // Redireciona se não houver token
-  const token = localStorage.getItem("token");
-  if (!token) {
-    window.location.href = "admin-login.html";
+  // Redireciona se não houver token.
+  // Exceção SÓ em ambiente local (localhost/127.0.0.1): libera o painel sem
+  // login para ver o layout. Em produção o comportamento continua o mesmo.
+  // Sem login real a API recusa as chamadas, então as listas ficam vazias.
+  const isLocalDev = ["localhost", "127.0.0.1", "[::1]"].includes(location.hostname);
+  if (!localStorage.getItem("token")) {
+    if (isLocalDev) {
+      localStorage.setItem("token", "dev-sem-login");
+    } else {
+      window.location.href = "admin-login.html";
+    }
   }
 </script>
 </head>
