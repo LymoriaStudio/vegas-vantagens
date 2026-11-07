@@ -82,6 +82,7 @@ justify-content: space-between;
 .card-vantagens-prod img {
     width: 51px;
     height: 51px;
+    object-fit: contain;
 }
 
 .card-vantagens-prod p {
