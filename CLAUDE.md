@@ -52,14 +52,14 @@ Adicionar um parceiro é sempre o **mesmo processo**: página (se for landing), 
 2. **Assets** — em `imgs/`: hero `banner-<parceiro>.png` (+ versão mobile), cards `card-<parceiro>1..3`, ícones e reviews. Os banners do slider da home vão em `imgs/banners/<FOLDER>/<FOLDER>_<TAMANHO>.<ext>` nos 4 tamanhos `1520X450`, `1232X365`, `768X360`, `402X520`. **Convenção de nome:** um token só, maiúsculo, sem espaços e sem acento (ex.: `ROCKENSINA_1520X450.png`) — o `data-base` passa por `formatFileName` (troca espaço por `_`, remove acento), então o nome do arquivo precisa bater com isso.
 3. **Home — banner de baixo** (seção `.banner-hero` / `.slides1`, controlada por `banner-slide2.js`): é onde ficam as landings. Para somar um slide:
    - No `index.html`: adicione `<input type="radio" name="slide" id="slideNN">`, a `<img class="slide slideNN" data-base="FOLDER" data-folder="FOLDER" data-href="./nome-parceiro.html">` dentro de `.slides1`, e um `<label class="bar bullet1" for="slideNN">`.
-   - **Atualize a contagem de slides** (ela é fixa): no CSS `.slides1 { width }` em `novidades.css` = Nº de slides × 100% (hoje `700%` p/ 7); no `banner-slide2.js` o passo `14.2857%` (= 100/N), o `% 7` do autoplay, os `=== 7`/`=== 1` dos botões, e crie `const slideNN` com seu listener `change`.
+   - **Atualize a contagem de slides** (ela é fixa): no CSS `.slides1 { width }` em `novidades.css` = Nº de slides × 100% (hoje `800%` p/ 8); no `banner-slide2.js` o passo `12.5%` (= 100/N), o `% 8` do autoplay, os `=== 8`/`=== 1` dos botões, e crie `const slideNN` com seu listener `change`.
 4. **Carrossel de logos** (`scripts/components/carrossel-logos.js`): adicione um item no array `parceiros`: `{ link: './nome-parceiro.html', src: './imgs/logos/<logo>.png', nome: '...' }`.
 5. **Cache busting**: incremente o `?v=` nos arquivos/refs que você alterou (ver convenções abaixo).
 
 ### Parceiro tipo loja com cupons (ex.: Zanini, Boi que Mia)
 
 Não se cria HTML — a loja é cadastrada na API e usa `detalhes.html#store-<id>`.
-- **Home — banner de cima** (seção `.slides`, controlada por `banner-slider.js`): adicione o slide com `data-href="./detalhes.html#store-<id>"`. A contagem também é fixa: CSS `.slides { width }` em `header.css` = Nº × 100% (hoje `800%`), e no `banner-slider.js` há `slideN` + listeners por slide, `% 8` no autoplay e `=== 8`/`=== 1` nos botões (o cálculo de posição já lê `slides.length`).
+- **Home — banner de cima** (seção `.slides`, controlada por `banner-slider.js`): adicione o slide com `data-href="./detalhes.html#store-<id>"`. A contagem também é fixa: CSS `.slides { width }` em `header.css` = Nº × 100% (hoje `900%`), e no `banner-slider.js` há `slideN` + listeners por slide, `% 9` no autoplay e `=== 9`/`=== 1` nos botões (o cálculo de posição já lê `slides.length`).
 - **Carrossel de logos**: item no array `parceiros` com `link: 'detalhes.html#store-<id>'`.
 
 ### Regras dos banners da home (proporção e lógica de contagem)
@@ -68,7 +68,7 @@ São dois sliders independentes, cada um com sua contagem de slides **fixa no c�
 
 | Slider | Seção / classe | Script | CSS da largura | Qtde atual |
 |--------|----------------|--------|----------------|------------|
-| Banner de cima | `.banner` / `.slides` | `banner-slider.js` | `.slides { width }` em `header.css` | 8 (`slide1`–`slide8`) |
+| Banner de cima | `.banner` / `.slides` | `banner-slider.js` | `.slides { width }` em `header.css` | 9 (`slide1`–`slide9`) |
 | Banner de baixo | `.banner-hero` / `.slides1` | `banner-slide2.js` | `.slides1 { width }` em `novidades.css` | 8 (`slide11`–`slide88`) |
 
 **Proporção / tamanhos responsivos** — cada banner tem 4 arquivos, escolhidos por largura de tela (a montagem do `src` é `./imgs/banners/<data-folder>/<formatFileName(data-base)>_<TAMANHO>.<ext>`):
@@ -81,7 +81,7 @@ São dois sliders independentes, cada um com sua contagem de slides **fixa no c�
 | < 768px | `402X520` | retrato mobile (~0,77:1) |
 
 **Lógica de contagem** — ao somar/remover um slide, acerte TODOS estes pontos para N slides, senão o banner quebra:
-- **CSS**: `width` do container = **N × 100%** (ex.: 8 slides → `800%`). É isso que faz cada slide ocupar exatamente a largura da janela; se esquecer, os slides ficam estreitos e aparece um pedaço do vizinho.
+- **CSS**: `width` do container = **N × 100%** (ex.: 9 slides → `900%`). É isso que faz cada slide ocupar exatamente a largura da janela; se esquecer, os slides ficam estreitos e aparece um pedaço do vizinho.
 - **Passo**: no script, `translateX` por slide = **100/N %** (ex.: 8 → `12.5`). No `banner-slider.js` (de cima) a posição já lê `slides.length`, mas o autoplay e os botões não.
 - **Autoplay**: `currentSlide % N + 1`.
 - **Botões** (‹ ›): wrap em `=== N ? 1` e `=== 1 ? N`.
