@@ -312,6 +312,24 @@ margin-top: 16px;
     background-color: #FFA606;
 }
 
+.btn-mymoment {
+    background: #E0A194;
+    justify-content: center;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-rockensina {
+    background: #2F86F6;
+    justify-content: center;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 
 
 .final-prod {
