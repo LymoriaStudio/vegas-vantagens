@@ -1,0 +1,1858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/paineladmin.css">
+     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <title>Dashboard Vegas</title>
+</head>
+<body class="body-painel">
+    
+    <div class="main">
+
+     <!-- Side Bar -->
+    <div class="sidebar-admin">
+
+        <div class="logo-sidebar">
+            <img src="./imgs/logos/logo-vegas.png" alt="">
+        </div>
+
+        
+       
+        <ul class="lista-sidebar">
+             <li data-page="dashboard">
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+  viewBox="0 0 24 24" fill="none" class="icon">
+
+  <path d="M19 3C20.1046 3 21 3.88316 21 4.9726L21 8.33992C21 9.42936 20.1046 10.3125 19 10.3125H16C14.8954 10.3125 14 9.42936 14 8.33992L14 4.9726C14 3.88316 14.8954 3 16 3L19 3Z"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <path d="M5 3C3.89543 3 3 3.88316 3 4.9726L3.00001 8.33992C3.00001 9.42936 3.89544 10.3125 5.00001 10.3125H8.00001C9.10458 10.3125 10 9.42936 10 8.33992L10 4.9726C10 3.88316 9.10457 3 8 3L5 3Z"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <path d="M19 13.6875C20.1046 13.6875 21 14.5707 21 15.6601V19.0274C21 20.1168 20.1046 21 19 21H16C14.8954 21 14 20.1168 14 19.0274L14 15.6601C14 14.5707 14.8954 13.6875 16 13.6875H19Z"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <path d="M5.00001 13.6875C3.89544 13.6875 3.00001 14.5707 3.00001 15.6601L3.00001 19.0274C3.00001 20.1168 3.89544 21 5.00001 21H8.00001C9.10458 21 10 20.1168 10 19.0274L10 15.6601C10 14.5707 9.10458 13.6875 8.00001 13.6875H5.00001Z"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-crumb="dash"/>
+</svg>
+
+           
+              Dashboard
+            </li>
+
+             <li data-page="estabelecimentos">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" viewBox="0 0 20 18" fill="none">
+  <path d="M17.9917 8.62111V15C17.9917 16.1046 17.0963 17 15.9917 17H3.9917C2.88713 17 1.9917 16.1046 1.9917 15V8.62111M5.4917 6.75C5.4917 7.99264 4.48434 9 3.2417 9C2.08567 9 1.13327 8.12818 1.00612 7.00615C0.986938 6.83688 1.01346 6.66657 1.05646 6.50173L2.10166 2.49516C2.3314 1.6145 3.12676 1 4.03689 1H15.9465C16.8566 1 17.652 1.6145 17.8817 2.49516L18.9269 6.50173C18.9699 6.66657 18.9965 6.83688 18.9773 7.00615C18.8501 8.12818 17.8977 9 16.7417 9C15.4991 9 14.4917 7.99264 14.4917 6.75M5.4917 6.75C5.4917 7.99264 6.49906 9 7.7417 9C8.98434 9 9.9917 7.99264 9.9917 6.75M5.4917 6.75L5.9917 1M9.9917 6.75C9.9917 7.99264 10.9991 9 12.2417 9C13.4843 9 14.4917 7.99264 14.4917 6.75M9.9917 6.75V1M14.4917 6.75L13.9917 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-crumb="estab"/>
+</svg>
+              Gerenciar Estabelecimento
+            </li>
+
+            <li data-page="promocoes">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+  <path d="M7 14.2L14.2 7M7.5539 7.54934L7.53975 7.53505M13.6644 13.7227L13.6503 13.7084M6.52286 2.98733L5.50495 3.04932C4.18351 3.1298 3.1298 4.18351 3.04932 5.50495L2.98733 6.52286C2.95176 7.10677 2.72179 7.66197 2.33405 8.1L1.65812 8.86361C0.780627 9.85491 0.780627 11.3451 1.65812 12.3364L2.33405 13.1C2.72179 13.538 2.95176 14.0932 2.98733 14.6771L3.04932 15.695C3.1298 17.0165 4.18351 18.0702 5.50495 18.1507L6.52286 18.2127C7.10676 18.2482 7.66197 18.4782 8.1 18.8659L8.86361 19.5419C9.85491 20.4194 11.3451 20.4194 12.3364 19.5419L13.1 18.8659C13.538 18.4782 14.0932 18.2482 14.6771 18.2127L15.695 18.1507C17.0165 18.0702 18.0702 17.0165 18.1507 15.695L18.2127 14.6771C18.2482 14.0932 18.4782 13.538 18.8659 13.1L19.5419 12.3364C20.4194 11.3451 20.4194 9.85491 19.5419 8.8636L18.8659 8.1C18.4782 7.66197 18.2482 7.10676 18.2127 6.52286L18.1507 5.50495C18.0702 4.18351 17.0165 3.1298 15.695 3.04932L14.6771 2.98733C14.0932 2.95176 13.538 2.72179 13.1 2.33405L12.3364 1.65812C11.3451 0.780627 9.85491 0.780627 8.8636 1.65812L8.1 2.33405C7.66197 2.72179 7.10676 2.95176 6.52286 2.98733Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" data-crumb="cupons"/>
+</svg>
+              Gerenciar Promoções
+            
+            </li>
+        </ul>
+
+        <div class="user-admin">
+
+            <div class="info-user">
+
+              <div class="profile-admin">
+                <img src="./imgs/boimia-cupom.png" alt="">
+              </div>
+              <div>
+                <p class="name-user">User</p>
+                <p class="cargo-user">Cargo</p>
+              </div>
+             
+            </div>
+
+            <div class="logout">
+               <img src="./imgs/icons/logout-02.png" alt="">
+            </div>
+         
+        </div>
+
+    </div>
+
+    <!-- Main Dash -->
+    <div class="dash">
+        <div class="header-dash">
+            <div class="rotas-dash">
+            <i>Icone</i>
+            <div class="rotas-tela">
+                <span>/Gerenciar /s</span>
+            </div>
+            </div>
+
+            <div class="actions-admin">
+                <div class="ball-ad notif">
+                    <img src="./imgs/icons/bell-icon.png" alt="">
+                </div>
+
+                 <div class="ball-ad profile">
+                    <img src="./imgs/Profile.png" alt="">
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="main-dash">
+
+    <!-- HOME DASH  -->     
+    <div class="page" data-page="dashboard">
+     <h1>Dashboard</h1>
+
+     
+
+        <!--GRAFICO-->
+
+         <div class="stats-grid" id="statsGrid">
+      <!-- Cards de estatísticas serão inseridos aqui -->
+    </div>
+
+     <div class="filtros">
+        <div class="filtro-group">
+          <label for="filtroTipo">Visualizar Estabelecimentos por:</label>
+          <select id="filtroTipo">
+            <option value="cidade">Cidade</option>
+            <option value="categoria">Categoria</option>
+            <option value="cupons">Cupons Ativos</option>
+          </select>
+        </div>
+
+    
+      </div>
+
+    <div class="chart-container">
+      <div class="chart-wrapper">
+        <canvas id="graficoEstabelecimentos"></canvas>
+      </div>
+   
+    </div>
+    </div>
+
+ 
+
+
+   <!-- ESTABELECIMENTOS -->
+<div class="page" data-page="estabelecimentos">
+  <h1>Gerenciar Estabelecimentos</h1>
+  
+  <!-- Botões de navegação entre subpages -->
+  <div class="btns-subpage">
+    <button data-open-subpage="lista-estab" class="active">Estabelecimentos</button>
+    <button data-open-subpage="lista-grupo" class="grupos-tab">Grupos</button>
+  </div>
+
+  <!-- Lista de Estabelecimentos -->
+  <div class="sub-page active" data-subpage="lista-estab">
+    <div class="actions-page-estab">
+      <!-- Barra de busca -->
+      <input type="text" class="search-estab" placeholder="Buscar por nome ou cidade...">
+      
+      <!-- Botão criar -->
+      <button class="btn-action" onclick="abrirPreview()" type="button">
+        + Criar
+      </button>
+    </div>
+
+    <!-- Filtros de Status (Todos, Publicados, Rascunhos) -->
+    <div class="filtros-status">
+      <button class="tab-filtro active" data-status="todos">
+        Todos (<span id="count-todos">0</span>)
+      </button>
+      <button class="tab-filtro" data-status="publicados">
+        Publicados (<span id="count-publicados">0</span>)
+      </button>
+      <button class="tab-filtro" data-status="rascunhos">
+        Rascunhos (<span id="count-rascunhos">0</span>)
+      </button>
+    </div>
+
+    <!-- Filtros Avançados -->
+<div class="filtros-avancados">
+  <div class="filtro-item">
+    <label>Cidade</label>
+    <select id="filtroCidade" class="filtro-select">
+      <option value="Todos">Todas</option>
+    </select>
+  </div>
+
+  <div class="filtro-item">
+    <label>Categoria</label>
+    <select id="filtroCategoria" class="filtro-select">
+      <option value="Todos">Todas</option>
+    </select>
+  </div>
+
+  <div class="filtro-item">
+    <label>Grupo</label>
+    <select id="filtroGrupo" class="filtro-select">
+      <option value="Todos">Todos</option>
+    </select>
+  </div>
+
+  <div class="filtro-item">
+    <label>Status Operacional</label>
+    <select id="filtroStatusOperacional" class="filtro-select">
+      <option value="Todos">Todos</option>
+      <option value="Ativo">Ativo</option>
+      <option value="Pausado">Pausado</option>
+      <option value="Cancelado">Cancelado</option>
+    </select>
+  </div>
+
+  <button class="btn-limpar-filtros" onclick="limparFiltros()">
+    Limpar Filtros
+  </button>
+</div>
+
+    <!-- Lista de Cards -->
+    <div id="listaCards" class="lista-cards"></div>
+  </div>
+
+  <!-- Lista de Grupos -->
+  <div class="sub-page" data-subpage="lista-grupo">
+    <div class="actions-page-estab">
+      <input type="text" class="search-grupo" placeholder="Buscar grupos...">
+      <button data-open-subpage="criar-grupo" class="btn-action" type="button">
+        + Criar Grupo
+      </button>
+    </div>
+    <div id="listaGrupo" class="lista-cards"></div>
+  </div>
+
+  <!-- Subpage: Criar Grupo (filho de lista-grupo) -->
+  <div class="sub-page" data-subpage="criar-grupo">
+    <button class="btn-voltar" data-open-subpage="lista-grupo" type="button">
+      ← Voltar para Grupos
+    </button>  
+
+  <!--Form Criar Grupo -->
+  <form class="form-estab" id="formCadastroGrupo">
+    <h3 class="title-form">Dados do Grupo</h3>
+
+    <div class="row">
+      <div class="field">
+        <label>Nome do Grupo *</label>
+        <input type="text" placeholder="Ex: Rede de Supermercados" id="nomeGrupo" required />
+      </div>
+      
+      <div class="field">
+        <label>Site URL</label>
+        <input type="url" placeholder="https://www.exemplo.com.br" id="siteUrlGrupo" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label>Logo do Grupo</label>
+        <input type="file" id="logoGrupo" accept="image/*" />
+        <small>Formatos aceitos: JPG, PNG, GIF</small>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field checkbox-field">
+        <label>
+          <input type="checkbox" id="ativoGrupo" checked />
+          Grupo Ativo
+        </label>
+      </div>
+    </div>
+
+    <h3 class="title-form">Estabelecimentos (opcional)</h3>
+    <div class="field">
+      <label>Vincular Estabelecimentos</label>
+      <div id="listaEstabelecimentosGrupo" class="checkbox-list">
+        <!-- Será populado via JavaScript -->
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" class="btn-secondary btn-gp-can" data-open-subpage="lista-grupo">
+        Cancelar
+      </button>
+      <button type="button" class="btn-primary btn-gp-cad" onclick="cadastrarGrupo()">
+        Salvar Grupo
+      </button>
+    </div>
+  </form>
+</div>
+
+<!-- Subpage: Criar Estabelecimento (filho de lista-estab) -->
+<div class="sub-page" data-subpage="criar-estab">
+  <!-- Botão Voltar -->
+  <button class="btn-voltar" data-open-subpage="lista-estab" type="button">
+    ← Voltar
+  </button>
+
+  <!--
+
+   <form class="form-estab" id="formCadastro2">
+  <h3 class="title-form">Dados Iniciais</h3>
+
+  <div class="row">
+    <div class="field">
+      <label>Nome Fantasia</label>
+      <input type="text" placeholder="Ex: Mercado Central" id="nomeEstab2" />
+    </div>
+
+    <div class="field">
+      <label>Razão Social</label>
+      <input type="text" placeholder="Ex: Mercado Central LTDA" id="razaoSocial2" />
+    </div>
+
+    <div class="field">
+      <label>CNPJ</label>
+      <input type="text" placeholder="00.000.000/0001-00" id="cnpj2" />
+    </div>
+
+    <div class="field">
+      <label>Ativo</label>
+      <label class="switch">
+        <input type="checkbox" id="ativoEstab2">
+        <span class="slider-edit"></span>
+      </label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field">
+      <label>Telefone</label>
+      <input type="text" placeholder="(11) 99999-9999" id="telefone2" />
+    </div>
+
+    <div class="field">
+      <label>Email de Contato</label>
+      <input type="email" placeholder="contato@empresa.com" id="emailContato2" />
+    </div>
+
+    <div class="field">
+      <label>Grupo</label>
+      <select id="grupo2">
+        <option>Selecione</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Categoria</label>
+      <select id="categoriaId2">
+        <option>Selecione</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field">
+      <label>Sobre</label>
+      <input type="text" placeholder="Breve descrição do estabelecimento" id="sobre2" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field">
+      <h3>Logo</h3>
+      <input type="file" id="logoImagem2">
+    </div>
+
+    <div class="field">
+      <h3>Fachada</h3>
+      <input type="file" id="fachadaImagem2">
+    </div>
+  </div>
+
+  <h3>Endereço</h3>
+
+  <div class="row">
+    <div class="field">
+      <label>CEP</label>
+      <input type="text" placeholder="00000-000" id="cep2"/>
+    </div>
+
+    <div class="field">
+      <label>Estado</label>
+      <select id="estadoId2">
+        <option value="1">São Paulo</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Cidade</label>
+      <select id="cidadeId2">
+        <option value="1">Americana</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Rua</label>
+      <input type="text" placeholder="Ex: Avenida Brasil" id="rua2"/>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field">
+      <label>Número</label>
+      <input type="text" placeholder="123" id="numero2"/>
+    </div>
+
+    <div class="field">
+      <label>Bairro</label>
+      <input type="text" placeholder="Centro" id="bairro2" />
+    </div>
+
+    <div class="field">
+      <label>Complemento</label>
+      <input type="text" placeholder="Apto, sala, bloco (opcional)" id="complemento2"/>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field full">
+      <label>Mapa URL</label>
+      <input type="text" id="mapurl2" placeholder="https://maps.google.com/..." />
+    </div>
+
+    <button class="btn-map" type="button">Extrair Lat/Long</button>
+  </div>
+
+  <div class="row">
+    <div class="field">
+      <label>Latitude</label>
+      <input type="text" placeholder="-22.7392" id="latitude2" class="latitude2"/>
+    </div>
+
+    <div class="field">
+      <label>Longitude</label>
+      <input type="text" placeholder="-47.3313" id="longitude2" class="longitude2"/>
+    </div>
+  </div>
+
+  <h3>Cartões Aceitos</h3> 
+ <div class="row cards-row">
+  <label class="field-ratio">
+    <input type="checkbox" id="cartao-1">
+    <span>Vegas Alimentação</span>
+  </label>
+
+  <label class="field-ratio">
+    <input type="checkbox" id="cartao-2">
+    <span>Vegas Refeição</span>
+  </label>
+
+  <label class="field-ratio">
+    <input type="checkbox" id="cartao-3">
+    <span>Vegas Day</span>
+  </label>
+
+  <label class="field-ratio">
+    <input type="checkbox" id="cartao-4">
+    <span>Vegas Farmácia</span>
+  </label>
+
+  <label class="field-ratio">
+    <input type="checkbox" id="cartao-5">
+    <span>Vegas Plus</span>
+  </label>
+
+  <label class="field-ratio">
+    <input type="checkbox" id="cartao-6">
+    <span>Vegas Pay</span>
+  </label>
+</div>
+  -->
+
+<!---
+<div class="row">
+  <label class="field-ratio">
+    <input type="checkbox" id="cartao-7">
+    <span>Vegas Natalino</span>
+  </label>
+
+  <label class="field-ratio">
+    <input type="checkbox" id="cartao-8">
+    <span>Vegas Frota</span>
+  </label>
+
+  <label class="field-ratio">
+    <input type="checkbox" id="cartao-9">
+    <span>Vegas GIF</span>
+  </label>
+
+  <label class="field-ratio">
+    <input type="checkbox" id="cartao-10">
+    <span>Vegas Rastreador</span>
+  </label>
+
+  <label class="field-ratio">
+    <input type="checkbox" id="cartao-11">
+    <span>Vegas Combustível</span>
+  </label>
+</div>
+-->
+
+<!--
+
+
+  <button type="button" onclick="cadastrarEstabelecimento2()" class="cadastrar">Cadastrar Estabelecimento</button>
+</form>
+
+-->
+
+
+
+
+  </div>
+    </div>
+
+    <!-- CUPONS -->
+
+    <div class="page" data-page="promocoes">
+  <h1>Gerenciar Promoções</h1>
+  
+  <div class="btns-subpage">
+    <button data-open-subpage="lista-cupom" class="active">Cupons</button>
+    <button data-open-subpage="criar-cupom" onclick="abrirPreviewCupom()">+ Criar</button>
+  </div>
+
+  <div class="sub-page active" data-subpage="lista-cupom">
+    
+    <!-- Barra de Busca -->
+    <div class="actions-page-estab">
+      <input type="text" class="search-cupom" placeholder="Buscar cupons...">
+    </div>
+
+    <!-- Filtros de Status (Todos, Publicados, Expirados) -->
+ 
+  <div class="filtros-status">
+    <button class="tab-filtro-cupom active" data-status="todos">
+      Todos (<span id="count-cupons-todos">0</span>)
+    </button>
+    <button class="tab-filtro-cupom" data-status="publicados">
+      Publicados (<span id="count-cupons-publicados">0</span>)
+    </button>
+    <button class="tab-filtro-cupom" data-status="rascunhos">
+      Rascunhos (<span id="count-cupons-rascunhos">0</span>)
+    </button>
+    <button class="tab-filtro-cupom" data-status="expirados">
+      Expirados (<span id="count-cupons-expirados">0</span>)
+    </button>
+ 
+  </div>
+
+    <!-- Filtros Avançados -->
+    <div class="filtros-avancados">
+      <div class="filtro-item">
+        <label>Estabelecimento</label>
+        <select id="filtroCupomEstabelecimento" class="filtro-select">
+          <option value="Todos">Todos</option>
+        </select>
+      </div>
+
+      <div class="filtro-item">
+        <label>Grupo</label>
+        <select id="filtroCupomGrupo" class="filtro-select">
+          <option value="Todos">Todos</option>
+        </select>
+      </div>
+
+      <button class="btn-limpar-filtros" onclick="limparFiltrosCupons()">
+        Limpar Filtros
+      </button>
+    </div>
+
+    <!-- Lista de Cupons -->
+    <div id="listaPromocoes"></div>
+  </div>
+<!---
+
+    <div class="sub-page" data-subpage="criar-cupom" >
+    <form id="formCupom">
+  <h2>Cadastrar Cupom</h2>
+  <div class="row">
+ <div class="field">
+    <label>Código</label>
+    <input type="text" id="codigo" required>
+  </div>
+
+  <div class="field">
+    <label>Título</label>
+    <input type="text" id="titulo" required>
+  </div>
+
+  <div class="field">
+    <label>Título Modal</label>
+    <input type="text" id="modalTitulo" required>
+  </div>
+
+  
+  </div>
+
+  <div class="row">
+      <div class="field">
+    <label>Descrição Modal</label>
+    <input type="text" id="modalDescricao" required>
+  </div>
+  </div>
+
+  <div class="row">
+
+
+  <div class="field">
+    <label>Valor Mínimo da Compra</label>
+    <input type="number" id="valorMinimoCompra" step="0.01">
+  </div>
+    </div>
+
+  <div class="row">
+ <div class="field">
+    <label>Data Início</label>
+    <input type="datetime-local" id="dataInicio" required>
+  </div>
+
+  <div class="field">
+    <label>Data Expiração</label>
+    <input type="datetime-local" id="dataExpiracao" required>
+  </div>
+
+  </div>
+ 
+
+  <div class="row">
+  <div class="field">
+    <label>Tipo</label>
+    <input type="text" id="tipo" required>
+  </div>
+
+  </div>
+
+  <div class="row">
+    <div class="field">
+    <label>Desconto</label>
+    <input type="number" id="valorDesconto" required>
+  </div>
+
+  <div class="field">
+    <label>Limite de Uso</label>
+    <input type="number" id="limiteUso">
+  </div>
+
+  <div class="field">
+    <label>Limite de Uso por Usuário</label>
+    <input type="number" id="limiteUsoPorUsuario">
+  </div>
+
+  <div class="field">
+      <label>Ativo</label>
+      <label class="switch">
+        <input type="checkbox" id="ativo-cupom">
+        <span class="slider-edit"></span>
+      </label>
+    </div>
+  </div>
+
+  
+
+   
+<div class="row">
+ <div class="field">
+  <label for="">Estabelecimentos</label>
+  <div class="estabelecimentos-checkbox-container">
+  
+  </div>
+ </div>
+ 
+</div>
+ 
+  <div class="row">
+ <div class="field">
+    <label>Descricao</label>
+    <input type="text" id="descricao" required>
+  </div>
+  </div>
+   
+
+
+<div class="row">
+ <div class="field">
+  <label>Cartões Aceitos</label>
+  <div class="cupom-cards-row"></div>
+</div>
+</div>
+ 
+
+  <div class="row">
+  <div class="field">
+    <label for="imgGaleria">Imagem Cupom:</label>
+    <input type="file" id="imgGaleria" accept="image/*">
+  </div>
+
+  <div class="field">
+    <label for="imgModal">Imagem Modal:</label>
+    <input type="file" id="imgModal" accept="image/*">
+  </div>
+
+  </div>
+ 
+  <button type="button" onclick="cadastrarCupom()" class="btn-cad">Cadastrar Cupom</button>
+  </form>
+
+
+    </div>
+
+    -->
+
+    </div>
+
+
+    <!-- MODAL EDITAR CUPOM -->
+  <div id="modalEditarCupom" class="modal-overlay-edit-cupom">
+  <div class="modal-container-edit-cupom">
+    <button class="modal-close-edit-cupom" onclick="fecharModalEditarCupom()">×</button>
+    
+    <h3>Editar Cupom/Promoção</h3>
+
+    <div class="form-section">
+
+  <div id="imagensCupomEditContainer" class="imagens-container">
+
+  </div>
+</div>
+    <!--Editar Cupom -->
+    <form class="form-edit-cupom" onsubmit="event.preventDefault(); salvarEdicaoCupom();">
+      
+      <!-- ID (oculto) -->
+      <div class="field-edit-cupom hidden">
+        <input type="hidden" id="edit-id">
+      </div>
+
+      <!-- Código e Título -->
+      <div class="row-edit-cupom">
+        <div class="field-edit-cupom">
+          <label>Código</label>
+          <input type="text" id="edit-codigo" required>
+        </div>
+
+        <div class="field-edit-cupom">
+          <label>Título</label>
+          <input type="text" id="edit-titulo" required>
+        </div>
+      </div>
+
+      <!-- Descrição -->
+      <div class="row-edit-cupom">
+        <div class="field-edit-cupom">
+          <label>Descrição</label>
+          <textarea id="edit-descricao"></textarea>
+        </div>
+      </div>
+
+      <!-- Modal Título e Modal Descrição -->
+      <div class="row-edit-cupom">
+        <div class="field-edit-cupom">
+          <label>Título do Modal</label>
+          <input type="text" id="edit-modalTitulo">
+        </div>
+
+        <div class="field-edit-cupom">
+          <label>Descrição do Modal</label>
+          <input type="text" id="edit-modalDescricao">
+        </div>
+      </div>
+
+      <!-- Tipo e Valor Desconto -->
+      <div class="row-edit-cupom">
+        <div class="field-edit-cupom">
+          <label>Tipo de Desconto</label>
+          <select id="edit-tipo" required>
+            <option value="">Selecione</option>
+            <option value="Percentual">Percentual (%)</option>
+            <option value="Fixo">Valor Fixo (R$)</option>
+          </select>
+        </div>
+
+        <div class="field-edit-cupom">
+          <label>Valor do Desconto</label>
+          <input type="number" id="edit-desconto" step="0.01" required>
+        </div>
+      </div>
+
+      <!-- Valor Mínimo -->
+      <div class="row-edit-cupom">
+        <div class="field-edit-cupom">
+          <label>Valor Mínimo da Compra</label>
+          <input type="number" id="edit-minimo" step="0.01">
+        </div>
+      </div>
+
+      <!-- Datas -->
+      <div class="row-edit-cupom">
+        <div class="field-edit-cupom">
+          <label>Data Início</label>
+          <input type="date" id="edit-inicio" required>
+        </div>
+
+        <div class="field-edit-cupom">
+          <label>Data Expiração</label>
+          <input type="date" id="edit-expiracao" required>
+        </div>
+      </div>
+
+      <!-- Limites -->
+      <div class="row-edit-cupom">
+        <div class="field-edit-cupom">
+          <label>Limite de Uso Total</label>
+          <input type="number" id="edit-limite">
+        </div>
+
+        <div class="field-edit-cupom">
+          <label>Limite de Uso por Usuário</label>
+          <input type="number" id="edit-limiteUsuario">
+        </div>
+      </div>
+
+
+  <div class="row-edit-cupom form-edit-vinc">
+    <label>Cartões Vinculados</label>
+    <div id="cartoes-vinculados">
+
+    </div>
+    
+  </div>
+
+      <!-- Estabelecimento -->
+      <div class="row-edit-cupom">
+        <div class="field-edit-cupom">
+          <label>Estabelecimento</label>
+          <select id="edit-estabelecimento" required>
+            <option value="">Selecione um estabelecimento</option>
+            <!-- Opções carregadas via JS -->
+          </select>
+        </div>
+      </div>
+
+      <!-- Cartões Aceitos -->
+      <div class="row-edit-cupom">
+        <div class="field-edit-cupom">
+ 
+        <div class="row-edit-cupom">
+  <div class="field-edit-cupom">
+    <label>Cartões Aceitos</label>
+    <div id="edit-cartoes-container" class="cartoes-checkbox-container">
+      <!-- Checkboxes carregados via JS -->
+    </div>
+  </div>
+</div>
+
+        </div>
+      </div>
+
+      <!-- Ativo/Inativo -->
+      <div class="row-edit-cupom ativo-edit-cupom">
+        <label class="switch-edit-cupom">
+          <input type="checkbox" id="edit-ativo">
+          <span class="slider-edit-cupom"></span>
+        </label>
+        <span>Cupom ativo</span>
+      </div>
+
+      <!-- Botões -->
+      <div class="modal-actions-edit-cupom">
+        <button type="button" class="btn-cancelar-edit-cupom" onclick="fecharModalEditarCupom()">
+          Cancelar
+        </button>
+        <button type="submit" class="btn-salvar-edit-cupom">
+          Salvar Alterações
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+
+
+<!---Modal Grupo Vincular -->
+
+   <div id="modalVincularEstab" class="modal-gp hidden" onclick="fecharModalVincular()">
+  <div class="modal-gp-content" onclick="event.stopPropagation()">
+    <button onclick="fecharModalVincular()" class="modal-close">X</button>
+    <h1>Detalhes do Grupo</h1>
+
+
+    <!-- JÁ VINCULADOS -->
+    <h4 class="modal-subtitle">Estabelecimentos do grupo</h4>
+    <div id="listaEstabVinculados" class="lista-modal-gp"></div>
+
+    <!-- DISPONÍVEIS -->
+    <h4 class="modal-subtitle">Adicionar novos</h4>
+    <div id="listaEstabModal" class="lista-modal-gp"></div>
+
+    <div class="footer-gp">
+ <div class="modal-gp-header">
+
+     
+    </div>
+    <div class="modal-gp-actions">
+      <button onclick="fecharModalVincular()">Cancelar</button>
+      <button onclick="confirmarVinculo()">Adicionar</button>
+    </div>
+    </div>
+   
+  </div>
+</div>
+
+<!-- Loader Overlay -->
+<div id="modalLoader" class="modal-loader-overlay">
+  <div class="loader-container">
+    <div class="loader-spinner"></div>
+    <p class="loader-text loader-text-animated">Carregando cupom...</p>
+    <p class="loader-subtext">Aguarde um momento</p>
+  </div>
+</div>
+
+<!-- ============================================================
+     MODAL PREVIEW UNIFICADO — Criação & Visualização/Edição
+     Substitui: #modal-preview (criação) e #modalEditarOverlay2 (edição)
+     ============================================================ -->
+
+<!-- ── MODAL CRIAR ─────────────────────────────────────────── -->
+<!-- Mantém id="modal-preview" e o mesmo comportamento de antes -->
+<div id="modal-preview" class="modal-preview" style="display: none;">
+  <div class="modal-preview-container">
+   
+
+    <div class="preview-content">
+      <!-- Formulário de CRIAÇÃO (30%) -->
+      <div class="preview-form-side">
+        <div class="form-scroll">
+          <h2 class="preview-title">Cadastrar Estabelecimento</h2>
+          <form class="form-estab" id="formCadastro2">
+            <h3 class="title-form">Dados Iniciais</h3>
+            <div class="row">
+              <div class="field"><label>Nome Fantasia *</label><input type="text" placeholder="Ex: Mercado Central" id="nomeEstab2"/></div>
+              <div class="field"><label>Razão Social *</label><input type="text" placeholder="Ex: Mercado Central LTDA" id="razaoSocial2"/></div>
+            </div>
+            <div class="row">
+              <div class="field"><label>CNPJ *</label><input type="text" placeholder="00.000.000/0001-00" id="cnpj2"/></div>
+              <div class="field"><label>Ativo</label><label class="switch"><input type="checkbox" id="ativoEstab2" checked><span class="slider-edit"></span></label></div>
+            </div>
+            <div class="row">
+              <div class="field"><label>Telefone *</label><input type="text" placeholder="(11) 99999-9999" id="telefone2"/></div>
+              <div class="field"><label>Email de Contato</label><input type="email" placeholder="contato@empresa.com" id="emailContato2"/></div>
+            </div>
+            <div class="row">
+              <div class="field"><label>Grupo</label><select id="grupo2"><option value="">Selecione</option></select></div>
+              <div class="field"><label>Categoria *</label><select id="categoriaId2" onchange="atualizarPreview()"><option value="">Selecione</option></select></div>
+            </div>
+            <div class="row">
+              <div class="field full"><label>Sobre</label><textarea placeholder="Breve descrição do estabelecimento" id="sobre2" rows="3"></textarea></div>
+            </div>
+            <div class="row">
+              <div class="field"><label>Logo</label><input type="file" id="logoImagem2" onchange="previewImagem(this, 'logo')" accept="image/*"><div class="preview-img-small" id="preview-logo-small"></div></div>
+              <div class="field"><label>Fachada</label><input type="file" id="fachadaImagem2" onchange="previewImagem(this, 'fachada')" accept="image/*"><div class="preview-img-small" id="preview-fachada-small"></div></div>
+            </div>
+            <h3 class="title-form">Status</h3>
+            <div class="row">
+              <div class="field"><label>Status Editorial</label><select id="statusPublicacao2"><option value="Rascunho">Rascunho</option><option value="Publicado">Publicado</option></select></div>
+              <div class="field"><label>Status Operacional</label><select id="statusOperacional2" onchange="toggleMotivoCancelamento()"><option value="Ativo">Ativo</option><option value="Pausado">Pausado</option><option value="Cancelado">Cancelado</option></select></div>
+            </div>
+            <div class="row" id="row-motivo-cancelamento" style="display:none;">
+              <div class="field full"><label>Motivo do Cancelamento</label><textarea placeholder="Descreva o motivo..." id="motivoCancelamento2" rows="2"></textarea></div>
+            </div>
+            <h3 class="title-form">Endereço</h3>
+            <div class="row">
+              <div class="field"><label>CEP *</label><input type="text" placeholder="00000-000" id="cep2"/></div>
+              <div class="field"><label>Estado</label><select id="estadoId2"><option value="1">São Paulo</option></select></div>
+            </div>
+            <div class="row">
+              <div class="field"><label>Cidade *</label><select id="cidadeId2" onchange="atualizarPreview()"><option value="1">Americana</option></select></div>
+              <div class="field"><label>Rua *</label><input type="text" placeholder="Ex: Avenida Brasil" id="rua2"/></div>
+            </div>
+            <div class="row">
+              <div class="field"><label>Número *</label><input type="text" placeholder="123" id="numero2"/></div>
+              <div class="field"><label>Bairro</label><input type="text" placeholder="Centro" id="bairro2"/></div>
+            </div>
+            <div class="row"><div class="field full"><label>Complemento</label><input type="text" placeholder="Apto, sala, bloco (opcional)" id="complemento2"/></div></div>
+            <div class="row"><div class="field full"><label>Mapa URL</label><input type="text" id="mapurl2" placeholder="https://maps.google.com/..."/></div></div>
+            <div class="row"><button class="btn-map" type="button" onclick="extrairLatLong()">Extrair Lat/Long</button></div>
+            <div class="row">
+              <div class="field"><label>Latitude</label><input type="text" placeholder="-22.7392" id="latitude2" class="latitude2"/></div>
+              <div class="field"><label>Longitude</label><input type="text" placeholder="-47.3313" id="longitude2" class="longitude2"/></div>
+            </div>
+            <h3 class="title-form">Dados do Consultor</h3>
+            <div class="row">
+              <div class="field"><label>Nome do Consultor</label><input type="text" placeholder="Ex: João Silva" id="consultorNome2"/></div>
+              <div class="field"><label>Email do Consultor</label><input type="email" placeholder="consultor@empresa.com" id="consultorEmail2"/></div>
+            </div>
+            <h3 class="title-form">Representante Legal</h3>
+            <div class="row">
+              <div class="field"><label>Nome do Representante</label><input type="text" placeholder="Ex: Maria Oliveira" id="representanteLegalNome2"/></div>
+              <div class="field"><label>CPF do Representante</label><input type="text" placeholder="000.000.000-00" id="cpfRepresentante2"/></div>
+            </div>
+            <h3 class="title-form">Segundo Contato</h3>
+            <div class="row">
+              <div class="field"><label>Nome</label><input type="text" placeholder="Ex: Carlos Pereira" id="segundoContatoNome2"/></div>
+              <div class="field"><label>Telefone</label><input type="text" placeholder="(11) 99999-9999" id="segundoContatoTelefone2"/></div>
+            </div>
+            <div class="row"><div class="field full"><label>Cargo</label><input type="text" placeholder="Ex: Gerente, Sócio..." id="segundoContatoCargo2"/></div></div>
+            <h3 class="title-form">Cartões Aceitos</h3>
+            <div class="cards-row">
+              <label class="field-ratio"><input type="checkbox" id="cartao-1"><span>Vegas Alimentação</span></label>
+              <label class="field-ratio"><input type="checkbox" id="cartao-2"><span>Vegas Refeição</span></label>
+              <label class="field-ratio"><input type="checkbox" id="cartao-3"><span>Vegas Day</span></label>
+              <label class="field-ratio"><input type="checkbox" id="cartao-4"><span>Vegas Farmácia</span></label>
+              <label class="field-ratio"><input type="checkbox" id="cartao-5"><span>Vegas Plus</span></label>
+              <label class="field-ratio"><input type="checkbox" id="cartao-6"><span>Vegas Pay</span></label>
+            </div>
+            <div class="preview-actions">
+              <button type="button" onclick="cadastrarEstabelecimento2()" class="btn-salvar-preview">💾 Cadastrar Estabelecimento</button>
+              <button type="button" onclick="fecharPreview()" class="btn-cancelar-preview">✕ Cancelar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Preview (70%) — igual ao original -->
+      <div class="preview-display-side">
+        <div class="preview-header">
+          <h3>Pré-visualização do Site</h3>
+          <div class="preview-viewport-btns">
+
+            <button class="viewport-btn active" id="btn-desktop-p" title="Desktop">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M12.0004 16.7996V19.1996M8.40039 20.3996H15.6004M4.80039 16.7996H19.2004C20.5259 16.7996 21.6004 15.7251 21.6004 14.3996V5.99961C21.6004 4.67413 20.5259 3.59961 19.2004 3.59961H4.80039C3.47491 3.59961 2.40039 4.67413 2.40039 5.99961V14.3996C2.40039 15.7251 3.47491 16.7996 4.80039 16.7996Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+
+            <span>Desktop</span>
+            </button>
+
+            <button class="viewport-btn" id="btn-tablet-p" title="Tablet">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M8.2 5.60002H16.2M4 4.4V18.8C4 20.1255 5.07452 21.2 6.4 21.2H18C19.3255 21.2 20.4 20.1255 20.4 18.8V4.40001C20.4 3.07453 19.3255 2.00002 18 2.00001L6.4 2C5.07452 2 4 3.07452 4 4.4ZM12.2 16.4H12.285V16.4769H12.2V16.4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+            <span>Tablet</span>
+            </button>
+
+            <button class="viewport-btn" id="btn-mobile-p" title="Mobile">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M8.58647 5.63017H14.5865M5 4.4V18.8C5 20.1255 6.07452 21.2 7.4 21.2H16C17.3255 21.2 18.4 20.1255 18.4 18.8V4.40001C18.4 3.07453 17.3255 2.00002 16 2.00001L7.4 2C6.07452 2 5 3.07452 5 4.4ZM11.5865 16.4302H11.6715V16.507H11.5865V16.4302Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+              <span>Mobile</span>
+            </button>
+          </div>
+
+           <button class="btn-fechar-preview" onclick="fecharPreview()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000">
+  <path d="M20 4L4 20M20 20L4 4" stroke="black" stroke-width="2" stroke-linecap="round"/>
+</svg>
+    </button>
+      
+        </div>
+
+        <div class="preview-scroll">
+          <div class="preview-comercio-wrapper" id="preview-comercio-wrapper">
+
+            <section class="comercio-p preview-comercio">
+              <h1 class="tag-comercio" id="prev-categoria">Bares e Restaurantes</h1>
+              <div class="comercio-container viewport">
+                <div class="main-img" id="f-img"><img src="./imgs/default-image.png" class="img-comercio" id="prev-fachada-img" alt="Fachada"></div>
+                <div class="main-info">
+                  <div class="header-info-mobile mobile-header-comercio">
+                    <div class="header-info-mobile-head">
+                      <div class="img-logo"><img src="./imgs/default-image.png" class="logo" id="prev-logo-mobile" alt="Logo"></div>
+                      <div class="names-ava"><h2 class="title-comercio" id="prev-nome-mobile">Nome do Estabelecimento</h2></div>
+                    </div>
+                    <div class="main-img"><img src="./imgs/default-image.png" class="img-comercio" id="prev-fachada-mobile" alt="Fachada"></div>
+                  </div>
+                  <div class="header-info">
+                    <div class="img-logo"><img src="./imgs/default-image.png" class="logo" id="prev-logo-img" alt="Logo"></div>
+                    <div class="inner-info"><div class="names-ava"><h2 class="title-comercio" id="prev-nome">Nome do Estabelecimento</h2></div></div>
+                  </div>
+                  <div class="main-img-tablet"><img src="./imgs/default-image.png" class="img-comercio" id="prev-fachada-tablet" alt="Fachada"></div>
+                  <div class="line line-1"></div>
+                  <div class="info-cards">
+                    <div class="primary-infos">
+                      <div class="info-card adress-card"><h3>Endereço:</h3><p class="adress" id="prev-endereco">Preencha o endereço no formulário</p></div>
+                      <div class="info-card phone-card"><h3>Telefone:</h3><p class="phone" id="prev-telefone">Preencha o telefone no formulário</p></div>
+                      <div class="info-card"><h3>Sobre:</h3><p class="descricao" id="prev-sobre">Adicione uma descrição sobre o estabelecimento</p></div>
+                    </div>
+                  </div>
+                  <div class="line line-last"></div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="preview-footer-note">
+            <p>💡 <strong>Campos administrativos não visíveis:</strong> CNPJ, Razão Social, Email, Grupo, Status Ativo, Coordenadas, Cartões Aceitos</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     MODAL VER / EDITAR ESTABELECIMENTO
+     Estrutura idêntica ao modal-preview (criação)
+     IDs mantidos — nenhuma alteração de JS necessária
+     ============================================================ -->
+<div id="modal-ver-estab" class="modal-preview" style="display:none;">
+  <div class="modal-preview-container">
+
+
+   
+
+    <div class="preview-content">
+
+      <!-- ── LADO ESQUERDO: Formulário ver/editar (30%) ────── -->
+      <div class="preview-form-side">
+        <div class="form-scroll">
+
+          <!-- Cabeçalho: nome + badges + botões ação -->
+          <div class="ver-form-header">
+            <div class="ver-form-title-group">
+              <h2 class="preview-title" id="ver-form-nome-titulo" style="margin-bottom:6px;">—</h2>
+              <div class="ver-status-badges">
+                <span class="badge-pub" id="ver-badge-pub">—</span>
+                <span class="badge-op"  id="ver-badge-op">—</span>
+              </div>
+            </div>
+            <div class="ver-form-actions-top">
+              <button class="btn-salvar-preview" id="btn-ativar-edicao" type="button" onclick="ativarModoEdicao()">
+                ✏️ Editar
+              </button>
+              <button class="btn-salvar-preview" id="btn-salvar-edicao" type="button" style="display:none; background:#15803d;" onclick="salvarEdicaoUnificada()">
+                💾 Salvar alterações
+              </button>
+              <button class="btn-cancelar-preview" id="btn-cancelar-edicao" type="button" style="display:none;" onclick="cancelarModoEdicao()">
+                ✕ Cancelar edição
+              </button>
+
+              <button class="btn-cancelar-preview" id="btn-excluir-estab" type="button" 
+          style="background:#dc2626;" onclick="excluirEstabDoModal()">
+    🗑️ Excluir
+  </button>
+            </div>
+          </div>
+
+          <input type="hidden" id="ver-estab-id">
+
+          <!-- IMAGENS -->
+          <h3 class="title-form">Imagens</h3>
+          <div class="row">
+            <div id="ver-imagens-container" class="ver-imagens-grid" style="width:100%;"></div>
+          </div>
+
+          <!-- DADOS PRINCIPAIS -->
+          <h3 class="title-form">Dados Principais</h3>
+
+          <div class="row">
+            <div class="field">
+              <label>Nome Fantasia</label>
+              <div class="ver-value" id="vv-nome">—</div>
+              <input class="ver-input" id="vi-nomeEstab" type="text" placeholder="Nome Fantasia" style="display:none;">
+            </div>
+            <div class="field">
+              <label>Razão Social</label>
+              <div class="ver-value" id="vv-razaoSocial">—</div>
+              <input class="ver-input" id="vi-razaoSocial" type="text" placeholder="Razão Social" style="display:none;">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label>CNPJ</label>
+              <div class="ver-value" id="vv-cnpj">—</div>
+              <input class="ver-input" id="vi-cnpj" type="text" placeholder="00.000.000/0001-00" style="display:none;">
+            </div>
+            <div class="field">
+              <label>Telefone</label>
+              <div class="ver-value" id="vv-telefone">—</div>
+              <input class="ver-input" id="vi-telefone" type="text" placeholder="(11) 99999-9999" style="display:none;">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label>Email de Contato</label>
+              <div class="ver-value" id="vv-email">—</div>
+              <input class="ver-input" id="vi-email" type="email" placeholder="contato@empresa.com" style="display:none;">
+            </div>
+            <div class="field">
+              <label>Categoria</label>
+              <div class="ver-value" id="vv-categoria">—</div>
+              <select class="ver-input" id="vi-categoriaId" style="display:none;"></select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field full">
+              <label>Sobre</label>
+              <div class="ver-value" id="vv-sobre">—</div>
+              <textarea class="ver-input" id="vi-sobre" rows="3" placeholder="Descrição do estabelecimento" style="display:none;"></textarea>
+            </div>
+          </div>
+
+          <!-- STATUS -->
+          <h3 class="title-form">Status</h3>
+
+          <div class="row">
+            <div class="field">
+              <label>Status Editorial</label>
+              <div class="ver-value" id="vv-statusPub">—</div>
+              <select class="ver-input" id="vi-statusPub" style="display:none;">
+                <option value="Rascunho">Rascunho</option>
+                <option value="Publicado">Publicado</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Status Operacional</label>
+              <div class="ver-value" id="vv-statusOp">—</div>
+              <select class="ver-input" id="vi-statusOp" style="display:none;" onchange="toggleMotivoVer()">
+                <option value="Ativo">Ativo</option>
+                <option value="Pausado">Pausado</option>
+                <option value="Cancelado">Cancelado</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row" id="ver-row-motivo" style="display:none;">
+            <div class="field full">
+              <label>Motivo do Cancelamento</label>
+              <div class="ver-value" id="vv-motivo">—</div>
+              <textarea class="ver-input" id="vi-motivo" rows="2" placeholder="Descreva o motivo..." style="display:none;"></textarea>
+            </div>
+          </div>
+
+          <!-- ENDEREÇO -->
+          <h3 class="title-form">Endereço</h3>
+
+          <div class="row">
+            <div class="field">
+              <label>CEP</label>
+              <div class="ver-value" id="vv-cep">—</div>
+              <input class="ver-input" id="vi-cep" type="text" placeholder="00000-000" style="display:none;">
+            </div>
+            <div class="field">
+              <label>Estado</label>
+              <div class="ver-value" id="vv-estado">—</div>
+              <select class="ver-input" id="vi-estadoId" style="display:none;" onchange="carregarCidadesVer()"></select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label>Cidade</label>
+              <div class="ver-value" id="vv-cidade">—</div>
+              <select class="ver-input" id="vi-cidadeId" style="display:none;"></select>
+            </div>
+            <div class="field">
+              <label>Rua</label>
+              <div class="ver-value" id="vv-rua">—</div>
+              <input class="ver-input" id="vi-rua" type="text" placeholder="Ex: Avenida Brasil" style="display:none;">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label>Número</label>
+              <div class="ver-value" id="vv-numero">—</div>
+              <input class="ver-input" id="vi-numero" type="text" placeholder="123" style="display:none;">
+            </div>
+            <div class="field">
+              <label>Bairro</label>
+              <div class="ver-value" id="vv-bairro">—</div>
+              <input class="ver-input" id="vi-bairro" type="text" placeholder="Centro" style="display:none;">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field full">
+              <label>Complemento</label>
+              <div class="ver-value" id="vv-complemento">—</div>
+              <input class="ver-input" id="vi-complemento" type="text" placeholder="Apto, sala, bloco (opcional)" style="display:none;">
+            </div>
+          </div>
+
+          <!-- MAPA -->
+          <h3 class="title-form">Mapa</h3>
+
+          <div class="row">
+            <div class="field full">
+              <label>URL Google Maps</label>
+              <div class="ver-value" id="vv-mapurl">—</div>
+              <input class="ver-input" id="vi-mapurl" type="text" placeholder="https://maps.google.com/..." style="display:none;">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label>Latitude</label>
+              <div class="ver-value" id="vv-latitude">—</div>
+              <input class="ver-input" id="vi-latitude" type="text" placeholder="-22.7392" style="display:none;">
+            </div>
+            <div class="field">
+              <label>Longitude</label>
+              <div class="ver-value" id="vv-longitude">—</div>
+              <input class="ver-input" id="vi-longitude" type="text" placeholder="-47.3313" style="display:none;">
+            </div>
+          </div>
+
+          <!-- DADOS DO CONSULTOR -->
+          <h3 class="title-form">Dados do Consultor</h3>
+
+          <div class="row">
+            <div class="field">
+              <label>Nome do Consultor</label>
+              <div class="ver-value" id="vv-consultorNome">—</div>
+              <input class="ver-input" id="vi-consultorNome" type="text" placeholder="Ex: João Silva" style="display:none;">
+            </div>
+            <div class="field">
+              <label>Email do Consultor</label>
+              <div class="ver-value" id="vv-consultorEmail">—</div>
+              <input class="ver-input" id="vi-consultorEmail" type="email" placeholder="consultor@empresa.com" style="display:none;">
+            </div>
+          </div>
+
+          <!-- REPRESENTANTE LEGAL -->
+          <h3 class="title-form">Representante Legal</h3>
+
+          <div class="row">
+            <div class="field">
+              <label>Nome do Representante</label>
+              <div class="ver-value" id="vv-repNome">—</div>
+              <input class="ver-input" id="vi-repNome" type="text" placeholder="Ex: Maria Oliveira" style="display:none;">
+            </div>
+            <div class="field">
+              <label>CPF do Representante</label>
+              <div class="ver-value" id="vv-repCpf">—</div>
+              <input class="ver-input" id="vi-repCpf" type="text" placeholder="000.000.000-00" style="display:none;">
+            </div>
+          </div>
+
+          <!-- SEGUNDO CONTATO -->
+          <h3 class="title-form">Segundo Contato</h3>
+
+          <div class="row">
+            <div class="field">
+              <label>Nome</label>
+              <div class="ver-value" id="vv-seg2Nome">—</div>
+              <input class="ver-input" id="vi-seg2Nome" type="text" placeholder="Ex: Carlos Pereira" style="display:none;">
+            </div>
+            <div class="field">
+              <label>Telefone</label>
+              <div class="ver-value" id="vv-seg2Tel">—</div>
+              <input class="ver-input" id="vi-seg2Tel" type="text" placeholder="(11) 99999-9999" style="display:none;">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field full">
+              <label>Cargo</label>
+              <div class="ver-value" id="vv-seg2Cargo">—</div>
+              <input class="ver-input" id="vi-seg2Cargo" type="text" placeholder="Ex: Gerente, Sócio..." style="display:none;">
+            </div>
+          </div>
+
+          <!-- CARTÕES -->
+          <!-- DEPOIS -->
+<h3 class="title-form">Cartões Aceitos</h3>
+<div class="row">
+  <div class="field full">
+    <!-- Modo visualização: badges -->
+    <div id="ver-cartoes-container" class="ver-cartoes-lista ver-value"></div>
+    <!-- Modo edição: checkboxes (mesmo estilo do formulário de criação) -->
+    <div id="ver-cartoes-edit" class="cards-row ver-input" style="display:none;">
+
+    </div>
+  </div>
+</div>
+          <!-- Botões rodapé (modo edição) -->
+          <div class="preview-actions" id="ver-actions-rodape" style="display:none;">
+            <button type="button" class="btn-salvar-preview" onclick="salvarEdicaoUnificada()">
+              💾 Salvar alterações
+            </button>
+            <button type="button" class="btn-cancelar-preview" onclick="cancelarModoEdicao()">
+              ✕ Cancelar edição
+            </button>
+          </div>
+
+        </div><!-- /form-scroll -->
+      </div><!-- /preview-form-side -->
+
+      <!-- ── LADO DIREITO: Preview do site (70%) ───────────── -->
+      <div class="preview-display-side">
+        <div class="preview-header">
+          <h3>Pré-Visualização do Site</h3>
+          <div class="preview-viewport-btns">
+
+            <button class="viewport-btn active" id="btn-desktop-v" title="Desktop" onclick="mudarViewportVer('desktop')">
+
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              <span>Desktop</span>
+
+            </button>
+
+            <button class="viewport-btn" id="btn-tablet-v" title="Tablet" onclick="mudarViewportVer('tablet')">
+
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="18" r="1" fill="currentColor"/></svg>
+               <span>Tablet</span>
+
+            </button>
+
+
+            <button class="viewport-btn" id="btn-mobile-v" title="Mobile" onclick="mudarViewportVer('mobile')">
+
+              <svg width="16" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="18" r="1" fill="currentColor"/></svg>
+               <span>Mobile</span>
+
+            </button>
+          </div>
+
+           <button class="btn-fechar-preview" onclick="fecharVerEstab()">
+     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M20 4L4 20M20 20L4 4" stroke="black" stroke-width="2" stroke-linecap="round"/>
+</svg>
+    </button>
+         
+        </div>
+
+        <div class="preview-scroll">
+          <div class="preview-comercio-wrapper" id="ver-preview-wrapper">
+
+            <section class="comercio-p preview-comercio">
+              <h1 class="tag-comercio" id="ver-categoria">—</h1>
+
+              <div class="comercio-container viewport">
+
+                <div class="main-img" id="ver-f-img">
+                  <img src="./imgs/default-image.png" class="img-comercio" id="ver-fachada-img" alt="Fachada">
+                </div>
+
+                <div class="main-info">
+                  <div class="header-info-mobile mobile-header-comercio">
+                    <div class="header-info-mobile-head">
+                      <div class="img-logo"><img src="./imgs/default-image.png" class="logo" id="ver-logo-mobile" alt="Logo"></div>
+                      <div class="names-ava"><h2 class="title-comercio" id="ver-nome-mobile">—</h2></div>
+                    </div>
+                    <div class="main-img"><img src="./imgs/default-image.png" class="img-comercio" id="ver-fachada-mobile" alt="Fachada"></div>
+                  </div>
+
+                  <div class="header-info">
+                    <div class="img-logo"><img src="./imgs/default-image.png" class="logo" id="ver-logo-img" alt="Logo"></div>
+                    <div class="inner-info"><div class="names-ava"><h2 class="title-comercio" id="ver-nome">—</h2></div></div>
+                  </div>
+
+                  <div class="main-img-tablet">
+                    <img src="./imgs/default-image.png" class="img-comercio" id="ver-fachada-tablet" alt="Fachada">
+                  </div>
+
+                  <div class="line line-1"></div>
+
+                  <div class="info-cards">
+                    <div class="primary-infos">
+                      <div class="info-card adress-card"><h3>Endereço:</h3><p class="adress" id="ver-endereco">—</p></div>
+                      <div class="info-card phone-card"><h3>Telefone:</h3><p class="phone" id="ver-telefone">—</p></div>
+                      <div class="info-card"><h3>Sobre:</h3><p class="descricao" id="ver-sobre">—</p></div>
+                    </div>
+                  </div>
+
+                  <div class="line line-last"></div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <div class="preview-footer-note">
+            <p>💡 <strong>Campos administrativos não visíveis:</strong> CNPJ, Razão Social, Email, Coordenadas, Cartões Aceitos</p>
+          </div>
+        </div>
+      </div><!-- /preview-display-side -->
+
+    </div><!-- /preview-content -->
+  </div><!-- /modal-preview-container -->
+</div><!-- /#modal-ver-estab -->
+
+
+<!--preview cupom-->
+
+<!-- Modal Preview Cupom — Unificado (Criar + Ver + Editar) -->
+<div id="modal-preview-cupom" class="mpc-overlay" style="display:none;">
+  <div class="mpc-container">
+
+    <!-- Botão fechar -->
+    <button class="mpc-btn-fechar" onclick="fecharPreviewCupom()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+
+    <!-- Layout: 35% form | 65% preview -->
+    <div class="mpc-layout">
+
+      <!-- ── Lado Esquerdo: Formulário ── -->
+      <div class="mpc-form-side">
+        <div class="mpc-form-scroll">
+
+          <!-- Header dinâmico -->
+          <div class="ver-form-header" style="margin-bottom:16px;">
+            <h2 class="mpc-form-title" id="cp-form-titulo">Cadastrar Cupom</h2>
+
+            <!-- Badges de status (só no modo visualização de edição) -->
+            <div class="ver-status-badges" id="cp-status-badges" style="display:none;">
+              <span id="cp-badge-status" class="badge-pub">Rascunho</span>
+              <span id="cp-badge-ativo"  class="badge-op">Ativo</span>
+            </div>
+
+            <!-- Botões do topo (modo visualização) -->
+            <div class="ver-form-actions-top" id="cp-actions-visualizacao" style="display:none;">
+              <button type="button" class="btn-ativar-edicao" id="btn-ativar-edicao-cupom"
+                      onclick="ativarModoEdicaoCupom()">
+                ✏️ Editar
+              </button>
+            </div>
+
+            <!-- Botões do topo (modo edição) -->
+            <div class="ver-form-actions-top" id="cp-actions-edicao" style="display:none;">
+              <button type="button" class="btn-salvar-preview" id="btn-salvar-edicao-cupom"
+                      onclick="salvarEdicaoCupom()">
+                💾 Salvar
+              </button>
+              <button type="button" class="btn-cancelar-preview" id="btn-cancelar-edicao-cupom"
+                      onclick="cancelarModoEdicaoCupom()">
+                ✕ Cancelar
+              </button>
+            </div>
+          </div>
+
+          <!-- ══════════════════════════════════════════════
+               FORMULÁRIO — usado em modo CRIAÇÃO e EDIÇÃO
+               ============================================== -->
+          <form id="formCupomPreview" autocomplete="off">
+
+            <!-- Código / Título -->
+            <div class="row">
+              <div class="field">
+                <label>Código</label>
+                <span class="ver-value" id="vv-cp-codigo">—</span>
+                <input class="ver-input" type="text" id="cp-codigo" placeholder="EX: PROMO10">
+              </div>
+              
+              <div class="field">
+                <label>Título</label>
+                <span class="ver-value" id="vv-cp-titulo">—</span>
+                <input class="ver-input" type="text" id="cp-titulo" placeholder="Título do cupom">
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="field">
+                <label for="">Tag</label>
+                <input type="text" class="ver-input" id="cp-tagCupom" max="30" maxlength="30">
+              </div>
+            </div>
+
+            <!-- Descrição Card -->
+            <div class="row">
+              <div class="field">
+                <label>Descrição Card</label>
+                <span class="ver-value" id="vv-cp-descricao">—</span>
+                <input class="ver-input" type="text" id="cp-descricao" placeholder="Descrição do card"  max="50" maxlength="50">
+              </div>
+            </div>
+
+             <!-- Título Modal -->
+            <div class="row">
+              <div class="field">
+                <label>Título Modal</label>
+                <span class="ver-value" id="vv-cp-modalTitulo">—</span>
+                <input class="ver-input" type="text" id="cp-modalTitulo" placeholder="Título do modal">
+              </div>
+            </div>
+
+            <!-- Descrição Modal -->
+            <div class="row">
+              <div class="field">
+                <label>Descrição Modal</label>
+                <span class="ver-value" id="vv-cp-modalDescricao">—</span>
+                <input class="ver-input" type="text" id="cp-modalDescricao" placeholder="Descrição do modal">
+              </div>
+            </div>
+
+            <!-- Desconto / Valor Mínimo -->
+            <div class="row">
+              <div class="field">
+                <label>Desconto (%)</label>
+                <span class="ver-value" id="vv-cp-valorDesconto">—</span>
+                <input class="ver-input" type="number" id="cp-valorDesconto" min="0" max="100">
+              </div>
+              <div class="field">
+                <label>Valor Mínimo</label>
+                <span class="ver-value" id="vv-cp-valorMinimoCompra">—</span>
+                <input class="ver-input" type="number" id="cp-valorMinimoCompra" min="0" step="0.01">
+              </div>
+            </div>
+
+            <!-- Datas -->
+            <div class="row">
+              <div class="field">
+                <label>Data Início</label>
+                <span class="ver-value" id="vv-cp-dataInicio">—</span>
+                <input class="ver-input" type="datetime-local" id="cp-dataInicio">
+              </div>
+              <div class="field">
+                <label>Data Expiração</label>
+                <span class="ver-value" id="vv-cp-dataExpiracao">—</span>
+                <input class="ver-input" type="datetime-local" id="cp-dataExpiracao">
+              </div>
+            </div>
+
+            <!-- Limites / Ativo -->
+            <div class="row">
+              <div class="field">
+                <label>Limite de Uso</label>
+                <span class="ver-value" id="vv-cp-limiteUso">—</span>
+                <input class="ver-input" type="number" id="cp-limiteUso">
+              </div>
+              <div class="field">
+                <label>Limite por Usuário</label>
+                <span class="ver-value" id="vv-cp-limiteUsoPorUsuario">—</span>
+                <input class="ver-input" type="number" id="cp-limiteUsoPorUsuario">
+              </div>
+              <div class="field">
+                <label>Ativo</label>
+                <!-- visualização -->
+                <span class="ver-value" id="vv-cp-ativo">—</span>
+                <!-- edição -->
+                <label class="switch ver-input" style="display:none;">
+                  <input type="checkbox" id="cp-ativo" checked>
+                  <span class="slider-edit"></span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Estabelecimentos -->
+            <div class="row">
+              <div class="field">
+                <label>Estabelecimento</label>
+                <span class="ver-value" id="vv-cp-estab">—</span>
+                <div class="ver-input estabelecimentos-checkbox-container"
+                     id="cp-estab-container" style="display:none;"></div>
+              </div>
+            </div>
+
+            <!-- Cartões Aceitos -->
+            <div class="row">
+              <div class="field">
+                <label>Cartões Aceitos</label>
+                <!-- visualização: badges -->
+                <div class="ver-value" id="vv-cp-cartoes" style="display:flex;flex-wrap:wrap;gap:6px;">
+                  <span style="color:#999;">Nenhum</span>
+                </div>
+                <!-- edição: checkboxes -->
+                <div class="ver-input cupom-cards-row" id="cp-cards-row-preview" style="display:none;"></div>
+              </div>
+            </div>
+
+            <!-- Imagens (só no modo edição / criação) -->
+            <div class="row ver-input" id="cp-row-imagens" style="display:none;">
+              <div class="field">
+                <label>Imagem Cupom (Card)</label>
+                <input type="file" id="cp-imgGaleria" class="input-cp" accept="image/*"
+                       onchange="cpPreviewImagem(this,'galeria')">
+                <div id="cp-thumb-galeria" class="preview-img-small"></div>
+              </div>
+              <div class="field">
+                <label>Imagem Modal</label>
+                <input type="file" id="cp-imgModal" class="input-cp" accept="image/*"
+                       onchange="cpPreviewImagem(this,'modal')">
+                <div id="cp-thumb-modal" class="preview-img-small"></div>
+              </div>
+            </div>
+
+            <!-- Ações rodapé — só modo CRIAÇÃO -->
+            <div class="preview-actions" id="cp-actions-rodape-criar">
+              <button type="button" onclick="cadastrarCupom()" class="btn-salvar-preview">
+                💾 Cadastrar Cupom
+              </button>
+              <button type="button" onclick="fecharPreviewCupom()" class="btn-cancelar-preview">
+                ✕ Cancelar
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+      <!-- ── Lado Direito: Preview ── -->
+      <div class="mpc-preview-side">
+        <div class="mpc-preview-header">
+          <h3>🖥️ Preview do Cupom</h3>
+         
+        </div>
+
+        <div class="mpc-preview-scroll">
+
+          <!-- CARD DO CUPOM -->
+          <div style="max-width:360px; margin: 0 auto 40px;">
+            <article class="coupon-card">
+              <div class="coupon-media">
+                <img id="cpv-card-img" src="./imgs/default-image.png" loading="lazy">
+                <span class="coupon-badge">
+                  <strong id="cpv-badge-titulo">5% De desconto!</strong>
+                </span>
+              </div>
+              <div class="coupon-body">
+                <div class="coupon-meta">
+                  <span class="meta-cat" id="cpv-meta-cat">Categoria</span>
+                  <div class="meta-pills" id="cpv-meta-pills"></div>
+                </div>
+                <h3 class="coupon-title" id="cpv-titulo">Título do cupom</h3>
+                <p class="coupon-sub" id="cpv-descricao">Descrição do cupom aparece aqui</p>
+                <button class="coupon-cta" type="button" onclick="abrirModalCupomPreview()">
+                  Ver Oferta
+                </button>
+                <p class="coupon-valid">Válido até <span id="cpv-validade">--/--/----</span></p>
+              </div>
+            </article>
+          </div>
+
+          <!-- MODAL DO CUPOM -->
+          <div class="mpc-modal-preview-wrap" id="cpv-modal-wrap" style="display:none;">
+            <div class="coupon-modal" style="position:relative;transform:none;left:auto;top:auto;max-width:100%;box-shadow:0 30px 70px rgba(10,15,35,.25);">
+              <button class="cm-close" style="position:absolute;right:-20px;top:-20px;"
+                      aria-label="Fechar" onclick="fecharModalCupomPreview()">&times;</button>
+              <div class="cm-wrap">
+                <div class="cm-topchips">
+                  <span class="cm-chip" id="cpv-modal-chip-validade">
+                    <svg viewBox="0 0 24 24"><path d="M8 2v3M16 2v3M3 8h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg>
+                    Válido até --/--/----
+                  </span>
+                  <span class="cm-chip" id="cpv-modal-chip-estab">
+                    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    Categoria
+                  </span>
+                </div>
+                <div class="cm-badge">
+                  <img id="cpv-modal-img" src="./imgs/default-image.png" alt="desconto" loading="lazy"
+                       style="width:390px;height:291px;display:block;">
+                </div>
+                <h2 class="cm-title" id="cpv-modal-titulo"
+                    style="text-align:center;color:#1e2340;font-size:22px;font-weight:700;margin:12px 0 8px;">
+                  Título do Modal
+                </h2>
+                <p class="cm-sub" id="cpv-modal-descricao"
+                   style="text-align:center;font-size:14px;color:#586274;margin-bottom:16px;">
+                  Descrição modal aparece aqui
+                </p>
+                <p class="aceitos-cm" style="text-align:center;font-weight:600;font-size:14px;margin-bottom:10px;">
+                  Cartões Aceitos:
+                </p>
+                <div class="cm-pills" id="cpv-modal-pills"
+                     style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px;"></div>
+                <div class="cm-alert" style="background:#f1f3fb;border-radius:12px;padding:16px;text-align:center;margin-bottom:16px;">
+                  <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:6px;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3446b8" stroke-width="2">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                    <strong style="color:#3446b8;font-size:15px;">Atenção!</strong>
+                  </div>
+                  <p style="color:#3446b8;font-weight:600;font-size:13px;margin:0 0 4px 0;">
+                    Esta oferta é válida até <span id="cpv-modal-validade-texto">--/--/----</span>
+                  </p>
+                  <p class="subvalid-cm" style="font-size:12px;color:#586274;margin:0;">
+                    Não acumulável com outras promoções. Apresente o cupom no momento do pedido.
+                  </p>
+                </div>
+                <a href="#" class="cm-cta" role="button"
+                   style="display:block;text-align:center;background:#3446b8;color:#fff;border-radius:999px;padding:14px;font-weight:700;text-decoration:none;">
+                  Consultar no mapa
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="preview-footer-note" style="margin-top:24px;">
+            <p>💡 Clique em <strong>"Ver Oferta"</strong> para visualizar o modal.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+    </div>
+    </div>
+
+    <script src="./scripts/env.js"></script>
+    <script type="module" src="./scripts/pages/paineladmin.js"></script>
+   
+
+
+    <script>
+  const menuItems = document.querySelectorAll(".lista-sidebar li");
+const pages = document.querySelectorAll(".main-dash .page");
+const rotaTexto = document.querySelector(".rotas-tela span");
+const rotaIcone = document.querySelector(".rotas-dash i");
+
+function showPage(pageName) {
+  pages.forEach(page => {
+    page.style.display =
+      page.dataset.page === pageName ? "block" : "none";
+  });
+
+  // Atualiza o texto do breadcrumb
+  const nomesAmigaveis = {
+    "dashboard": "Dashboard",
+    "estabelecimentos": "Gerenciar Estabelecimentos",
+    "promocoes": "Gerenciar Promoções"
+  };
+  
+  rotaTexto.textContent = `/ ${nomesAmigaveis[pageName] || pageName}`;
+  
+  // Atualiza o ícone do breadcrumb
+  const itemAtivo = document.querySelector(`.lista-sidebar li[data-page="${pageName}"]`);
+  if (itemAtivo) {
+    const iconeOriginal = itemAtivo.querySelector("svg");
+    if (iconeOriginal) {
+      // Clona o SVG e substitui o conteúdo do <i>
+      const iconeClonado = iconeOriginal.cloneNode(true);
+      rotaIcone.innerHTML = "";
+      rotaIcone.appendChild(iconeClonado);
+    }
+  }
+}
+
+menuItems.forEach(item => {
+  item.addEventListener("click", () => {
+    const pageName = item.dataset.page;
+
+    // menu ativo
+    menuItems.forEach(i => i.classList.remove("active"));
+    item.classList.add("active");
+
+    showPage(pageName);
+  });
+});
+
+// Tela inicial
+showPage("dashboard");
+menuItems[0].classList.add("active");
+</script>
+
+</body>
+</html>
