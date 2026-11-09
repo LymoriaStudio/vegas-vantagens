@@ -31,6 +31,9 @@
      max-width: 1512px;
     margin: 0 auto;
     margin-top: 55px;
+    /* mesma margem lateral do banner (.hero-prod) e dos cards (.vantagens-prod),
+       para o texto não ficar mais largo que eles no desktop */
+    padding-inline: 104px;
 }
 
 .copy-after h1 {
@@ -97,8 +100,11 @@ line-height: 30px; /* 125% */
 
 .btn-conhecer {
         background: linear-gradient(90deg, #828EC5 0%, #DBA092 100%);
-    min-height: 40px;
-height: 48px;
+    /* altura mínima em vez de fixa: no mobile o texto pode quebrar em 2 linhas */
+    min-height: 48px;
+    height: auto;
+    line-height: 1.2;
+    text-align: center;
 padding: 12px 24px;
     border-radius: 8px;
     border: none;
@@ -387,6 +393,10 @@ line-height: 20px; /* 125% */
     .hero-prod {
         padding-inline: 104px;
         
+    }
+
+    .copy-after {
+        padding-inline: 0; /* no tablet/mobile o limite é o max-width: 80% do parágrafo */
     }
 
     .copy-after h1 {
