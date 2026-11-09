@@ -63,6 +63,8 @@ imgs/
   icons/              ícones (inclusive os 4 ícones de cada landing)
 enviar-user.php       formulário "Faça parte do clube"
 enviar-parceiro.php   formulário "Cadastre seu comércio"
+paineladmin.html      painel admin novo (módulos em scripts/pages/paineladmin/)
+mock/                 API mockada para localhost (server.py + seed.json) — nunca em produção
 ```
 
 ### Rodar localmente
@@ -72,6 +74,23 @@ php -S localhost:8000
 ```
 
 (ou `python -m http.server` se não precisar dos formulários). `file://` não funciona por causa dos módulos ES. Copie `scripts/env.example.js` para `scripts/env.js` e preencha as credenciais.
+
+### API mockada (somente localhost)
+
+Para trabalhar no painel admin sem depender da API real (que bloqueia `localhost` por CORS), use o servidor mock:
+
+```bash
+python mock/server.py
+```
+
+Deixe esse terminal aberto e abra o painel por `http://localhost:8765/paineladmin.html` **ou** pelo Live Server do VS Code (ex.: `http://127.0.0.1:5501/.../paineladmin.html`). Em localhost as chamadas vão sempre para o mock na porta 8765, qualquer que seja a porta da página; o mock libera CORS só para origens localhost. Se o painel mostrar "Erro ao carregar estabelecimentos", o `mock/server.py` não está rodando.
+
+- **Quando liga:** `scripts/auth.js` troca o `API_BASE` para `/mock-api` **apenas** quando o hostname é `localhost`, `127.0.0.1` ou `[::1]`. Em qualquer outro domínio (produção, homologação) usa a API real do `env.js`. O servidor mock também só escuta em `127.0.0.1`.
+- **Dados:** `mock/seed.json` é o estado inicial (Zanini e Boi Que Mia + 2 cupons, categorias, cartões, UFs, cidades). Na primeira execução ele é copiado para `mock/db.json`, que vai sendo alimentado com tudo que você cadastra/edita/exclui no painel. Uploads de imagem vão para `mock/uploads/`.
+- **Zerar:** apague `mock/db.json` (e `mock/uploads/`).
+- `mock/db.json` e `mock/uploads/` estão no `.gitignore`. A pasta `mock/` **não deve ir para o servidor de produção**.
+- Rota não implementada responde 404 e aparece no terminal como `[mock] ROTA NÃO IMPLEMENTADA`; adicione-a em `mock/server.py`.
+- Sem token no `localStorage`, o mock grava `mock-token` (o painel exige um token).
 
 ---
 

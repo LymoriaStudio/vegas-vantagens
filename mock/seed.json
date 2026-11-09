@@ -1,0 +1,158 @@
+{
+  "_aviso": "DADOS MOCKADOS - uso exclusivo em localhost. Nunca usar em producao. Este e o estado inicial; o servidor mock copia para mock/db.json na primeira execucao.",
+  "categorias": [
+    { "id": 1, "nome": "Alimentação" },
+    { "id": 2, "nome": "Presentes" },
+    { "id": 3, "nome": "Brinquedos" },
+    { "id": 4, "nome": "Óticas" },
+    { "id": 5, "nome": "Barbearias" },
+    { "id": 6, "nome": "Petshop" },
+    { "id": 7, "nome": "Bares / Restaurantes" },
+    { "id": 8, "nome": "Cosméticos" },
+    { "id": 9, "nome": "Veículos" }
+  ],
+  "cartoes": [
+    { "id": 1, "nome": "Vegas Day" },
+    { "id": 2, "nome": "Vegas Plus" },
+    { "id": 3, "nome": "Vegas Alimentação" },
+    { "id": 4, "nome": "Vegas Refeição" },
+    { "id": 5, "nome": "Vegas Combustível" }
+  ],
+  "unidadesFederativas": [
+    { "id": 1, "nome": "São Paulo", "sigla": "SP" },
+    { "id": 2, "nome": "Rio de Janeiro", "sigla": "RJ" }
+  ],
+  "cidades": [
+    { "id": 1, "nome": "Americana", "unidadeFederativaId": 1 },
+    { "id": 2, "nome": "Santa Bárbara d'Oeste", "unidadeFederativaId": 1 },
+    { "id": 3, "nome": "Nova Odessa", "unidadeFederativaId": 1 },
+    { "id": 4, "nome": "Sumaré", "unidadeFederativaId": 1 },
+    { "id": 5, "nome": "Campinas", "unidadeFederativaId": 1 },
+    { "id": 6, "nome": "Rio de Janeiro", "unidadeFederativaId": 2 }
+  ],
+  "grupos": [],
+  "estabelecimentos": [
+    {
+      "id": 3,
+      "nome": "Zanini",
+      "razaoSocial": "",
+      "cnpj": "",
+      "telefone": "",
+      "emailContato": "",
+      "ativo": true,
+      "statusPublicacao": "Publicado",
+      "statusOperacional": "Ativo",
+      "motivoCancelamento": "",
+      "categoriaIds": [3],
+      "cidadeId": 1,
+      "rua": "",
+      "numero": "",
+      "bairro": "",
+      "complemento": "",
+      "cep": "",
+      "latitude": null,
+      "longitude": null,
+      "mapaUrl": "",
+      "sobre": "Tudo para sua casa e família! Cliente Vegas tem 10% de desconto em qualquer produto da loja.",
+      "grupoId": null,
+      "consultorNome": "",
+      "consultorEmail": "",
+      "representanteLegalNome": "",
+      "cpfRepresentante": "",
+      "segundoContatoNome": "",
+      "segundoContatoTelefone": "",
+      "segundoContatoCargo": "",
+      "cartoesAceitosIds": [1, 2],
+      "imagens": [
+        { "id": 1, "url": "./imgs/logos/logo-zanini.png", "principal": true, "logo": true, "fachada": false },
+        { "id": 2, "url": "./imgs/comercios/zanini-est.webp", "principal": false, "logo": false, "fachada": true }
+      ]
+    },
+    {
+      "id": 5,
+      "nome": "Boi Que Mia - Grill Bar",
+      "razaoSocial": "",
+      "cnpj": "",
+      "telefone": "",
+      "emailContato": "",
+      "ativo": true,
+      "statusPublicacao": "Publicado",
+      "statusOperacional": "Ativo",
+      "motivoCancelamento": "",
+      "categoriaIds": [7],
+      "cidadeId": 1,
+      "rua": "",
+      "numero": "",
+      "bairro": "",
+      "complemento": "",
+      "cep": "",
+      "latitude": null,
+      "longitude": null,
+      "mapaUrl": "",
+      "sobre": "Grill bar. Cliente Vegas ganha 1 pão de alho ou queijo coalho por conta da casa.",
+      "grupoId": null,
+      "consultorNome": "",
+      "consultorEmail": "",
+      "representanteLegalNome": "",
+      "cpfRepresentante": "",
+      "segundoContatoNome": "",
+      "segundoContatoTelefone": "",
+      "segundoContatoCargo": "",
+      "cartoesAceitosIds": [1, 2, 4],
+      "imagens": [
+        { "id": 3, "url": "./imgs/logos/boi-logo.png", "principal": true, "logo": true, "fachada": false },
+        { "id": 4, "url": "./imgs/comercios/boimia.jpg", "principal": false, "logo": false, "fachada": true }
+      ]
+    }
+  ],
+  "cupons": [
+    {
+      "id": 1,
+      "codigo": "MOCK-ZANINI10",
+      "titulo": "10% de desconto na Zanini",
+      "descricao": "Cliente Vegas tem 10% de desconto em qualquer produto da loja.",
+      "modalTitulo": "Presentes para toda a família pagando 10% mais barato na Zanini!",
+      "modalDescricao": "Faça compras a partir de R$ 100,00 na Zanini e pague 10% a menos com seu Vegas Card.",
+      "tipo": "Percentual",
+      "tag": "Brinquedos",
+      "valorDesconto": 10,
+      "valorMinimoCompra": 100,
+      "dataInicio": "2026-01-01T00:00:00.000Z",
+      "dataExpiracao": "2026-12-31T23:59:00.000Z",
+      "limiteUso": 0,
+      "limiteUsoPorUsuario": 0,
+      "ativo": true,
+      "status": "Publicado",
+      "estabelecimentoId": 3,
+      "cartoesAceitosIds": [1, 2],
+      "imagens": [
+        { "id": 1, "url": "./imgs/zanini-cupom.png", "imagemTipoId": 1 },
+        { "id": 2, "url": "./imgs/zanini-cupom2.png", "imagemTipoId": 2 }
+      ]
+    },
+    {
+      "id": 2,
+      "codigo": "MOCK-BOIQUEMIA",
+      "titulo": "Entrada por conta da casa no Boi Que Mia",
+      "descricao": "Cliente Vegas ganha 1 pão de alho ou queijo coalho por conta da casa.",
+      "modalTitulo": "Entrada por conta da casa no Boi que Mia!",
+      "modalDescricao": "Apresente seu Vegas Card e ganhe 1 pão de alho ou 1 queijo coalho.",
+      "tipo": "Percentual",
+      "tag": "Bares / Restaurantes",
+      "valorDesconto": 0,
+      "valorMinimoCompra": 0,
+      "dataInicio": "2026-01-01T00:00:00.000Z",
+      "dataExpiracao": "2026-12-31T23:59:00.000Z",
+      "limiteUso": 0,
+      "limiteUsoPorUsuario": 0,
+      "ativo": true,
+      "status": "Publicado",
+      "estabelecimentoId": 5,
+      "cartoesAceitosIds": [1, 2, 4],
+      "imagens": [
+        { "id": 3, "url": "./imgs/boimia-cupom.png", "imagemTipoId": 1 },
+        { "id": 4, "url": "./imgs/boimia-cupom.png", "imagemTipoId": 2 }
+      ]
+    }
+  ]
+}

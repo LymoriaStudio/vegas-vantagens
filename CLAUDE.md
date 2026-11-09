@@ -13,6 +13,7 @@ Não há `package.json`, build, linter ou testes (`scripts/testes/` está vazio)
 - Para abrir o site basta servir os arquivos estáticos. As páginas JS usam `type="module"`, então `file://` não funciona — sirva por HTTP (ex.: `python -m http.server` na raiz) ou por um servidor PHP.
 - Os endpoints de formulário (`enviar-user.php`, `enviar-parceiro.php`) exigem PHP. Para testar os formulários rode um servidor com PHP (ex.: `php -S localhost:8000` na raiz), que também serve os arquivos estáticos.
 - Leaflet (usado em `scripts/components/map.js`) é carregado via CDN (`unpkg.com`), então o mapa precisa de internet.
+- **API mockada (só localhost)**: `python mock/server.py` serve o site em `http://localhost:8765` e responde em `/mock-api/...` imitando a API .NET, persistindo em `mock/db.json` (criado a partir de `mock/seed.json`; apague para zerar). Funciona também com o Live Server (outras portas): em localhost o `API_BASE` é sempre `http://<hostname>:8765/mock-api` e o mock libera CORS só para origens localhost. `scripts/auth.js` só aponta o `API_BASE` para o mock quando `location.hostname` é `localhost`/`127.0.0.1`/`[::1]` — nunca mude essa condição para incluir outros domínios, e nunca use o mock fora de localhost. Ao usar um endpoint novo no front, implemente a rota correspondente em `mock/server.py`. `detalhes.js` (cupons) e `map.js` ainda têm a URL da API fixa e não passam pelo mock.
 
 ## Arquitetura
 

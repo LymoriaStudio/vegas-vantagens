@@ -9,3 +9,8 @@ imgs/VegasVantagens/
 # Sistema operacional
 Thumbs.db
 .DS_Store
+
+# Mock local (mock/server.py): dados gerados e uploads de teste — nunca versionar
+mock/db.json
+mock/db.json.tmp
+mock/uploads/
