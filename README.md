@@ -64,6 +64,9 @@ imgs/
 enviar-user.php       formulário "Faça parte do clube"
 enviar-parceiro.php   formulário "Cadastre seu comércio"
 paineladmin.html      painel admin novo (módulos em scripts/pages/paineladmin/)
+data/cupons.json      cupons exibidos em detalhes.html (fonte única, formato do POST /api/Cupons)
+data/lojas-mapa.json  link do perfil no Google Maps por loja (botão "Consultar no mapa" e pins do mapa)
+tools/                importar-cupons.py: envia data/cupons.json para a API — não vai para o servidor
 mock/                 API mockada para localhost (server.py + seed.json) — nunca em produção
 ```
 
@@ -86,7 +89,7 @@ python mock/server.py
 Deixe esse terminal aberto e abra o painel por `http://localhost:8765/paineladmin.html` **ou** pelo Live Server do VS Code (ex.: `http://127.0.0.1:5501/.../paineladmin.html`). Em localhost as chamadas vão sempre para o mock na porta 8765, qualquer que seja a porta da página; o mock libera CORS só para origens localhost. Se o painel mostrar "Erro ao carregar estabelecimentos", o `mock/server.py` não está rodando.
 
 - **Quando liga:** `scripts/auth.js` troca o `API_BASE` para `/mock-api` **apenas** quando o hostname é `localhost`, `127.0.0.1` ou `[::1]`. Em qualquer outro domínio (produção, homologação) usa a API real do `env.js`. O servidor mock também só escuta em `127.0.0.1`.
-- **Dados:** `mock/seed.json` é o estado inicial (Zanini e Boi Que Mia + 2 cupons, categorias, cartões, UFs, cidades). Na primeira execução ele é copiado para `mock/db.json`, que vai sendo alimentado com tudo que você cadastra/edita/exclui no painel. Uploads de imagem vão para `mock/uploads/`.
+- **Dados:** `mock/seed.json` é uma cópia das **24 lojas de produção** (mesmos ids, nomes, endereços, coordenadas, categorias e imagens), mais categorias, cartões, UFs e cidades. O mock responde **no formato da API de produção**: a lista (`GET /api/Estabelecimentos`) traz só `id, nome, razaoSocial, cnpj, cidade, ativo` e o detalhe traz `imagens` como lista de URLs. Na primeira execução o seed é copiado para `mock/db.json`, que vai sendo alimentado com o que você cadastra/edita/exclui no painel. Uploads de imagem vão para `mock/uploads/`. Os cupons do mock começam vazios — para carregá-los: `python tools/importar-cupons.py --api http://127.0.0.1:8765/mock-api --token mock-token`.
 - **Zerar:** apague `mock/db.json` (e `mock/uploads/`).
 - `mock/db.json` e `mock/uploads/` estão no `.gitignore`. A pasta `mock/` **não deve ir para o servidor de produção**.
 - Rota não implementada responde 404 e aparece no terminal como `[mock] ROTA NÃO IMPLEMENTADA`; adicione-a em `mock/server.py`.
@@ -209,7 +212,35 @@ Os `?v=NN` são fixos e manuais. Ao alterar um arquivo, suba o `?v=` em **toda a
 
 ---
 
-## 6. Como adicionar um parceiro (resumo)
+## 6. Cupons (`data/cupons.json`)
+
+Os cupons da página `detalhes.html` **não ficam mais escritos no HTML**: o `scripts/pages/detalhes.js` lê `data/cupons.json` e monta os cards e modais. Para criar, editar ou remover um cupom, edite só esse arquivo (e suba ele + imagens novas).
+
+Cada item tem:
+
+| Bloco | Para quê |
+|---|---|
+| `chave` | identificador do cupom no site (liga o card ao modal) |
+| `lojas.estabelecimentoIds` / `lojas.nomeContem` | em quais lojas aparece: pelo id **ou** se o nome da loja contém o texto (ex.: `"pasteur"` pega as 6 unidades e futuras) |
+| `post` | **exatamente o corpo de `POST /api/Cupons`** (`codigo`, `titulo`, `descricao`, `modalTitulo`, `modalDescricao`, `tipo`, `valorDesconto`, `valorMinimoCompra`, `dataInicio`, `dataExpiracao`, `limiteUso`, `limiteUsoPorUsuario`, `ativo`, `status`, `estabelecimentoId`, `cartoesAceitosIds`, `tag`). A validade exibida sai de `dataExpiracao`. |
+| `cartoesAceitos` | nomes dos cartões; viram `cartoesAceitosIds` na importação |
+| `imagens` | `imagemTipoId` 1 = foto do card, 2 = selo/imagem do modal (`POST /api/Cupons/{id}/imagens`) |
+| `site` | só visual: `tema` (`padrao` = azul-escuro, `rosa` = Outubro Rosa, `azul` = Novembro Azul — classes `.cupom-rosa`/`.cupom-azul` no `cupom.css`), `selo`, `categoria`, ícones, `pills`, textos (`descricaoHtml` no card, `modalDescricaoHtml` no modal, `aceitos`, `avisoAlerta`, `rodape`) |
+
+**Botão "Consultar no mapa" e pins do mapa da home** — abrem o perfil da loja no Google Maps (nova aba). O link vem, nesta ordem: do `mapaUrl` da loja na API (a API de produção ainda não devolve esse campo) → de `data/lojas-mapa.json` (chave = id da loja; link em Google Maps > Compartilhar > Copiar link) → busca pelas coordenadas da loja.
+
+**Levar os cupons para a API** (quando ela voltar a aceitar login):
+
+```bash
+python tools/importar-cupons.py --api https://apiclubedevantagens.vegascard.com.br --simular
+```
+```bash
+python tools/importar-cupons.py --api https://apiclubedevantagens.vegascard.com.br --email seu@email
+```
+
+O script faz login (senha pedida no terminal), um `POST /api/Cupons` por loja e envia as imagens. `--simular` só mostra o que faria; `--cupom <chave>` e `--loja <id>` limitam o envio. Teste antes no mock: `--api http://127.0.0.1:8765/mock-api --token mock-token`.
+
+## 7. Como adicionar um parceiro (resumo)
 
 **Landing estática** (serviço/parceiro nacional):
 1. Copiar uma landing → `nome-parceiro.html` e trocar textos, ícones, imagens e links.
@@ -226,9 +257,8 @@ Os `?v=NN` são fixos e manuais. Ao alterar um arquivo, suba o `?v=` em **toda a
 
 ---
 
-## 7. Pontos de atenção conhecidos
+## 8. Pontos de atenção conhecidos
 
-- `map.js` e o fetch de cupons em `detalhes.js` usam a URL da API **fixa no código**, não `window.env.API_BASE_URL`.
 - `banner-slide2.js` registra dois `DOMContentLoaded` (carrega as imagens duas vezes) e mantém um mapa `routesByBase1` de fallback com rotas antigas.
 - Destinatário dos formulários PHP ainda é placeholder (`teste@gmail.com`).
 - Várias landings novas têm `TODO` com `href="#"` aguardando o link oficial do parceiro.
