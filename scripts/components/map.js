@@ -1,11 +1,25 @@
 // map-leaflet.js — ajustes: (1) load inicial em "Americana" + (2) Ver Mais mobile
-import { getClientToken, loginToken } from '../auth.js';
+import { getClientToken, loginToken, API_BASE } from '../auth.js';
+// API_BASE = API real (window.env.API_BASE_URL); em localhost aponta para o mock (mock/server.py)
 
 let map;
 let markers = [];
 let markersGroup = null;
 
 let LOJAS_CACHE = [];
+
+// Perfil de cada loja no Google Maps (mesmo arquivo usado pelo botão dos cupons).
+// Prioridade: mapaUrl da API (se vier) > data/lojas-mapa.json > busca pelas coordenadas.
+let MAPAS_LOJAS = {};
+const mapasProntos = fetch('./data/lojas-mapa.json', { cache: 'no-cache' })
+  .then(r => (r.ok ? r.json() : {}))
+  .then(d => { MAPAS_LOJAS = d.lojas || {}; })
+  .catch(() => {});
+
+function linkPerfilGoogleMaps(loja, lat, lng) {
+  const url = (/^https?:\/\//.test(loja.mapaUrl || '') && loja.mapaUrl) || MAPAS_LOJAS[String(loja.id)]?.mapaUrl;
+  return /^https?:\/\//.test(url || '') ? url : `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+}
 let ESTADO_ATUAL = "";
 
 function corrigirCoordenada(valor, tipo) {
@@ -19,7 +33,7 @@ function corrigirCoordenada(valor, tipo) {
 // ---------------- API ----------------
 async function fetchAllStores(accessToken) {
   try {
-    const respLista = await fetch('https://apiclubedevantagens.vegascard.com.br/api/Estabelecimentos', {
+    const respLista = await fetch(`${API_BASE}/api/Estabelecimentos`, {
       headers: { 'Authorization': `Bearer ${accessToken}` }
     });
     if (!respLista.ok) throw new Error("Erro ao buscar lista geral");
@@ -27,7 +41,7 @@ async function fetchAllStores(accessToken) {
 
     const detalhes = await Promise.all(
       lista.map(async loja => {
-        const detalheResp = await fetch(`https://apiclubedevantagens.vegascard.com.br/api/Estabelecimentos/${loja.id}`, {
+        const detalheResp = await fetch(`${API_BASE}/api/Estabelecimentos/${loja.id}`, {
           headers: { 'Authorization': `Bearer ${accessToken}` }
         });
         if (!detalheResp.ok) return null;
@@ -48,7 +62,7 @@ async function fetchAllStores(accessToken) {
 }
 
 async function fetchStoreDetails(loginToken, storeId) {
-  const resp = await fetch(`https://apiclubedevantagens.vegascard.com.br/api/Estabelecimentos/${storeId}`, {
+  const resp = await fetch(`${API_BASE}/api/Estabelecimentos/${storeId}`, {
     headers: { 'Authorization': `Bearer ${loginToken}` }
   });
   return resp.json();
@@ -81,7 +95,7 @@ function esconderMensagemVazia(){ const msg = document.getElementById("mensagem-
 async function carregarEstados() {
   try {
     const accessToken = await getClientToken();
-    const resp = await fetch("https://apiclubedevantagens.vegascard.com.br/api/UnidadesFederativas", {
+    const resp = await fetch(`${API_BASE}/api/UnidadesFederativas`, {
       headers: { 'Authorization': `Bearer ${accessToken}` }
     });
     const estados = await resp.json();
@@ -221,7 +235,7 @@ if (liTodasCidades) {
     if (LOJAS_CACHE.length === 0) LOJAS_CACHE = await fetchAllStores(accessToken);
 
     // cidades no estado (API) — e cruzamos com as que têm lojas
-    const resp = await fetch(`https://apiclubedevantagens.vegascard.com.br/api/Cidades/por-estado/${estadoId}`, {
+    const resp = await fetch(`${API_BASE}/api/Cidades/por-estado/${estadoId}`, {
       headers: { 'Authorization': `Bearer ${accessToken}` }
     });
     if (!resp.ok) throw new Error("Cidades não encontradas para este estado.");
@@ -284,7 +298,7 @@ function adicionarMarcador(loja) {
   if (isNaN(lat) || isNaN(lng)) return null;
 
   // URLs do Google Maps
-  const gmapView = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+  const gmapView = linkPerfilGoogleMaps(loja, lat, lng);
   const gmapDir  = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
 
  const marker = L.marker([lat, lng]).addTo(markersGroup)
@@ -325,6 +339,7 @@ function centralizarNoConjunto() {
 async function updateMapaLista({ cidade="", segmento="", busca="" }) {
   try {
     mostrarLoader();
+    await mapasProntos; // links do Google Maps antes de desenhar os pins
     const accessToken = await getClientToken();
     if (LOJAS_CACHE.length === 0) LOJAS_CACHE = await fetchAllStores(accessToken);
 
