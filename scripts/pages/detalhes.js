@@ -92,6 +92,8 @@ function pickDescricaoPorNome(nome = "") {
 }
 
 
+window.addEventListener("hashchange", () => window.location.reload());
+
 document.addEventListener("DOMContentLoaded", async () => {
   const hash = decodeURIComponent(window.location.hash).slice(1);
   const idMatch = hash.match(/^store-(\d+)$/);
@@ -137,16 +139,18 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     console.log(loja)
 
-    mostrarCuponsDoEstabelecimento(loja);
+    await mostrarCuponsDoEstabelecimento(loja);
 
     document.querySelectorAll('.title-comercio').forEach(el => {
       el.textContent = loja.nome;
     });
 
-    const linkMapa = `https://www.google.com/maps/search/?api=1&query=${loja.latitude},${loja.longitude}`;
+    const linkMapa = await linkGoogleMapsDaLoja(loja);
 
     document.querySelectorAll(".coupon-modal .cm-cta").forEach(btn => {
-  btn.href = linkMapa;
+      btn.href = linkMapa;
+      btn.target = "_blank";
+      btn.rel = "noopener";
     });
 
     const addressEl = document.querySelector(".adress");
@@ -191,7 +195,7 @@ if (avaliacaoEl) {
       img.src = './imgs/mercadaofach.png';
       console.log("mercadao id")
     } else {
-      img.src = loja.imagens[0];
+      img.src = typeof loja.imagens[0] === 'string' ? loja.imagens[0] : loja.imagens[0]?.url;
     }
       });
     }
@@ -232,59 +236,241 @@ if (avaliacaoEl) {
   }
 });
 
-function mostrarCuponsDoEstabelecimento(estabelecimento) {
-  const nomeEstabelecimento = normalizarTexto(estabelecimento?.nome || '');
-  const todosCupons = document.querySelectorAll('article.coupon-card');
+// ============================================================================
+// CUPONS — vêm de data/cupons.json (fonte única; não ficam mais fixos no HTML)
+// Cada cupom aparece na loja cujo id está em lojas.estabelecimentoIds OU cujo
+// nome contém lojas.nomeContem. O bloco "post" de cada cupom é o corpo de
+// POST /api/Cupons (ver tools/importar-cupons.py).
+// ============================================================================
+const CUPONS_URL = "./data/cupons.json";
 
-  let encontrouAlgum = false;
+const ICONE_PIN = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>';
+const ICONE_TAG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6a3 3 0 0 1 3-3h8.5a1 1 0 0 1 .7.29l4.5 4.5a1 1 0 0 1 .3.71V15a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6zM8.5 8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm5 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>';
 
-  todosCupons.forEach(cupom => {
-    const nomeCupom = normalizarTexto(cupom.dataset.cupom || '');
-    const corresponde = nomeCupom && nomeEstabelecimento.includes(nomeCupom);
-
-    cupom.style.display = corresponde ? 'flex' : 'none';
-    if (corresponde) encontrouAlgum = true;
-
-    console.log('cupom:', nomeCupom, '| corresponde:', corresponde, '| loja:', nomeEstabelecimento);
-  });
-
-  // container da seção de cupons (já existente)
-  const containerCupons = document.querySelector('.coupons-section');
-
-
-
-  // cria/pega a mensagem de "sem cupons"
-  let msg = document.getElementById('no-coupons-msg');
-  if (!msg) {
-    msg = document.createElement('p');
-    msg.id = 'no-coupons-msg';
-    msg.className = 'no-coupons-msg';
-    msg.textContent = 'No momento não há cupons disponíveis para este estabelecimento.';
-    msg.setAttribute('aria-live', 'polite');
-
-    // onde anexar: abaixo do grid, dentro da seção
-    // tenta colocar após a grade se existir
-    const grid = containerCupons?.querySelector('.coupon-grid');
-    if (grid && grid.parentElement) {
-      grid.parentElement.insertBefore(msg, grid.nextSibling);
-    } else if (containerCupons) {
-      containerCupons.appendChild(msg);
-    } else {
-      // fallback: coloca no body (não recomendado, mas evita sumir)
-      document.body.appendChild(msg);
-    }
-  }
- 
-
-  // liga/desliga seção + mensagem
-  if (containerCupons) {
-    containerCupons.style.display = encontrouAlgum ? 'block' : 'block'; // mantém a seção para mostrar a msg
-  }
-  msg.style.display = encontrouAlgum ? 'none' : 'block';
-
-  return encontrouAlgum; // útil se quiser saber no chamador
+function esc(texto = "") {
+  return String(texto)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 }
 
+function caminho(arquivo = "") {
+  return /^(https?:)?\/\//.test(arquivo) ? arquivo : `./${String(arquivo).replace(/^\.?\//, "")}`;
+}
+
+function dataBR(iso) {
+  const d = new Date(iso);
+  return isNaN(d) ? "" : d.toLocaleDateString("pt-BR", { timeZone: "America/Sao_Paulo" });
+}
+
+function imagemDoTipo(cupom, tipo) {
+  return (cupom.imagens || []).find(i => i.imagemTipoId === tipo)?.arquivo || "";
+}
+
+function cupomValeParaLoja(cupom, loja) {
+  const ids = cupom.lojas?.estabelecimentoIds || [];
+  if (ids.includes(Number(loja.id))) return true;
+  const trecho = normalizarTexto(cupom.lojas?.nomeContem || "");
+  return Boolean(trecho) && normalizarTexto(loja.nome || "").includes(trecho);
+}
+
+// "padrao" = azul-escuro original; outros temas viram a classe "cupom-<tema>" (cupom.css)
+function classeTema(site = {}) {
+  return site.tema && site.tema !== "padrao" ? ` cupom-${String(site.tema).replace(/[^a-z0-9-]/gi, "")}` : "";
+}
+
+function htmlCardCupom(cupom, opcoes = {}) {
+  const { post, site = {} } = cupom;
+  // destino definido = card da seção "Acompanhe outros Descontos": o botão leva à loja
+  const botao = opcoes.destino
+    ? `<button class="coupon-cta" type="button" data-href="${esc(opcoes.destino)}">Ver Oferta</button>`
+    : `<button class="coupon-cta" type="button" data-target="${esc(cupom.chave)}">Ver Oferta</button>`;
+  const tema = classeTema(site);
+  const icone = site.iconeCategoria && site.iconeCategoria !== "pin"
+    ? `<img src="${esc(caminho(site.iconeCategoria))}" alt="">`
+    : ICONE_PIN;
+  const pills = (site.pills || [])
+    .map(p => `<span class="pill${p.alt ? " pill-alt" : ""}">${esc(p.texto)}</span>`)
+    .join("") + (site.maisCartoes ? "<span>+</span>" : "");
+
+  return `
+  <article class="coupon-card${tema}" data-cupom="${esc(cupom.lojas?.nomeContem || "")}">
+    <div class="coupon-media">
+      <img src="${esc(caminho(imagemDoTipo(cupom, 1)))}" alt="${esc(post.titulo)}" loading="lazy">
+      <span class="coupon-badge">${tema ? "" : ICONE_TAG}<strong>${esc(site.selo)}</strong></span>
+    </div>
+    <div class="coupon-body">
+      <div class="coupon-meta">
+        <span class="meta-cat">${icone}${esc(site.categoria)}</span>
+        <div class="meta-pills">${pills}</div>
+      </div>
+      <h3 class="coupon-title">${esc(post.titulo)}</h3>
+      <p class="coupon-sub">${site.descricaoHtml || esc(post.descricao)}</p>
+      ${botao}
+    </div>
+  </article>`;
+}
+
+function htmlModalCupom(cupom) {
+  const { post, site = {} } = cupom;
+  const tema = classeTema(site);
+  const validade = dataBR(post.dataExpiracao);
+  const selo = imagemDoTipo(cupom, 2);
+  const aceitos = (site.aceitos || []).map(a => a.simples
+    ? `<p>${esc(a.texto)}</p>`
+    : `<span class="cm-pill${a.classe ? " " + esc(a.classe) : ""}">${esc(a.texto)}</span>`).join("");
+  const idTitulo = `coupon-modal-title-${esc(cupom.chave)}`;
+
+  return `
+<dialog class="coupon-modal${tema}" data-modal="${esc(cupom.chave)}" aria-labelledby="${idTitulo}">
+  <button class="cm-close" aria-label="Fechar">&times;</button>
+  <div class="cm-wrap">
+    <div class="cm-topchips">
+      <span class="cm-chip"><img src="./imgs/calender-icon.png" alt="">Válido até ${esc(validade)}</span>
+      <span class="cm-chip"><img src="${esc(caminho(site.iconeCategoriaModal || "imgs/utils-icon.png"))}" alt="">${esc(site.categoriaModal || site.categoria)}</span>
+    </div>
+    <div class="cm-badge">${selo ? `<img src="${esc(caminho(selo))}" alt="${esc(site.selo)}" loading="lazy">` : ""}</div>
+    <h2 id="${idTitulo}" class="cm-title">${esc(post.modalTitulo)}</h2>
+    <p class="cm-sub">${site.modalDescricaoHtml || esc(post.modalDescricao)}</p>
+    ${site.aceitosTitulo ? `<p class="aceitos-cm">${esc(site.aceitosTitulo)}</p>` : ""}
+    <div class="cm-pills">${aceitos}</div>
+    <div class="cm-alert">
+      <div class="flex-alert"><img src="./imgs/alert-icon.png" alt=""><strong>Atenção!</strong></div>
+      ${validade ? `<p class="valid-cm">Esta oferta é válida até ${esc(validade)}</p>` : ""}
+      ${site.avisoAlerta ? `<p class="subvalid-cm">${esc(site.avisoAlerta)}</p>` : ""}
+    </div>
+    ${site.rodape ? `<p class="cm-fineprint">${esc(site.rodape)}</p>` : ""}
+    <a href="#" class="cm-cta" role="button">Consultar no mapa</a>
+  </div>
+</dialog>`;
+}
+
+// Link do botão "Consultar no mapa": perfil da loja no Google Maps.
+// Prioridade: mapaUrl da API (quando existir) > data/lojas-mapa.json > busca pelas coordenadas.
+const MAPAS_URL = "./data/lojas-mapa.json";
+
+async function linkGoogleMapsDaLoja(loja) {
+  if (loja.mapaUrl && /^https?:\/\//.test(loja.mapaUrl)) return loja.mapaUrl;
+  try {
+    const resp = await fetch(MAPAS_URL, { cache: "no-cache" });
+    if (resp.ok) {
+      const dados = await resp.json();
+      const url = dados.lojas?.[String(loja.id)]?.mapaUrl;
+      if (url && /^https?:\/\//.test(url)) return url;
+    }
+  } catch (err) {
+    console.warn("Não foi possível ler", MAPAS_URL, err.message);
+  }
+  return `https://www.google.com/maps/search/?api=1&query=${loja.latitude},${loja.longitude}`;
+}
+
+let _cuponsPromessa = null;
+function carregarCupons() {
+  _cuponsPromessa ??= fetch(CUPONS_URL, { cache: "no-cache" }).then(async resp => {
+    if (!resp.ok) throw new Error(`Falha ao carregar ${CUPONS_URL}: ${resp.status}`);
+    const dados = await resp.json();
+    return Array.isArray(dados) ? dados : dados.cupons || [];
+  });
+  return _cuponsPromessa;
+}
+
+function atualizarRail(grid) {
+  // recalcula a barra de progresso depois de inserir cards
+  grid?.dispatchEvent(new Event("scroll"));
+}
+
+// ---- "Acompanhe outros Descontos": 3 cupons de OUTRAS lojas ----
+const QTD_OUTROS_CUPONS = 3;
+
+function embaralhar(lista) {
+  const a = [...lista];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function mostrarOutrosCupons(todos, loja) {
+  const grid = document.getElementById("outros-cupons");
+  if (!grid) return;
+  const secao = grid.closest("section");
+
+  // um cupom por "família" de loja (ex.: só 1 do Pasteur), sorteados a cada visita
+  const porFamilia = new Map();
+  embaralhar(todos.filter(c => !cupomValeParaLoja(c, loja) && c.lojas?.estabelecimentoIds?.length))
+    .forEach(c => {
+      const familia = normalizarTexto(c.lojas.nomeContem || c.chave);
+      if (!porFamilia.has(familia)) porFamilia.set(familia, c);
+    });
+  const escolhidos = [...porFamilia.values()].slice(0, QTD_OUTROS_CUPONS);
+
+  if (!escolhidos.length) {
+    if (secao) secao.style.display = "none";
+    return;
+  }
+
+  grid.innerHTML = escolhidos
+    .map(c => htmlCardCupom(c, { destino: `./detalhes.html#store-${c.lojas.estabelecimentoIds[0]}` }))
+    .join("");
+  grid.querySelectorAll(".coupon-card").forEach(card => { card.style.display = "flex"; });
+
+  if (!grid.dataset.cliqueLigado) {
+    grid.dataset.cliqueLigado = "1";
+    grid.addEventListener("click", e => {
+      const btn = e.target.closest(".coupon-cta[data-href]");
+      if (!btn) return;
+      // vai para o topo antes de trocar de loja: no recarregamento o navegador
+      // restaura a rolagem salva, que passa a ser o topo da página
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      window.location.href = btn.dataset.href;
+    });
+  }
+  atualizarRail(grid);
+}
+
+async function mostrarCuponsDoEstabelecimento(estabelecimento) {
+  const grid = document.querySelector(".coupon-rail .coupon-grid:not(#outros-cupons)");
+  const containerModais = document.getElementById("cupons-modais") || document.body;
+  let todos = [];
+
+  try {
+    todos = await carregarCupons();
+  } catch (err) {
+    console.error("Erro ao carregar cupons:", err.message);
+  }
+  const cupons = todos.filter(c => cupomValeParaLoja(c, estabelecimento));
+  mostrarOutrosCupons(todos, estabelecimento);
+
+  if (grid) {
+    grid.innerHTML = cupons.map(htmlCardCupom).join("");
+    // .coupon-card nasce com display:none no cupom.css; os cupons da loja são ligados aqui
+    grid.querySelectorAll(".coupon-card").forEach(card => { card.style.display = "flex"; });
+  }
+  containerModais.querySelectorAll("dialog.coupon-modal").forEach(m => m.remove());
+  containerModais.insertAdjacentHTML("beforeend", cupons.map(htmlModalCupom).join(""));
+  vincularModaisCupons();
+  atualizarRail(grid);
+
+  const encontrouAlgum = cupons.length > 0;
+  const containerCupons = document.querySelector(".coupons-section");
+
+  // cria/pega a mensagem de "sem cupons"
+  let msg = document.getElementById("no-coupons-msg");
+  if (!msg) {
+    msg = document.createElement("p");
+    msg.id = "no-coupons-msg";
+    msg.className = "no-coupons-msg";
+    msg.textContent = "No momento não há cupons disponíveis para este estabelecimento.";
+    msg.setAttribute("aria-live", "polite");
+    if (grid && grid.parentElement) grid.parentElement.insertBefore(msg, grid.nextSibling);
+    else (containerCupons || document.body).appendChild(msg);
+  }
+
+  if (containerCupons) containerCupons.style.display = "block"; // mantém a seção para mostrar a msg
+  msg.style.display = encontrouAlgum ? "none" : "block";
+
+  return encontrouAlgum;
+}
 
 /*
 
@@ -461,7 +647,8 @@ function hideOverlay() {
   ov.style.pointerEvents = 'none';
 }
 
-// ===== Integra com seus botões/modais =====
+// ===== Integra com seus botões/modais (chamado depois de montar os cupons) =====
+function vincularModaisCupons() {
 document.querySelectorAll('.coupon-card .coupon-cta').forEach(btn => {
   const key = btn.dataset.target;
   const modal = document.querySelector(`.coupon-modal[data-modal="${key}"]`);
@@ -494,6 +681,7 @@ document.querySelectorAll('.coupon-card .coupon-cta').forEach(btn => {
     }
   });
 });
+}
 
 
  
@@ -510,7 +698,33 @@ document.querySelectorAll('.coupon-card .coupon-cta').forEach(btn => {
     const thumb = bar ? bar.querySelector('.cs-thumb') : null;
     if (!track) return;
 
+    // setas ‹ › ao lado do título da seção (só aparecem quando há rolagem)
+    const setas = rail.closest('section')?.querySelector('.cupons-setas');
+    const setaAnterior = setas?.querySelector('[data-direcao="-1"]');
+    const setaProxima  = setas?.querySelector('[data-direcao="1"]');
+    const passoCard = () => {
+      const card = track.querySelector('.coupon-card:not([style*="display: none"])');
+      const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+      return card ? card.getBoundingClientRect().width + gap : track.clientWidth * 0.8;
+    };
+    setas?.querySelectorAll('.seta-cupons').forEach(btn => {
+      btn.addEventListener('click', () => {
+        track.scrollBy({ left: Number(btn.dataset.direcao) * passoCard(), behavior: 'smooth' });
+        // recalcula o estado das setas mesmo que o navegador demore a disparar "scroll"
+        setTimeout(updateBar, 450);
+      });
+    });
+
     const updateBar = () => {
+      // cursor de "arrastar" e setas só quando há conteúdo além da largura da faixa
+      const temScroll = track.scrollWidth > track.clientWidth + 1;
+      track.classList.toggle('com-scroll', temScroll);
+      if (setas) {
+        setas.hidden = !temScroll;
+        const max = track.scrollWidth - track.clientWidth;
+        if (setaAnterior) setaAnterior.disabled = track.scrollLeft <= 1;
+        if (setaProxima)  setaProxima.disabled  = track.scrollLeft >= max - 1;
+      }
       if (!bar || !thumb) return;
 
       const maxScroll = track.scrollWidth - track.clientWidth;
@@ -584,6 +798,37 @@ document.querySelectorAll('.coupon-card .coupon-cta').forEach(btn => {
       bar.addEventListener('pointerup', stop);
       bar.addEventListener('pointercancel', stop);
     }
+
+    // arrastar com o mouse (clicar e puxar para os lados)
+    // < 5px = clique normal; acima disso vira arraste e o clique é cancelado
+    let arrastando = false, moveu = false, inicioX = 0, inicioScroll = 0;
+    track.addEventListener('pointerdown', (e) => {
+      if (e.pointerType !== 'mouse' || e.button !== 0) return;
+      if (track.scrollWidth <= track.clientWidth) return;
+      arrastando = true; moveu = false;
+      inicioX = e.clientX; inicioScroll = track.scrollLeft;
+    });
+    window.addEventListener('pointermove', (e) => {
+      if (!arrastando) return;
+      const dx = e.clientX - inicioX;
+      if (!moveu && Math.abs(dx) > 5) {
+        moveu = true;
+        track.classList.add('arrastando');   // desliga o scroll-snap durante o arraste
+      }
+      if (moveu) track.scrollLeft = inicioScroll - dx;
+    });
+    window.addEventListener('pointerup', () => {
+      if (!arrastando) return;
+      arrastando = false;
+      if (moveu) {
+        track.classList.remove('arrastando');
+        setTimeout(() => { moveu = false; }, 0);  // o "click" do soltar ainda vê moveu = true
+      }
+    });
+    track.addEventListener('click', (e) => {
+      if (moveu) { e.preventDefault(); e.stopPropagation(); }
+    }, true);
+    track.addEventListener('dragstart', (e) => e.preventDefault());  // não arrastar a imagem
 
     // recalcular em mudanças de tamanho
     const ro = new ResizeObserver(updateBar);

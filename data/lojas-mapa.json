@@ -1,0 +1,35 @@
+{
+  "_leia": [
+    "Link do perfil de cada loja no Google Maps, usado no botão 'Consultar no mapa' dos cupons (detalhes.html) e nos pins do mapa da home (map.js).",
+    "Chave = id do estabelecimento na API. Copie o link em Google Maps > Compartilhar > Copiar link.",
+    "Prioridade no site: mapaUrl vindo da API (quando existir) > este arquivo > busca pelas coordenadas da loja.",
+    "Na API o campo equivalente é 'mapaUrl' do estabelecimento (POST /api/Estabelecimentos/Criar e PUT /api/Estabelecimentos/{id})."
+  ],
+  "lojas": {
+    "30": {
+      "nome": "Pasteur Fortunato Basseto",
+      "endereco": "Rua Fortunato Basseto, 37, Vila Medon - Americana",
+      "mapaUrl": "https://maps.app.goo.gl/BpYRVPxMu7rDf5W37"
+    },
+    "31": {
+      "nome": "Pasteur Cid Jardim",
+      "endereco": "Rua das Hortências, 1882, Cidade Jardim II - Americana",
+      "mapaUrl": "https://maps.app.goo.gl/hCWhmZzAsxHWyjvx8"
+    },
+    "32": {
+      "nome": "Pasteur Centro Diagnostico",
+      "endereco": "Rua Domingos Nardini, 54, Vila Medon - Americana",
+      "mapaUrl": "https://maps.app.goo.gl/LJcdr8W7CQ5BEVtX9"
+    },
+    "33": {
+      "nome": "Pasteur São Gabriel",
+      "endereco": "Rua São Gabriel, 751, São Vito - Americana",
+      "mapaUrl": "https://maps.app.goo.gl/yRQKksjCTyAX4ynd7"
+    },
+    "34": {
+      "nome": "Pasteur Zanaga",
+      "endereco": "Avenida Cecília Meirelles, 356, Antônio Zanaga II - Americana",
+      "mapaUrl": "https://maps.app.goo.gl/ebEcP6c31FRTvJAr6"
+    }
+  }
+}

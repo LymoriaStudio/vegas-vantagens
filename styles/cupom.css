@@ -717,3 +717,159 @@ height: 14px;
 
 
 
+
+/* ============================================================
+   Variação ROSA do cupom (ex.: campanhas Outubro Rosa)
+   Uso: adicione a classe "cupom-rosa" no <article class="coupon-card">
+   e no <dialog class="coupon-modal"> do mesmo cupom.
+   ============================================================ */
+.cupom-rosa {
+  --rosa: #CA7EC0;
+  --rosa-claro: #F1E2EF;
+  --rosa-fundo: #F0E9F0;
+  --rosa-borda: #E4D3E3;
+  --roxo-texto: #7B3F86;
+}
+
+/* Card */
+.coupon-card.cupom-rosa .coupon-badge { background: var(--rosa-claro); color: var(--roxo-texto); }
+.coupon-card.cupom-rosa .meta-cat     { color: #181818; }
+.coupon-card.cupom-rosa .pill         { background: var(--rosa-claro); color: var(--roxo-texto); }
+.coupon-card.cupom-rosa .coupon-title { color: #000; }
+.coupon-card.cupom-rosa .coupon-cta   { background: var(--rosa); }
+
+/* Modal */
+.coupon-modal.cupom-rosa .cm-close          { background: var(--rosa); }
+.coupon-modal.cupom-rosa .cm-close:hover    { background: #b866ad; }
+.coupon-modal.cupom-rosa .cm-chip           { background: var(--rosa-claro); color: var(--roxo-texto); }
+/* só os ícones azuis padrão (calendário e alerta) recebem o filtro roxo;
+   o ícone da categoria já vem na cor certa */
+.coupon-modal.cupom-rosa .cm-chip:first-child img,
+.coupon-modal.cupom-rosa .flex-alert img    { filter: hue-rotate(60deg) saturate(1.3); }
+.coupon-modal.cupom-rosa .cm-title          { color: #000; }
+.coupon-modal.cupom-rosa .cm-pill           { background: var(--rosa-claro); color: var(--roxo-texto); }
+.coupon-modal.cupom-rosa .cm-alert          { background: var(--rosa-fundo); border-color: var(--rosa-borda); }
+.coupon-modal.cupom-rosa .valid-cm          { color: var(--roxo-texto); }
+.coupon-modal.cupom-rosa .cm-fineprint      { color: #555; }
+.coupon-modal.cupom-rosa .cm-cta            { background: var(--rosa); }
+
+/* Botão "Ver Oferta" sempre no rodapé do card, alinhado entre os cards,
+   independente do tamanho do título/descrição */
+.coupon-card .coupon-body { flex: 1; }
+.coupon-card .coupon-cta  { margin-top: auto; }
+
+/* ============================================================
+   Variação AZUL do cupom (ex.: campanhas Novembro Azul)
+   Uso: "tema": "azul" no data/cupons.json (classe "cupom-azul").
+   ============================================================ */
+.cupom-azul {
+  --azul: #7282D4;
+  --azul-claro: #E3E7F8;
+  --azul-fundo: #E8ECFF;
+  --azul-borda: #D5DCF7;
+  --azul-texto: #4A57A8;
+}
+
+/* Card */
+.coupon-card.cupom-azul .coupon-badge { background: var(--azul-claro); color: var(--azul-texto); }
+.coupon-card.cupom-azul .meta-cat     { color: #181818; }
+.coupon-card.cupom-azul .pill         { background: var(--azul-claro); color: var(--azul-texto); }
+.coupon-card.cupom-azul .coupon-title { color: #000; }
+.coupon-card.cupom-azul .coupon-cta   { background: var(--azul); box-shadow: 0 6px 18px rgba(114,130,212,.3); }
+
+/* Modal */
+.coupon-modal.cupom-azul .cm-close        { background: var(--azul); }
+.coupon-modal.cupom-azul .cm-close:hover  { background: #5d6dc4; }
+.coupon-modal.cupom-azul .cm-chip         { background: var(--azul-claro); color: var(--azul-texto); }
+.coupon-modal.cupom-azul .cm-title        { color: #000; }
+.coupon-modal.cupom-azul .cm-pill         { background: var(--azul-claro); color: var(--azul-texto); }
+.coupon-modal.cupom-azul .cm-alert        { background: var(--azul-fundo); border-color: var(--azul-borda); }
+.coupon-modal.cupom-azul .valid-cm        { color: var(--azul); }
+.coupon-modal.cupom-azul .cm-fineprint    { color: #555; }
+.coupon-modal.cupom-azul .cm-cta          { background: var(--azul); }
+
+/* O ícone de coração da categoria vem rosa (icon-heart.png): no tema azul vira azul */
+.coupon-card.cupom-azul .meta-cat img,
+.coupon-modal.cupom-azul .cm-chip:nth-child(2) img { filter: hue-rotate(-80deg) saturate(1.1); }
+
+/* Faixa de cupons: arrastar com o mouse */
+/* "com-scroll" é ligada pelo detalhes.js só quando a faixa tem o que rolar */
+.coupon-rail .coupon-grid.com-scroll { cursor: grab; }
+.coupon-rail .coupon-grid.arrastando {
+  cursor: grabbing;
+  scroll-snap-type: none;   /* o encaixe automático brigaria com o arraste */
+  user-select: none;
+}
+.coupon-rail .coupon-grid.arrastando * { cursor: grabbing; }
+
+/* ============================================================
+   Setas da faixa de cupons (ao lado do título "Ofertas")
+   Botão secundário do site: fundo branco, borda #828EC5,
+   ícone #4B57A3; no hover, preenchido em #4B57A3.
+   Só aparecem quando a faixa tem rolagem (detalhes.js).
+   ============================================================ */
+.cupons-topo {
+  display: flex;
+  align-items: center;          /* setas centralizadas com o título */
+  justify-content: space-between;
+  gap: 16px;
+  margin: 67px 0 30px;          /* as margens do título passam para a linha */
+}
+.cupons-topo .title-desc { margin: 0; }
+.cupons-setas {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.cupons-setas[hidden] { display: none; }
+.seta-cupons {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: #fff;
+  border: 2px solid #828EC5;
+  border-radius: 8px;
+  color: #4B57A3;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease, border-color .2s ease, opacity .2s ease;
+}
+.seta-cupons svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.seta-cupons:hover:not(:disabled) {
+  background: #4B57A3;
+  border-color: #4B57A3;
+  color: #fff;
+}
+.seta-cupons:focus-visible {
+  outline: 2px solid #4B57A3;
+  outline-offset: 2px;
+}
+.seta-cupons:disabled {
+  opacity: .4;
+  cursor: default;
+}
+@media (max-width: 560px) {
+  .seta-cupons { width: 36px; height: 36px; }
+  .seta-cupons svg { width: 18px; height: 18px; }
+}
+
+/* Espaço acima dos títulos "Ofertas"/"Acompanhe outros Descontos":
+   os 67px do desktop ficavam exagerados em telas menores */
+@media (max-width: 780px) {
+  .cupons-topo { margin-top: 24px; }
+  .rela-ofertas { margin-top: 80px; }   /* "Acompanhe outros Descontos": 160px no desktop */
+}
+@media (max-width: 560px) {
+  .cupons-topo { margin-top: 0; margin-bottom: 24px; }  /* a seção já tem 40px de padding */
+  .rela-ofertas { margin-top: 24px; }   /* mesmo respiro do "Ofertas" no celular */
+}

@@ -1,0 +1,1003 @@
+{
+  "_leia": [
+    "Cupons exibidos em detalhes.html. Fonte única: edite aqui, não no HTML.",
+    "Cada item -> 'post' é exatamente o corpo de POST /api/Cupons. O 'estabelecimentoId' fica null:",
+    "o script tools/importar-cupons.py faz um POST para cada id em lojas.estabelecimentoIds.",
+    "cartoesAceitos (nomes) -> convertidos em cartoesAceitosIds via GET /api/Cartoes na importação.",
+    "imagens -> POST /api/Cupons/{id}/imagens?imagemTipoId=N (1 = foto do card, 2 = selo/imagem do modal).",
+    "site -> apenas visual da página (não vai para a API).",
+    "No site, o cupom aparece na loja cujo id está em lojas.estabelecimentoIds OU cujo nome contém lojas.nomeContem."
+  ],
+  "cupons": [
+    {
+      "chave": "zanini",
+      "lojas": {
+        "nomeContem": "zanini",
+        "estabelecimentoIds": [
+          3,
+          11,
+          22
+        ]
+      },
+      "post": {
+        "codigo": "VEGAS-ZANINI10",
+        "titulo": "Presentes para toda a família pagando 10% mais barato na Zanini!",
+        "descricao": "Faça a felicidade de quem você ama pagando mais barato!",
+        "modalTitulo": "Tudo para sua casa e família!",
+        "modalDescricao": "Ganhe até 10% OFF em brinquedos e utilidades do dia a dia! Faça compras a partir de R$ 100,00 reais na Zanini!",
+        "tipo": "Percentual",
+        "valorDesconto": 10,
+        "valorMinimoCompra": 100,
+        "dataInicio": "2026-01-01T00:00:00.000Z",
+        "dataExpiracao": "2026-06-30T23:59:59.000Z",
+        "limiteUso": 0,
+        "limiteUsoPorUsuario": 0,
+        "ativo": true,
+        "status": "Publicado",
+        "estabelecimentoId": null,
+        "cartoesAceitosIds": [],
+        "tag": ""
+      },
+      "cartoesAceitos": [
+        "Day",
+        "Alimentação",
+        "Plus",
+        "Natal"
+      ],
+      "imagens": [
+        {
+          "imagemTipoId": 1,
+          "arquivo": "imgs/zanini-cupom2.png"
+        },
+        {
+          "imagemTipoId": 2,
+          "arquivo": "imgs/icons/desconto.png"
+        }
+      ],
+      "site": {
+        "tema": "padrao",
+        "selo": "10% De desconto!",
+        "categoria": "Utilidades",
+        "iconeCategoria": "pin",
+        "pills": [
+          {
+            "texto": "Day",
+            "alt": false
+          },
+          {
+            "texto": "Plus",
+            "alt": true
+          }
+        ],
+        "maisCartoes": true,
+        "categoriaModal": "Utilidades",
+        "iconeCategoriaModal": "imgs/utils-icon.png",
+        "aceitosTitulo": "Cartões Aceitos:",
+        "aceitos": [
+          {
+            "texto": "Day",
+            "classe": "-day"
+          },
+          {
+            "texto": "Alimentação",
+            "classe": "-alim"
+          },
+          {
+            "texto": "Plus",
+            "classe": null
+          },
+          {
+            "texto": "Natal",
+            "classe": "-day"
+          }
+        ],
+        "avisoAlerta": "Não acumulável com outras promoções. Apresente o cupom no momento do pedido.",
+        "rodape": ""
+      }
+    },
+    {
+      "chave": "caochorro",
+      "lojas": {
+        "nomeContem": "caochorro",
+        "estabelecimentoIds": [
+          7
+        ]
+      },
+      "post": {
+        "codigo": "VEGAS-CAOCHORRO10",
+        "titulo": "Economize até 10% em compras para o seu pet!",
+        "descricao": "Pagando com Vegas, você garante 10% de descontos na Cãochorro!",
+        "modalTitulo": "Tudo para sua casa e família!",
+        "modalDescricao": "Desconto de 10% não acumulativo em outras Promoções.",
+        "tipo": "Percentual",
+        "valorDesconto": 10,
+        "valorMinimoCompra": 0,
+        "dataInicio": "2026-01-01T00:00:00.000Z",
+        "dataExpiracao": "2026-06-30T23:59:59.000Z",
+        "limiteUso": 0,
+        "limiteUsoPorUsuario": 0,
+        "ativo": true,
+        "status": "Publicado",
+        "estabelecimentoId": null,
+        "cartoesAceitosIds": [],
+        "tag": ""
+      },
+      "cartoesAceitos": [
+        "Day",
+        "Plus",
+        "Natal"
+      ],
+      "imagens": [
+        {
+          "imagemTipoId": 1,
+          "arquivo": "imgs/cao-cupom.png"
+        },
+        {
+          "imagemTipoId": 2,
+          "arquivo": "imgs/icons/desconto.png"
+        }
+      ],
+      "site": {
+        "tema": "padrao",
+        "selo": "10% De desconto!",
+        "categoria": "Petshop",
+        "iconeCategoria": "pin",
+        "pills": [
+          {
+            "texto": "Day",
+            "alt": false
+          },
+          {
+            "texto": "Plus",
+            "alt": true
+          }
+        ],
+        "maisCartoes": true,
+        "categoriaModal": "Petshop",
+        "iconeCategoriaModal": "imgs/utils-icon.png",
+        "aceitosTitulo": "Cartões Aceitos:",
+        "aceitos": [
+          {
+            "texto": "Day",
+            "classe": "-day"
+          },
+          {
+            "texto": "Plus",
+            "classe": null
+          },
+          {
+            "texto": "Natal",
+            "classe": "-day"
+          }
+        ],
+        "avisoAlerta": "Não acumulável com outras promoções. Apresente o cupom no momento do pedido.",
+        "rodape": ""
+      }
+    },
+    {
+      "chave": "betta-suplementos",
+      "lojas": {
+        "nomeContem": "betta suplementos",
+        "estabelecimentoIds": [
+          6,
+          12,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ]
+      },
+      "post": {
+        "codigo": "VEGAS5",
+        "titulo": "Cuidar do físico ficou 5% mais barato!",
+        "descricao": "Pagando com Vegas, você garante 5% de descontos na rede Betta Suplementos!",
+        "modalTitulo": "Cuidar do físico ficou 5% mais barato!",
+        "modalDescricao": "Pagando com Vegas, e utilizando o cupom VEGAS5 você garante 5% de descontos na rede Betta Suplementos!",
+        "tipo": "Percentual",
+        "valorDesconto": 5,
+        "valorMinimoCompra": 0,
+        "dataInicio": "2026-01-01T00:00:00.000Z",
+        "dataExpiracao": "2026-06-30T23:59:59.000Z",
+        "limiteUso": 0,
+        "limiteUsoPorUsuario": 0,
+        "ativo": true,
+        "status": "Publicado",
+        "estabelecimentoId": null,
+        "cartoesAceitosIds": [],
+        "tag": ""
+      },
+      "cartoesAceitos": [
+        "Day",
+        "Farmacia",
+        "Alimentação",
+        "Refeição"
+      ],
+      "imagens": [
+        {
+          "imagemTipoId": 1,
+          "arquivo": "imgs/betta-cupom.png"
+        },
+        {
+          "imagemTipoId": 2,
+          "arquivo": "imgs/icons/desconto5.png"
+        }
+      ],
+      "site": {
+        "tema": "padrao",
+        "selo": "5% De desconto!",
+        "categoria": "Fitness",
+        "iconeCategoria": "pin",
+        "pills": [
+          {
+            "texto": "Day",
+            "alt": false
+          },
+          {
+            "texto": "Plus",
+            "alt": true
+          }
+        ],
+        "maisCartoes": false,
+        "categoriaModal": "Academia",
+        "iconeCategoriaModal": "imgs/utils-icon.png",
+        "aceitosTitulo": "Cartões Aceitos:",
+        "aceitos": [
+          {
+            "texto": "Day",
+            "classe": "-day"
+          },
+          {
+            "texto": "Farmacia",
+            "classe": "cm-farm"
+          },
+          {
+            "texto": "Alimentação",
+            "classe": "-alim"
+          },
+          {
+            "texto": "Refeição",
+            "classe": null
+          }
+        ],
+        "avisoAlerta": "Não acumulável com outras promoções. Apresente o cupom no momento do pedido.",
+        "rodape": "",
+        "modalDescricaoHtml": "Pagando com Vegas, e utilizando o cupom <span class=\"valid-cm\">VEGAS5</span> você garante 5% de descontos na rede Betta Suplementos!"
+      }
+    },
+    {
+      "chave": "boi-que-mia",
+      "lojas": {
+        "nomeContem": "boi que mia",
+        "estabelecimentoIds": [
+          5
+        ]
+      },
+      "post": {
+        "codigo": "VEGAS-BOIQUEMIA",
+        "titulo": "Entrada por conta da casa no Boi que Mia!",
+        "descricao": "Pagando com o seu Vegas, você garante porções selecionadas, por conta da casa!",
+        "modalTitulo": "Entrada por conta da casa!",
+        "modalDescricao": "Pagando com o seu Vegas, você garante porções selecionadas, por conta da casa!",
+        "tipo": "Percentual",
+        "valorDesconto": 0,
+        "valorMinimoCompra": 0,
+        "dataInicio": "2026-01-01T00:00:00.000Z",
+        "dataExpiracao": "2026-06-30T23:59:59.000Z",
+        "limiteUso": 0,
+        "limiteUsoPorUsuario": 0,
+        "ativo": true,
+        "status": "Publicado",
+        "estabelecimentoId": null,
+        "cartoesAceitosIds": [],
+        "tag": ""
+      },
+      "cartoesAceitos": [
+        "Day",
+        "Plus",
+        "Alimentação",
+        "Refeição",
+        "Natal"
+      ],
+      "imagens": [
+        {
+          "imagemTipoId": 1,
+          "arquivo": "imgs/boimia-cupom.png"
+        }
+      ],
+      "site": {
+        "tema": "padrao",
+        "selo": "Entrada por conta da casa!",
+        "categoria": "Alimentação",
+        "iconeCategoria": "imgs/icons/hamb-icon.svg",
+        "pills": [
+          {
+            "texto": "Alimentação",
+            "alt": false
+          },
+          {
+            "texto": "Plus",
+            "alt": true
+          }
+        ],
+        "maisCartoes": true,
+        "categoriaModal": "Alimentação",
+        "iconeCategoriaModal": "imgs/utils-icon.png",
+        "aceitosTitulo": "Cartões Aceitos:",
+        "aceitos": [
+          {
+            "texto": "Day",
+            "classe": "-day"
+          },
+          {
+            "texto": "Plus",
+            "classe": null
+          },
+          {
+            "texto": "Alimentação",
+            "classe": "-alim"
+          },
+          {
+            "texto": "Refeição",
+            "classe": null
+          },
+          {
+            "texto": "Natal",
+            "classe": "-day"
+          }
+        ],
+        "avisoAlerta": "Não acumulável com outras promoções. Apresente o cupom no momento do pedido.",
+        "rodape": ""
+      }
+    },
+    {
+      "chave": "pasteur-hemograma",
+      "lojas": {
+        "nomeContem": "pasteur",
+        "estabelecimentoIds": [
+          29,
+          30,
+          31,
+          32,
+          33,
+          34
+        ]
+      },
+      "post": {
+        "codigo": "VEGAS-HEMOGRAMA50",
+        "titulo": "Aproveite 50% OFF no Hemograma Completo",
+        "descricao": "Cuide da sua saúde pagando menos: de R$ 37,00 por R$ 18,50.",
+        "modalTitulo": "Aproveite 50% OFF no Hemograma Completo!",
+        "modalDescricao": "Cuide da sua saúde pagando menos! De R$ 37,00 por apenas R$ 18,50 com o Pasteur.",
+        "tipo": "Percentual",
+        "valorDesconto": 50,
+        "valorMinimoCompra": 0,
+        "dataInicio": "2026-10-01T00:00:00.000Z",
+        "dataExpiracao": "2026-11-30T23:59:59.000Z",
+        "limiteUso": 0,
+        "limiteUsoPorUsuario": 0,
+        "ativo": true,
+        "status": "Publicado",
+        "estabelecimentoId": null,
+        "cartoesAceitosIds": [],
+        "tag": "Outubro Rosa"
+      },
+      "cartoesAceitos": [],
+      "imagens": [
+        {
+          "imagemTipoId": 1,
+          "arquivo": "imgs/pasteur-cupom-rosa.png"
+        },
+        {
+          "imagemTipoId": 2,
+          "arquivo": "imgs/icons/desconto-50.png"
+        }
+      ],
+      "site": {
+        "tema": "rosa",
+        "selo": "50% De desconto!",
+        "categoria": "Saúde",
+        "iconeCategoria": "imgs/icons/icon-heart.png",
+        "pills": [
+          {
+            "texto": "Outubro Rosa",
+            "alt": false
+          }
+        ],
+        "maisCartoes": false,
+        "categoriaModal": "Saúde",
+        "iconeCategoriaModal": "imgs/icons/icon-heart.png",
+        "aceitosTitulo": "Produtos aceitos:",
+        "aceitos": [
+          {
+            "texto": "Apresente seu cupom na Pasteur!",
+            "classe": null
+          }
+        ],
+        "avisoAlerta": "Não acumulativo com outras promoções. Apresente o cupom no momento do pedido.",
+        "rodape": "*Condição especial válida em todas as unidades da Pasteur, mediante apresentação do cupom.",
+        "modalDescricaoHtml": "Cuide da sua saúde pagando menos!<br><strong>De R$ 37,00 por apenas R$ 18,50 com o Pasteur.</strong>"
+      }
+    },
+    {
+      "chave": "pasteur-tsh",
+      "lojas": {
+        "nomeContem": "pasteur",
+        "estabelecimentoIds": [
+          29,
+          30,
+          31,
+          32,
+          33,
+          34
+        ]
+      },
+      "post": {
+        "codigo": "VEGAS-TSH50",
+        "titulo": "Aproveite 50% OFF no exame TSH",
+        "descricao": "Cuide da saúde da sua tireoide pagando menos: de R$ 37,00 por R$ 18,50.",
+        "modalTitulo": "Aproveite 50% OFF no exame TSH!",
+        "modalDescricao": "Cuide da saúde da sua tireoide pagando menos! De R$ 37,00 por apenas R$ 18,50 com o Pasteur.",
+        "tipo": "Percentual",
+        "valorDesconto": 50,
+        "valorMinimoCompra": 0,
+        "dataInicio": "2026-10-01T00:00:00.000Z",
+        "dataExpiracao": "2026-11-30T23:59:59.000Z",
+        "limiteUso": 0,
+        "limiteUsoPorUsuario": 0,
+        "ativo": true,
+        "status": "Publicado",
+        "estabelecimentoId": null,
+        "cartoesAceitosIds": [],
+        "tag": "Outubro Rosa"
+      },
+      "cartoesAceitos": [],
+      "imagens": [
+        {
+          "imagemTipoId": 1,
+          "arquivo": "imgs/pasteur-cupom-rosa-04.png"
+        },
+        {
+          "imagemTipoId": 2,
+          "arquivo": "imgs/icons/desconto-50.png"
+        }
+      ],
+      "site": {
+        "tema": "rosa",
+        "selo": "50% De desconto!",
+        "categoria": "Saúde",
+        "iconeCategoria": "imgs/icons/icon-heart.png",
+        "pills": [
+          {
+            "texto": "Outubro Rosa",
+            "alt": false
+          }
+        ],
+        "maisCartoes": false,
+        "categoriaModal": "Saúde",
+        "iconeCategoriaModal": "imgs/icons/icon-heart.png",
+        "aceitosTitulo": "Produtos aceitos:",
+        "aceitos": [
+          {
+            "texto": "Apresente seu cupom na Pasteur!",
+            "classe": null
+          }
+        ],
+        "avisoAlerta": "Não acumulativo com outras promoções. Apresente o cupom no momento do pedido.",
+        "rodape": "*Condição especial válida em todas as unidades da Pasteur, mediante apresentação do cupom.",
+        "modalDescricaoHtml": "Cuide da saúde da sua tireoide pagando menos! <strong>De R$ 37,00 por apenas R$ 18,50 com o Pasteur.</strong>"
+      }
+    },
+    {
+      "chave": "pasteur-t4-livre",
+      "lojas": {
+        "nomeContem": "pasteur",
+        "estabelecimentoIds": [
+          29,
+          30,
+          31,
+          32,
+          33,
+          34
+        ]
+      },
+      "post": {
+        "codigo": "VEGAS-T4LIVRE50",
+        "titulo": "Aproveite 50% OFF no exame T4 Livre",
+        "descricao": "Acompanhe sua saúde hormonal pagando menos: de R$ 37,00 por R$ 18,50.",
+        "modalTitulo": "Aproveite 50% OFF no exame T4 Livre!",
+        "modalDescricao": "Acompanhe sua saúde hormonal pagando menos! De R$ 37,00 por apenas R$ 18,50 com o Pasteur",
+        "tipo": "Percentual",
+        "valorDesconto": 50,
+        "valorMinimoCompra": 0,
+        "dataInicio": "2026-10-01T00:00:00.000Z",
+        "dataExpiracao": "2026-11-30T23:59:59.000Z",
+        "limiteUso": 0,
+        "limiteUsoPorUsuario": 0,
+        "ativo": true,
+        "status": "Publicado",
+        "estabelecimentoId": null,
+        "cartoesAceitosIds": [],
+        "tag": "Outubro Rosa"
+      },
+      "cartoesAceitos": [],
+      "imagens": [
+        {
+          "imagemTipoId": 1,
+          "arquivo": "imgs/pasteur-cupom-rosa-06.png"
+        },
+        {
+          "imagemTipoId": 2,
+          "arquivo": "imgs/icons/desconto-50.png"
+        }
+      ],
+      "site": {
+        "tema": "rosa",
+        "selo": "50% De desconto!",
+        "categoria": "Saúde",
+        "iconeCategoria": "imgs/icons/icon-heart.png",
+        "pills": [
+          {
+            "texto": "Outubro Rosa",
+            "alt": false
+          }
+        ],
+        "maisCartoes": false,
+        "categoriaModal": "Saúde",
+        "iconeCategoriaModal": "imgs/icons/icon-heart.png",
+        "aceitosTitulo": "Produtos aceitos:",
+        "aceitos": [
+          {
+            "texto": "Apresente seu cupom na Pasteur!",
+            "classe": null
+          }
+        ],
+        "avisoAlerta": "Não acumulativo com outras promoções. Apresente o cupom no momento do pedido.",
+        "rodape": "*Condição especial válida em todas as unidades da Pasteur, mediante apresentação do cupom.",
+        "modalDescricaoHtml": "Acompanhe sua saúde hormonal pagando menos! <strong>De R$ 37,00 por apenas R$ 18,50 com o Pasteur</strong>"
+      }
+    },
+    {
+      "chave": "pasteur-glicose-jejum",
+      "lojas": {
+        "nomeContem": "pasteur",
+        "estabelecimentoIds": [
+          29,
+          30,
+          31,
+          32,
+          33,
+          34
+        ]
+      },
+      "post": {
+        "codigo": "VEGAS-GLICOSE49",
+        "titulo": "Aproveite 49% OFF no exame de Glicose em Jejum",
+        "descricao": "Acompanhe seus níveis de glicose pagando menos: de R$ 20,30 por R$ 10,20.",
+        "modalTitulo": "Aproveite 49% OFF no exame de Glicose em Jejum!",
+        "modalDescricao": "Acompanhe seus níveis de glicose pagando menos! De R$ 20,30 por apenas R$ 10,20 com o Pasteur.",
+        "tipo": "Percentual",
+        "valorDesconto": 49,
+        "valorMinimoCompra": 0,
+        "dataInicio": "2026-10-01T00:00:00.000Z",
+        "dataExpiracao": "2026-11-30T23:59:59.000Z",
+        "limiteUso": 0,
+        "limiteUsoPorUsuario": 0,
+        "ativo": true,
+        "status": "Publicado",
+        "estabelecimentoId": null,
+        "cartoesAceitosIds": [],
+        "tag": "Outubro Rosa"
+      },
+      "cartoesAceitos": [],
+      "imagens": [
+        {
+          "imagemTipoId": 1,
+          "arquivo": "imgs/pasteur-cupom-rosa-05.png"
+        },
+        {
+          "imagemTipoId": 2,
+          "arquivo": "imgs/icons/desconto-49-rosa.png"
+        }
+      ],
+      "site": {
+        "tema": "rosa",
+        "selo": "49% De desconto!",
+        "categoria": "Saúde",
+        "iconeCategoria": "imgs/icons/icon-heart.png",
+        "pills": [
+          {
+            "texto": "Outubro Rosa",
+            "alt": false
+          }
+        ],
+        "maisCartoes": false,
+        "categoriaModal": "Saúde",
+        "iconeCategoriaModal": "imgs/icons/icon-heart.png",
+        "aceitosTitulo": "Produtos aceitos:",
+        "aceitos": [
+          {
+            "texto": "Apresente seu cupom na Pasteur!",
+            "classe": null
+          }
+        ],
+        "avisoAlerta": "Não acumulativo com outras promoções. Apresente o cupom no momento do pedido.",
+        "rodape": "*Condição especial válida em todas as unidades da Pasteur, mediante apresentação do cupom.",
+        "modalDescricaoHtml": "Acompanhe seus níveis de glicose pagando menos! <strong>De R$ 20,30 por apenas R$ 10,20 com o Pasteur.</strong>"
+      }
+    },
+    {
+      "chave": "pasteur-psa-total",
+      "lojas": {
+        "nomeContem": "pasteur",
+        "estabelecimentoIds": [
+          29,
+          30,
+          31,
+          32,
+          33,
+          34
+        ]
+      },
+      "post": {
+        "codigo": "VEGAS-PSA49",
+        "titulo": "49% OFF no exame de PSA Total!",
+        "descricao": "Neste Novembro Azul, cuide da sua saúde pagando menos. De R$ 60,40 por apenas R$ 30,20 no Pasteur.",
+        "modalTitulo": "49% OFF no exame de PSA Total",
+        "modalDescricao": "Neste Novembro Azul, cuide da sua saúde pagando menos. De R$ 60,40 por apenas R$ 30,20 no Pasteur.",
+        "tipo": "Percentual",
+        "valorDesconto": 49,
+        "valorMinimoCompra": 0,
+        "dataInicio": "2026-11-01T00:00:00.000Z",
+        "dataExpiracao": "2026-11-30T23:59:59.000Z",
+        "limiteUso": 0,
+        "limiteUsoPorUsuario": 0,
+        "ativo": true,
+        "status": "Publicado",
+        "estabelecimentoId": null,
+        "cartoesAceitosIds": [],
+        "tag": "Novembro Azul"
+      },
+      "cartoesAceitos": [],
+      "imagens": [
+        {
+          "imagemTipoId": 1,
+          "arquivo": "imgs/pasteur-cupom-azul-01.png"
+        },
+        {
+          "imagemTipoId": 2,
+          "arquivo": "imgs/icons/desconto-49-azul.png"
+        }
+      ],
+      "site": {
+        "tema": "azul",
+        "selo": "49% De desconto!",
+        "categoria": "Saúde",
+        "iconeCategoria": "imgs/icons/icon-heart.png",
+        "pills": [
+          {
+            "texto": "Novembro Azul",
+            "alt": false
+          }
+        ],
+        "maisCartoes": false,
+        "categoriaModal": "Saúde",
+        "iconeCategoriaModal": "imgs/icons/icon-heart.png",
+        "aceitosTitulo": "Produtos aceitos:",
+        "aceitos": [
+          {
+            "texto": "Apresente seu cupom na Pasteur!",
+            "classe": null
+          }
+        ],
+        "avisoAlerta": "Não acumulativo com outras promoções. Apresente o cupom no momento do pedido.",
+        "rodape": "*Condição especial válida em todas as unidades da Pasteur, mediante apresentação do cupom.",
+        "modalDescricaoHtml": "Neste Novembro Azul, cuide da sua saúde pagando menos. <strong>De R$ 60,40 por apenas R$ 30,20 no Pasteur.</strong>",
+        "descricaoHtml": "Neste Novembro Azul, cuide da sua saúde pagando menos. <strong>De R$ 60,40 por apenas R$ 30,20</strong> no Pasteur."
+      }
+    },
+    {
+      "chave": "pasteur-exames-60",
+      "lojas": {
+        "nomeContem": "pasteur",
+        "estabelecimentoIds": [
+          29,
+          30,
+          31,
+          32,
+          33,
+          34
+        ]
+      },
+      "post": {
+        "codigo": "VEGAS-PASTEUR60",
+        "titulo": "Cuide da saúde pagando até 60% mais barato!",
+        "descricao": "Na Pasteur diagnósticos, usuários Vegas contam com até 60% de descontos em exames selecionados!",
+        "modalTitulo": "Cuide da saúde pagando até 60% mais barato!",
+        "modalDescricao": "Na Pasteur diagnósticos, usuários Vegas contam com até 60% de descontos em exames selecionados!",
+        "tipo": "Percentual",
+        "valorDesconto": 60,
+        "valorMinimoCompra": 0,
+        "dataInicio": "2026-01-01T00:00:00.000Z",
+        "dataExpiracao": "2026-06-30T23:59:59.000Z",
+        "limiteUso": 0,
+        "limiteUsoPorUsuario": 0,
+        "ativo": true,
+        "status": "Publicado",
+        "estabelecimentoId": null,
+        "cartoesAceitosIds": [],
+        "tag": ""
+      },
+      "cartoesAceitos": [],
+      "imagens": [
+        {
+          "imagemTipoId": 1,
+          "arquivo": "imgs/pasteur-cupom.png"
+        },
+        {
+          "imagemTipoId": 2,
+          "arquivo": "imgs/icons/desconto61.png"
+        }
+      ],
+      "site": {
+        "tema": "padrao",
+        "selo": "60% De desconto!",
+        "categoria": "Saúde",
+        "iconeCategoria": "imgs/icons/hamb-icon.svg",
+        "pills": [
+          {
+            "texto": "Day",
+            "alt": false
+          },
+          {
+            "texto": "Plus",
+            "alt": true
+          }
+        ],
+        "maisCartoes": true,
+        "categoriaModal": "Saúde",
+        "iconeCategoriaModal": "imgs/utils-icon.png",
+        "aceitosTitulo": "Cartões Aceitos:",
+        "aceitos": [
+          {
+            "texto": "Consultar no local",
+            "classe": null,
+            "simples": true
+          }
+        ],
+        "avisoAlerta": "Não acumulável com outras promoções. Apresente o cupom no momento do pedido.",
+        "rodape": ""
+      }
+    },
+    {
+      "chave": "mercadao-dos-oculos",
+      "lojas": {
+        "nomeContem": "mercadao dos oculos",
+        "estabelecimentoIds": [
+          26
+        ]
+      },
+      "post": {
+        "codigo": "VEGAS-MERCADAO20",
+        "titulo": "20% de descontos em armações selecionadas!",
+        "descricao": "Clientes Vegas possuem 20% de descontos em armações selecionadas no Mercadão dos óculos!",
+        "modalTitulo": "20% de descontos em armações selecionadas!",
+        "modalDescricao": "Clientes Vegas possuem 20% de descontos em armações selecionadas no Mercadão dos óculos!",
+        "tipo": "Percentual",
+        "valorDesconto": 20,
+        "valorMinimoCompra": 0,
+        "dataInicio": "2026-01-01T00:00:00.000Z",
+        "dataExpiracao": "2026-06-30T23:59:59.000Z",
+        "limiteUso": 0,
+        "limiteUsoPorUsuario": 0,
+        "ativo": true,
+        "status": "Publicado",
+        "estabelecimentoId": null,
+        "cartoesAceitosIds": [],
+        "tag": ""
+      },
+      "cartoesAceitos": [
+        "Day",
+        "Farmácia",
+        "Plus"
+      ],
+      "imagens": [
+        {
+          "imagemTipoId": 1,
+          "arquivo": "imgs/mercadao-cupom.png"
+        },
+        {
+          "imagemTipoId": 2,
+          "arquivo": "imgs/icons/desconto20.png"
+        }
+      ],
+      "site": {
+        "tema": "padrao",
+        "selo": "20% De desconto!",
+        "categoria": "Bem estar",
+        "iconeCategoria": "imgs/icons/heart-icon.png",
+        "pills": [
+          {
+            "texto": "Day",
+            "alt": false
+          },
+          {
+            "texto": "Plus",
+            "alt": true
+          }
+        ],
+        "maisCartoes": true,
+        "categoriaModal": "Bem estar",
+        "iconeCategoriaModal": "imgs/icons/heart-icon.png",
+        "aceitosTitulo": "Cartões Aceitos:",
+        "aceitos": [
+          {
+            "texto": "Day",
+            "classe": "-day"
+          },
+          {
+            "texto": "Farmácia",
+            "classe": "cm-farm"
+          },
+          {
+            "texto": "Plus",
+            "classe": null
+          }
+        ],
+        "avisoAlerta": "Não acumulável com outras promoções. Apresente o cupom no momento do pedido.",
+        "rodape": ""
+      }
+    },
+    {
+      "chave": "intensos",
+      "lojas": {
+        "nomeContem": "intensos",
+        "estabelecimentoIds": [
+          28
+        ]
+      },
+      "post": {
+        "codigo": "VEGAS-INTENSOS",
+        "titulo": "O primeiro corte é por nossa conta!",
+        "descricao": "Clientes Vegas que aderirem o clube intensos garante o primeiro corte grátis e hidratação no mesmo atendimento!",
+        "modalTitulo": "O primeiro corte é por nossa conta!",
+        "modalDescricao": "Clientes Vegas que aderirem o clube intensos garante o primeiro corte grátis e hidratação no mesmo atendimento!",
+        "tipo": "Percentual",
+        "valorDesconto": 0,
+        "valorMinimoCompra": 0,
+        "dataInicio": "2026-01-01T00:00:00.000Z",
+        "dataExpiracao": "2026-06-30T23:59:59.000Z",
+        "limiteUso": 0,
+        "limiteUsoPorUsuario": 0,
+        "ativo": true,
+        "status": "Publicado",
+        "estabelecimentoId": null,
+        "cartoesAceitosIds": [],
+        "tag": ""
+      },
+      "cartoesAceitos": [
+        "Day",
+        "Plus"
+      ],
+      "imagens": [
+        {
+          "imagemTipoId": 1,
+          "arquivo": "imgs/intensos-cupom.png"
+        },
+        {
+          "imagemTipoId": 2,
+          "arquivo": "imgs/icons/1lugardesconto.png"
+        }
+      ],
+      "site": {
+        "tema": "padrao",
+        "selo": "1° corte por conta da casa!",
+        "categoria": "Bem estar",
+        "iconeCategoria": "imgs/icons/heart-icon.png",
+        "pills": [
+          {
+            "texto": "Day",
+            "alt": false
+          },
+          {
+            "texto": "Plus",
+            "alt": true
+          }
+        ],
+        "maisCartoes": true,
+        "categoriaModal": "Bem estar",
+        "iconeCategoriaModal": "imgs/icons/heart-icon.png",
+        "aceitosTitulo": "Cartões Aceitos:",
+        "aceitos": [
+          {
+            "texto": "Day",
+            "classe": "-day"
+          },
+          {
+            "texto": "Plus",
+            "classe": null
+          }
+        ],
+        "avisoAlerta": "Não acumulável com outras promoções. Apresente o cupom no momento do pedido.",
+        "rodape": ""
+      }
+    },
+    {
+      "chave": "vidrovan",
+      "lojas": {
+        "nomeContem": "vidrovan",
+        "estabelecimentoIds": [
+          27
+        ]
+      },
+      "post": {
+        "codigo": "VEGAS-VIDROVAN5",
+        "titulo": "Dirija com com mais clareza e mais descontos!",
+        "descricao": "Economize até 5% pagando com os cartões Vegas",
+        "modalTitulo": "Dirija com com mais clareza e mais descontos!",
+        "modalDescricao": "Economize até 5% pagando com os cartões Vegas",
+        "tipo": "Percentual",
+        "valorDesconto": 5,
+        "valorMinimoCompra": 0,
+        "dataInicio": "2026-01-01T00:00:00.000Z",
+        "dataExpiracao": "2026-06-30T23:59:59.000Z",
+        "limiteUso": 0,
+        "limiteUsoPorUsuario": 0,
+        "ativo": true,
+        "status": "Publicado",
+        "estabelecimentoId": null,
+        "cartoesAceitosIds": [],
+        "tag": ""
+      },
+      "cartoesAceitos": [
+        "Day",
+        "Plus"
+      ],
+      "imagens": [
+        {
+          "imagemTipoId": 1,
+          "arquivo": "imgs/vidrovan-cupom.png"
+        },
+        {
+          "imagemTipoId": 2,
+          "arquivo": "imgs/icons/desconto5.png"
+        }
+      ],
+      "site": {
+        "tema": "padrao",
+        "selo": "5% De desconto!",
+        "categoria": "Transporte",
+        "iconeCategoria": "imgs/icons/car-icon.svg",
+        "pills": [
+          {
+            "texto": "Day",
+            "alt": false
+          },
+          {
+            "texto": "Plus",
+            "alt": true
+          }
+        ],
+        "maisCartoes": true,
+        "categoriaModal": "Transporte",
+        "iconeCategoriaModal": "imgs/icons/car-icon.svg",
+        "aceitosTitulo": "Cartões Aceitos:",
+        "aceitos": [
+          {
+            "texto": "Day",
+            "classe": "-day"
+          },
+          {
+            "texto": "Plus",
+            "classe": null
+          }
+        ],
+        "avisoAlerta": "Não acumulável com outras promoções. Apresente o cupom no momento do pedido.",
+        "rodape": ""
+      }
+    }
+  ]
+}
