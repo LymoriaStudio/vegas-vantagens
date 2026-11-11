@@ -1,59 +1,193 @@
 {
-  "_aviso": "DADOS MOCKADOS - uso exclusivo em localhost. Nunca usar em producao. Este e o estado inicial; o servidor mock copia para mock/db.json na primeira execucao.",
+  "_aviso": "DADOS MOCKADOS - uso exclusivo em localhost. Nunca usar em producao. Copia das 24 lojas de producao (GET /api/Estabelecimentos e /api/Estabelecimentos/{id}, nov/2026). O servidor mock copia este arquivo para mock/db.json na primeira execucao.",
   "categorias": [
-    { "id": 1, "nome": "Alimentação" },
-    { "id": 2, "nome": "Presentes" },
-    { "id": 3, "nome": "Brinquedos" },
-    { "id": 4, "nome": "Óticas" },
-    { "id": 5, "nome": "Barbearias" },
-    { "id": 6, "nome": "Petshop" },
-    { "id": 7, "nome": "Bares / Restaurantes" },
-    { "id": 8, "nome": "Cosméticos" },
-    { "id": 9, "nome": "Veículos" }
+    {
+      "id": 1,
+      "nome": "Restaurante"
+    },
+    {
+      "id": 2,
+      "nome": "Lanchonete"
+    },
+    {
+      "id": 3,
+      "nome": "Padaria"
+    },
+    {
+      "id": 4,
+      "nome": "Supermercado"
+    },
+    {
+      "id": 5,
+      "nome": "Loja de Roupa"
+    },
+    {
+      "id": 6,
+      "nome": "Pet Shop"
+    },
+    {
+      "id": 7,
+      "nome": "Farmácia"
+    },
+    {
+      "id": 8,
+      "nome": "Academia"
+    },
+    {
+      "id": 9,
+      "nome": "Salão de Beleza"
+    },
+    {
+      "id": 10,
+      "nome": "Posto de Combustível"
+    },
+    {
+      "id": 11,
+      "nome": "Lojas Magazine"
+    },
+    {
+      "id": 12,
+      "nome": "Utilidades"
+    },
+    {
+      "id": 14,
+      "nome": "Bem Estar"
+    },
+    {
+      "id": 15,
+      "nome": "Saúde"
+    },
+    {
+      "id": 16,
+      "nome": "Transporte"
+    }
   ],
   "cartoes": [
-    { "id": 1, "nome": "Vegas Day" },
-    { "id": 2, "nome": "Vegas Plus" },
-    { "id": 3, "nome": "Vegas Alimentação" },
-    { "id": 4, "nome": "Vegas Refeição" },
-    { "id": 5, "nome": "Vegas Combustível" }
+    {
+      "id": 1,
+      "nome": "Day"
+    },
+    {
+      "id": 2,
+      "nome": "Plus"
+    },
+    {
+      "id": 3,
+      "nome": "Alimentação"
+    },
+    {
+      "id": 4,
+      "nome": "Refeição"
+    },
+    {
+      "id": 5,
+      "nome": "Combustível"
+    },
+    {
+      "id": 6,
+      "nome": "Natal"
+    },
+    {
+      "id": 7,
+      "nome": "Farmácia"
+    }
   ],
   "unidadesFederativas": [
-    { "id": 1, "nome": "São Paulo", "sigla": "SP" },
-    { "id": 2, "nome": "Rio de Janeiro", "sigla": "RJ" }
+    {
+      "id": 1,
+      "nome": "São Paulo",
+      "sigla": "SP"
+    },
+    {
+      "id": 2,
+      "nome": "Rio de Janeiro",
+      "sigla": "RJ"
+    }
   ],
   "cidades": [
-    { "id": 1, "nome": "Americana", "unidadeFederativaId": 1 },
-    { "id": 2, "nome": "Santa Bárbara d'Oeste", "unidadeFederativaId": 1 },
-    { "id": 3, "nome": "Nova Odessa", "unidadeFederativaId": 1 },
-    { "id": 4, "nome": "Sumaré", "unidadeFederativaId": 1 },
-    { "id": 5, "nome": "Campinas", "unidadeFederativaId": 1 },
-    { "id": 6, "nome": "Rio de Janeiro", "unidadeFederativaId": 2 }
+    {
+      "id": 1,
+      "nome": "Americana",
+      "unidadeFederativaId": 1
+    },
+    {
+      "id": 2,
+      "nome": "Santa Bárbara d'Oeste",
+      "unidadeFederativaId": 1
+    },
+    {
+      "id": 3,
+      "nome": "Nova Odessa",
+      "unidadeFederativaId": 1
+    },
+    {
+      "id": 4,
+      "nome": "Sumaré",
+      "unidadeFederativaId": 1
+    },
+    {
+      "id": 5,
+      "nome": "Campinas",
+      "unidadeFederativaId": 1
+    },
+    {
+      "id": 6,
+      "nome": "Piracicaba",
+      "unidadeFederativaId": 1
+    },
+    {
+      "id": 7,
+      "nome": "Limeira",
+      "unidadeFederativaId": 1
+    },
+    {
+      "id": 8,
+      "nome": "Rio de Janeiro",
+      "unidadeFederativaId": 2
+    }
   ],
   "grupos": [],
   "estabelecimentos": [
     {
       "id": 3,
-      "nome": "Zanini",
-      "razaoSocial": "",
-      "cnpj": "",
-      "telefone": "",
-      "emailContato": "",
-      "ativo": true,
-      "statusPublicacao": "Publicado",
+      "nome": "Zanini Loja 01",
+      "razaoSocial": "Magazine Americana Ltda",
+      "cnpj": "44.829.620/0001-03",
+      "rua": "Dr. Antônio Lobo",
+      "numero": "615",
+      "bairro": "Centro",
+      "complemento": "-",
+      "cep": "13465-005",
+      "cidadeId": 1,
+      "telefone": "(19) 3462-1940",
+      "emailContato": "financeiro@zanini.com.br",
+      "latitude": -22.73574,
+      "longitude": -47.32967,
+      "categoriaIds": [
+        12
+      ],
+      "imagens": [
+        {
+          "id": 1,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/b32df7fe-5c31-4a1f-9fba-175a582009d6.jpg",
+          "principal": true,
+          "logo": true,
+          "fachada": false
+        },
+        {
+          "id": 2,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/fc8d39d9-ca2f-4279-9097-5021d4fb1c1e.jpg",
+          "principal": false,
+          "logo": false,
+          "fachada": true
+        }
+      ],
+      "ativo": false,
+      "statusPublicacao": "Rascunho",
       "statusOperacional": "Ativo",
       "motivoCancelamento": "",
-      "categoriaIds": [3],
-      "cidadeId": 1,
-      "rua": "",
-      "numero": "",
-      "bairro": "",
-      "complemento": "",
-      "cep": "",
-      "latitude": null,
-      "longitude": null,
       "mapaUrl": "",
-      "sobre": "Tudo para sua casa e família! Cliente Vegas tem 10% de desconto em qualquer produto da loja.",
+      "sobre": "",
       "grupoId": null,
       "consultorNome": "",
       "consultorEmail": "",
@@ -62,34 +196,48 @@
       "segundoContatoNome": "",
       "segundoContatoTelefone": "",
       "segundoContatoCargo": "",
-      "cartoesAceitosIds": [1, 2],
-      "imagens": [
-        { "id": 1, "url": "./imgs/logos/logo-zanini.png", "principal": true, "logo": true, "fachada": false },
-        { "id": 2, "url": "./imgs/comercios/zanini-est.webp", "principal": false, "logo": false, "fachada": true }
-      ]
+      "cartoesAceitosIds": []
     },
     {
       "id": 5,
-      "nome": "Boi Que Mia - Grill Bar",
-      "razaoSocial": "",
-      "cnpj": "",
-      "telefone": "",
+      "nome": "Boi que Mia",
+      "razaoSocial": "Boi que Mia Lanchonete Ltda - ME",
+      "cnpj": "21229387000122",
+      "rua": "Rua Paraná",
+      "numero": "245",
+      "bairro": "Vila Nossa Senhora Fatima",
+      "complemento": "",
+      "cep": "13478560",
+      "cidadeId": 1,
+      "telefone": "(19) 3013-1101",
       "emailContato": "",
+      "latitude": -22.740382767204057,
+      "longitude": -47.32275101902131,
+      "categoriaIds": [
+        1
+      ],
+      "imagens": [
+        {
+          "id": 3,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/b16cb6b6-5f9d-4756-862e-a446047c8e1a.jpg",
+          "principal": false,
+          "logo": false,
+          "fachada": true
+        },
+        {
+          "id": 4,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/f86b52f9-3f27-4217-9304-46963961bb91.png",
+          "principal": true,
+          "logo": true,
+          "fachada": false
+        }
+      ],
       "ativo": true,
       "statusPublicacao": "Publicado",
       "statusOperacional": "Ativo",
       "motivoCancelamento": "",
-      "categoriaIds": [7],
-      "cidadeId": 1,
-      "rua": "",
-      "numero": "",
-      "bairro": "",
-      "complemento": "",
-      "cep": "",
-      "latitude": null,
-      "longitude": null,
       "mapaUrl": "",
-      "sobre": "Grill bar. Cliente Vegas ganha 1 pão de alho ou queijo coalho por conta da casa.",
+      "sobre": "",
       "grupoId": null,
       "consultorNome": "",
       "consultorEmail": "",
@@ -98,61 +246,1106 @@
       "segundoContatoNome": "",
       "segundoContatoTelefone": "",
       "segundoContatoCargo": "",
-      "cartoesAceitosIds": [1, 2, 4],
-      "imagens": [
-        { "id": 3, "url": "./imgs/logos/boi-logo.png", "principal": true, "logo": true, "fachada": false },
-        { "id": 4, "url": "./imgs/comercios/boimia.jpg", "principal": false, "logo": false, "fachada": true }
-      ]
-    }
-  ],
-  "cupons": [
-    {
-      "id": 1,
-      "codigo": "MOCK-ZANINI10",
-      "titulo": "10% de desconto na Zanini",
-      "descricao": "Cliente Vegas tem 10% de desconto em qualquer produto da loja.",
-      "modalTitulo": "Presentes para toda a família pagando 10% mais barato na Zanini!",
-      "modalDescricao": "Faça compras a partir de R$ 100,00 na Zanini e pague 10% a menos com seu Vegas Card.",
-      "tipo": "Percentual",
-      "tag": "Brinquedos",
-      "valorDesconto": 10,
-      "valorMinimoCompra": 100,
-      "dataInicio": "2026-01-01T00:00:00.000Z",
-      "dataExpiracao": "2026-12-31T23:59:00.000Z",
-      "limiteUso": 0,
-      "limiteUsoPorUsuario": 0,
-      "ativo": true,
-      "status": "Publicado",
-      "estabelecimentoId": 3,
-      "cartoesAceitosIds": [1, 2],
-      "imagens": [
-        { "id": 1, "url": "./imgs/zanini-cupom.png", "imagemTipoId": 1 },
-        { "id": 2, "url": "./imgs/zanini-cupom2.png", "imagemTipoId": 2 }
-      ]
+      "cartoesAceitosIds": []
     },
     {
-      "id": 2,
-      "codigo": "MOCK-BOIQUEMIA",
-      "titulo": "Entrada por conta da casa no Boi Que Mia",
-      "descricao": "Cliente Vegas ganha 1 pão de alho ou queijo coalho por conta da casa.",
-      "modalTitulo": "Entrada por conta da casa no Boi que Mia!",
-      "modalDescricao": "Apresente seu Vegas Card e ganhe 1 pão de alho ou 1 queijo coalho.",
-      "tipo": "Percentual",
-      "tag": "Bares / Restaurantes",
-      "valorDesconto": 0,
-      "valorMinimoCompra": 0,
-      "dataInicio": "2026-01-01T00:00:00.000Z",
-      "dataExpiracao": "2026-12-31T23:59:00.000Z",
-      "limiteUso": 0,
-      "limiteUsoPorUsuario": 0,
-      "ativo": true,
-      "status": "Publicado",
-      "estabelecimentoId": 5,
-      "cartoesAceitosIds": [1, 2, 4],
+      "id": 6,
+      "nome": "Betta Suplementos - Loja 01",
+      "razaoSocial": "Bt1 Suplementos Alimentares Ltda",
+      "cnpj": "18784087000796",
+      "rua": "Avenida da Indústria",
+      "numero": "173",
+      "bairro": "Jardim Pérola",
+      "complemento": "",
+      "cep": "13454200",
+      "cidadeId": 2,
+      "telefone": "(19) 4122-3458",
+      "emailContato": "",
+      "latitude": -22.744193524000494,
+      "longitude": -47.37045356332771,
+      "categoriaIds": [],
       "imagens": [
-        { "id": 3, "url": "./imgs/boimia-cupom.png", "imagemTipoId": 1 },
-        { "id": 4, "url": "./imgs/boimia-cupom.png", "imagemTipoId": 2 }
-      ]
+        {
+          "id": 5,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/57f8fd26-63f0-40ed-afdb-fcdf30dd002b.png",
+          "principal": false,
+          "logo": false,
+          "fachada": true
+        },
+        {
+          "id": 6,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/71e23b56-6996-4995-8d2b-4eb0dfae3596.png",
+          "principal": true,
+          "logo": true,
+          "fachada": false
+        }
+      ],
+      "ativo": false,
+      "statusPublicacao": "Rascunho",
+      "statusOperacional": "Ativo",
+      "motivoCancelamento": "",
+      "mapaUrl": "",
+      "sobre": "",
+      "grupoId": null,
+      "consultorNome": "",
+      "consultorEmail": "",
+      "representanteLegalNome": "",
+      "cpfRepresentante": "",
+      "segundoContatoNome": "",
+      "segundoContatoTelefone": "",
+      "segundoContatoCargo": "",
+      "cartoesAceitosIds": []
+    },
+    {
+      "id": 7,
+      "nome": "Cãochorro Pet Shop",
+      "razaoSocial": "Tree Pet Comercio de Produtos Para Animais Ltda",
+      "cnpj": "57148045000125",
+      "rua": "Avenida Paschoal Ardito",
+      "numero": "887",
+      "bairro": "São Manoel",
+      "complemento": "-",
+      "cep": "13472130",
+      "cidadeId": 1,
+      "telefone": "(19) 9 7811-7913",
+      "emailContato": "-",
+      "latitude": -22.729016544529347,
+      "longitude": -47.311095932516395,
+      "categoriaIds": [
+        6
+      ],
+      "imagens": [
+        {
+          "id": 7,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/25f1297c-2c34-47fa-9c03-a8fd99c9ec0b.png",
+          "principal": false,
+          "logo": false,
+          "fachada": true
+        },
+        {
+          "id": 8,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/ea36f862-8244-401b-a8be-5fd96ea2a4da.png",
+          "principal": true,
+          "logo": true,
+          "fachada": false
+        }
+      ],
+      "ativo": true,
+      "statusPublicacao": "Publicado",
+      "statusOperacional": "Ativo",
+      "motivoCancelamento": "",
+      "mapaUrl": "",
+      "sobre": "",
+      "grupoId": null,
+      "consultorNome": "",
+      "consultorEmail": "",
+      "representanteLegalNome": "",
+      "cpfRepresentante": "",
+      "segundoContatoNome": "",
+      "segundoContatoTelefone": "",
+      "segundoContatoCargo": "",
+      "cartoesAceitosIds": []
+    },
+    {
+      "id": 11,
+      "nome": "Zanini Loja 04",
+      "razaoSocial": "Magazine Americana Ltda",
+      "cnpj": "44829620000537",
+      "rua": "Rua Governador Pedro de Toledo",
+      "numero": "831",
+      "bairro": "Centro",
+      "complemento": "-",
+      "cep": "13400060",
+      "cidadeId": 6,
+      "telefone": "(19) 3432-3363",
+      "emailContato": "-",
+      "latitude": -22.724541847728965,
+      "longitude": -47.64736694601104,
+      "categoriaIds": [
+        12
+      ],
+      "imagens": [
+        {
+          "id": 9,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/81668bcc-2cdf-4df2-987b-03fc89a14150.png",
+          "principal": false,
+          "logo": false,
+          "fachada": true
+        },
+        {
+          "id": 10,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/7db26148-f6b4-44cb-a0fe-7f86e9f33218.png",
+          "principal": true,
+          "logo": true,
+          "fachada": false
+        }
+      ],
+      "ativo": true,
+      "statusPublicacao": "Publicado",
+      "statusOperacional": "Ativo",
+      "motivoCancelamento": "",
+      "mapaUrl": "",
+      "sobre": "",
+      "grupoId": null,
+      "consultorNome": "",
+      "consultorEmail": "",
+      "representanteLegalNome": "",
+      "cpfRepresentante": "",
+      "segundoContatoNome": "",
+      "segundoContatoTelefone": "",
+      "segundoContatoCargo": "",
+      "cartoesAceitosIds": []
+    },
+    {
+      "id": 12,
+      "nome": "Betta Suplementos - Loja 02",
+      "razaoSocial": "Bt1 Suplementos Alimentares Ltda",
+      "cnpj": "18784087000362",
+      "rua": "Rua Florindo Cibin",
+      "numero": "289",
+      "bairro": "Vila Medon",
+      "complemento": "-",
+      "cep": "13465230",
+      "cidadeId": 1,
+      "telefone": "(19) 41223458",
+      "emailContato": "-",
+      "latitude": -22.74751805681943,
+      "longitude": -47.33560630686265,
+      "categoriaIds": [
+        8
+      ],
+      "imagens": [
+        {
+          "id": 11,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/c607a448-348d-443b-91cc-0320aa1bf123.jpg",
+          "principal": false,
+          "logo": false,
+          "fachada": true
+        },
+        {
+          "id": 12,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/fbbe0913-f032-4b4c-97e3-c3da0d86f507.png",
+          "principal": true,
+          "logo": true,
+          "fachada": false
+        }
+      ],
+      "ativo": true,
+      "statusPublicacao": "Publicado",
+      "statusOperacional": "Ativo",
+      "motivoCancelamento": "",
+      "mapaUrl": "",
+      "sobre": "",
+      "grupoId": null,
+      "consultorNome": "",
+      "consultorEmail": "",
+      "representanteLegalNome": "",
+      "cpfRepresentante": "",
+      "segundoContatoNome": "",
+      "segundoContatoTelefone": "",
+      "segundoContatoCargo": "",
+      "cartoesAceitosIds": []
+    },
+    {
+      "id": 14,
+      "nome": "Betta Suplementos - Loja 03",
+      "razaoSocial": "Bt2 Suplementos Alimentares Ltda",
+      "cnpj": "34558724000177",
+      "rua": "Avenida Tiradentes",
+      "numero": "804",
+      "bairro": "Vila Mac Knight",
+      "complemento": "-",
+      "cep": "13450236",
+      "cidadeId": 2,
+      "telefone": "(19) 41223458",
+      "emailContato": "-",
+      "latitude": -22.74787489156062,
+      "longitude": -47.418828441980615,
+      "categoriaIds": [
+        8
+      ],
+      "imagens": [
+        {
+          "id": 13,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/6d8c1294-7798-463a-a6d6-7dfeb45e0b90.png",
+          "principal": false,
+          "logo": false,
+          "fachada": true
+        },
+        {
+          "id": 14,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/796188f4-a558-41f5-9338-5e2ba4178a96.png",
+          "principal": true,
+          "logo": true,
+          "fachada": false
+        }
+      ],
+      "ativo": true,
+      "statusPublicacao": "Publicado",
+      "statusOperacional": "Ativo",
+      "motivoCancelamento": "",
+      "mapaUrl": "",
+      "sobre": "",
+      "grupoId": null,
+      "consultorNome": "",
+      "consultorEmail": "",
+      "representanteLegalNome": "",
+      "cpfRepresentante": "",
+      "segundoContatoNome": "",
+      "segundoContatoTelefone": "",
+      "segundoContatoCargo": "",
+      "cartoesAceitosIds": []
+    },
+    {
+      "id": 15,
+      "nome": "Betta Suplementos - Loja 04",
+      "razaoSocial": "Bt1 Suplementos Alimentares Ltda",
+      "cnpj": "18784087000605",
+      "rua": "Avenida Torquato da Silva Leitão",
+      "numero": "804",
+      "bairro": "São Dimas",
+      "complemento": "-",
+      "cep": "13416210",
+      "cidadeId": 6,
+      "telefone": "(19) 41223458",
+      "emailContato": "-",
+      "latitude": -22.708127256130844,
+      "longitude": -47.645669795385324,
+      "categoriaIds": [
+        8
+      ],
+      "imagens": [
+        {
+          "id": 15,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/e3626f50-d15d-4400-a2f3-8f312197ca7c.png",
+          "principal": false,
+          "logo": false,
+          "fachada": true
+        },
+        {
+          "id": 16,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/abab9a05-502b-48ca-b025-09a0c1256e40.png",
+          "principal": true,
+          "logo": true,
+          "fachada": false
+        }
+      ],
+      "ativo": true,
+      "statusPublicacao": "Publicado",
+      "statusOperacional": "Ativo",
+      "motivoCancelamento": "",
+      "mapaUrl": "",
+      "sobre": "",
+      "grupoId": null,
+      "consultorNome": "",
+      "consultorEmail": "",
+      "representanteLegalNome": "",
+      "cpfRepresentante": "",
+      "segundoContatoNome": "",
+      "segundoContatoTelefone": "",
+      "segundoContatoCargo": "",
+      "cartoesAceitosIds": []
+    },
+    {
+      "id": 16,
+      "nome": "Betta Suplementos - Loja 05",
+      "razaoSocial": "Bt1 Suplementos Alimentares Ltda",
+      "cnpj": "18784087000443",
+      "rua": "Avenida Paschoal Ardito",
+      "numero": "340",
+      "bairro": "São Manoel",
+      "complemento": "-",
+      "cep": "13472130",
+      "cidadeId": 1,
+      "telefone": "(19) 41223458",
+      "emailContato": "-",
+      "latitude": -22.730064137410483,
+      "longitude": -47.316022300175376,
+      "categoriaIds": [
+        8
+      ],
+      "imagens": [
+        {
+          "id": 17,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/8086b178-08d6-4ae3-bc91-5ca0f3b7c366.png",
+          "principal": false,
+          "logo": false,
+          "fachada": true
+        },
+        {
+          "id": 18,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/9e837aff-f3ca-4df7-8977-38926adae27f.png",
+          "principal": true,
+          "logo": true,
+          "fachada": false
+        }
+      ],
+      "ativo": true,
+      "statusPublicacao": "Publicado",
+      "statusOperacional": "Ativo",
+      "motivoCancelamento": "",
+      "mapaUrl": "",
+      "sobre": "",
+      "grupoId": null,
+      "consultorNome": "",
+      "consultorEmail": "",
+      "representanteLegalNome": "",
+      "cpfRepresentante": "",
+      "segundoContatoNome": "",
+      "segundoContatoTelefone": "",
+      "segundoContatoCargo": "",
+      "cartoesAceitosIds": []
+    },
+    {
+      "id": 17,
+      "nome": "Betta Suplementos - Loja 06",
+      "razaoSocial": "Bt1 Suplementos Alimentares Ltda",
+      "cnpj": "18784087000524",
+      "rua": "Avenida Dois Córregos",
+      "numero": "999",
+      "bairro": "Piracicamirim",
+      "complemento": "-",
+      "cep": "13420610",
+      "cidadeId": 6,
+      "telefone": "(19) 41223458",
+      "emailContato": "-",
+      "latitude": -22.73823021251606,
+      "longitude": -47.6214865260663,
+      "categoriaIds": [
+        8
+      ],
+      "imagens": [
+        {
+          "id": 19,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/08f0dc6d-92d8-478d-b9bf-130700ee416a.png",
+          "principal": false,
+          "logo": false,
+          "fachada": true
+        },
+        {
+          "id": 20,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/0ceec0ae-1928-4cc1-9da6-d47349c4aaa7.png",
+          "principal": true,
+          "logo": true,
+          "fachada": false
+        }
+      ],
+      "ativo": true,
+      "statusPublicacao": "Publicado",
+      "statusOperacional": "Ativo",
+      "motivoCancelamento": "",
+      "mapaUrl": "",
+      "sobre": "",
+      "grupoId": null,
+      "consultorNome": "",
+      "consultorEmail": "",
+      "representanteLegalNome": "",
+      "cpfRepresentante": "",
+      "segundoContatoNome": "",
+      "segundoContatoTelefone": "",
+      "segundoContatoCargo": "",
+      "cartoesAceitosIds": []
+    },
+    {
+      "id": 18,
+      "nome": "Betta Suplementos - Loja 07",
+      "razaoSocial": "Bt1 Suplementos Alimentares Ltda",
+      "cnpj": "18784087000877",
+      "rua": "Avenida Rebouças",
+      "numero": "2398",
+      "bairro": "Centro",
+      "complemento": "-",
+      "cep": "13170023",
+      "cidadeId": 4,
+      "telefone": "(19) 41223458",
+      "emailContato": "-",
+      "latitude": -22.82089571341202,
+      "longitude": -47.27227053402348,
+      "categoriaIds": [
+        8
+      ],
+      "imagens": [
+        {
+          "id": 21,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/5ec11cbb-7e1e-45b4-a125-eaaead9894a7.png",
+          "principal": false,
+          "logo": false,
+          "fachada": true
+        },
+        {
+          "id": 22,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/3ea71b98-ea27-4413-96c7-62ca7fe0811e.png",
+          "principal": true,
+          "logo": true,
+          "fachada": false
+        }
+      ],
+      "ativo": true,
+      "statusPublicacao": "Publicado",
+      "statusOperacional": "Ativo",
+      "motivoCancelamento": "",
+      "mapaUrl": "",
+      "sobre": "",
+      "grupoId": null,
+      "consultorNome": "",
+      "consultorEmail": "",
+      "representanteLegalNome": "",
+      "cpfRepresentante": "",
+      "segundoContatoNome": "",
+      "segundoContatoTelefone": "",
+      "segundoContatoCargo": "",
+      "cartoesAceitosIds": []
+    },
+    {
+      "id": 19,
+      "nome": "Betta Suplementos - Loja 09",
+      "razaoSocial": "Bt1 Suplementos Alimentares Ltda",
+      "cnpj": "18784087001091",
+      "rua": "Avenida Brasil",
+      "numero": "1825",
+      "bairro": "Jardim São Paulo",
+      "complemento": "-",
+      "cep": "13468000",
+      "cidadeId": 1,
+      "telefone": "(19) 41223458",
+      "emailContato": "-",
+      "latitude": -22.751554880794412,
+      "longitude": -47.34702178742878,
+      "categoriaIds": [
+        8
+      ],
+      "imagens": [
+        {
+          "id": 23,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/b2779446-b93e-414f-b604-5d85df311bdb.png",
+          "principal": false,
+          "logo": false,
+          "fachada": true
+        },
+        {
+          "id": 24,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/d599519b-34ed-4114-8936-bf8a2aef2334.png",
+          "principal": true,
+          "logo": true,
+          "fachada": false
+        }
+      ],
+      "ativo": true,
+      "statusPublicacao": "Publicado",
+      "statusOperacional": "Ativo",
+      "motivoCancelamento": "",
+      "mapaUrl": "",
+      "sobre": "",
+      "grupoId": null,
+      "consultorNome": "",
+      "consultorEmail": "",
+      "representanteLegalNome": "",
+      "cpfRepresentante": "",
+      "segundoContatoNome": "",
+      "segundoContatoTelefone": "",
+      "segundoContatoCargo": "",
+      "cartoesAceitosIds": []
+    },
+    {
+      "id": 20,
+      "nome": "Betta Suplementos - Loja 10",
+      "razaoSocial": "Bt1 Suplementos Alimentares Ltda",
+      "cnpj": "18784087000958",
+      "rua": "Rua Antonio José Novello",
+      "numero": "19",
+      "bairro": "Santa Terezinha",
+      "complemento": "-",
+      "cep": "13411019",
+      "cidadeId": 6,
+      "telefone": "(19) 41223458",
+      "emailContato": "-",
+      "latitude": -22.67843252076807,
+      "longitude": -47.679916237083745,
+      "categoriaIds": [
+        8
+      ],
+      "imagens": [
+        {
+          "id": 25,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/69a0914d-d523-4663-bdcb-e859716874ac.png",
+          "principal": false,
+          "logo": false,
+          "fachada": true
+        },
+        {
+          "id": 26,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/e21ded3f-10aa-43af-9f20-c0512cb0a909.png",
+          "principal": true,
+          "logo": true,
+          "fachada": false
+        }
+      ],
+      "ativo": true,
+      "statusPublicacao": "Publicado",
+      "statusOperacional": "Ativo",
+      "motivoCancelamento": "",
+      "mapaUrl": "",
+      "sobre": "",
+      "grupoId": null,
+      "consultorNome": "",
+      "consultorEmail": "",
+      "representanteLegalNome": "",
+      "cpfRepresentante": "",
+      "segundoContatoNome": "",
+      "segundoContatoTelefone": "",
+      "segundoContatoCargo": "",
+      "cartoesAceitosIds": []
+    },
+    {
+      "id": 21,
+      "nome": "Betta Suplementos - Loja 11",
+      "razaoSocial": "Bt1 Suplementos Alimentares Ltda",
+      "cnpj": "18784087001172",
+      "rua": "Avenida João Pessoa",
+      "numero": "572",
+      "bairro": "Centro",
+      "complemento": "-",
+      "cep": "13380017",
+      "cidadeId": 3,
+      "telefone": "(19) 41223458",
+      "emailContato": "-",
+      "latitude": -22.777046191591307,
+      "longitude": -47.29704816470439,
+      "categoriaIds": [
+        8
+      ],
+      "imagens": [
+        {
+          "id": 27,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/4d366c78-702c-43b2-a118-f653cc027dbb.jpg",
+          "principal": false,
+          "logo": false,
+          "fachada": true
+        },
+        {
+          "id": 28,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/4956b847-aea8-4a9a-b782-007a793a53e2.png",
+          "principal": true,
+          "logo": true,
+          "fachada": false
+        }
+      ],
+      "ativo": true,
+      "statusPublicacao": "Publicado",
+      "statusOperacional": "Ativo",
+      "motivoCancelamento": "",
+      "mapaUrl": "",
+      "sobre": "",
+      "grupoId": null,
+      "consultorNome": "",
+      "consultorEmail": "",
+      "representanteLegalNome": "",
+      "cpfRepresentante": "",
+      "segundoContatoNome": "",
+      "segundoContatoTelefone": "",
+      "segundoContatoCargo": "",
+      "cartoesAceitosIds": []
+    },
+    {
+      "id": 22,
+      "nome": "Zanini Loja 05",
+      "razaoSocial": "Magazine Americana Ltda",
+      "cnpj": "44829620000456",
+      "rua": "Praça Toledo Barros",
+      "numero": "140",
+      "bairro": "Centro",
+      "complemento": "",
+      "cep": "13480021",
+      "cidadeId": 7,
+      "telefone": "(19) 3453-8285",
+      "emailContato": "",
+      "latitude": -22.563071196666723,
+      "longitude": -47.40201773252127,
+      "categoriaIds": [
+        12
+      ],
+      "imagens": [
+        {
+          "id": 29,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/3bc8e0c1-54fb-44e4-8d23-5f264877bc3b.jpg",
+          "principal": false,
+          "logo": false,
+          "fachada": true
+        },
+        {
+          "id": 30,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/a8695e35-49fa-4899-99ed-2e05e3bebe97.png",
+          "principal": true,
+          "logo": true,
+          "fachada": false
+        }
+      ],
+      "ativo": true,
+      "statusPublicacao": "Publicado",
+      "statusOperacional": "Ativo",
+      "motivoCancelamento": "",
+      "mapaUrl": "",
+      "sobre": "",
+      "grupoId": null,
+      "consultorNome": "",
+      "consultorEmail": "",
+      "representanteLegalNome": "",
+      "cpfRepresentante": "",
+      "segundoContatoNome": "",
+      "segundoContatoTelefone": "",
+      "segundoContatoCargo": "",
+      "cartoesAceitosIds": []
+    },
+    {
+      "id": 26,
+      "nome": "Mercadão Dos Óculos",
+      "razaoSocial": "Mhe Artigos de Otica Ltda",
+      "cnpj": "50918115000138",
+      "rua": "Rua Washington Luiz ",
+      "numero": "102",
+      "bairro": "Centro",
+      "complemento": "",
+      "cep": "13465520",
+      "cidadeId": 1,
+      "telefone": "(19) 3406-9736/(19) 9 8152-1132",
+      "emailContato": "marcosendo@hotmail.com",
+      "latitude": -22.739333779367158,
+      "longitude": -47.32806396217923,
+      "categoriaIds": [
+        14
+      ],
+      "imagens": [
+        {
+          "id": 31,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/14189746-785d-46d2-8c11-b41b1b31da36.png",
+          "principal": false,
+          "logo": false,
+          "fachada": true
+        },
+        {
+          "id": 32,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/3efe5976-f75f-4d71-b23b-068e1e453f9e.png",
+          "principal": true,
+          "logo": true,
+          "fachada": false
+        }
+      ],
+      "ativo": true,
+      "statusPublicacao": "Publicado",
+      "statusOperacional": "Ativo",
+      "motivoCancelamento": "",
+      "mapaUrl": "",
+      "sobre": "",
+      "grupoId": null,
+      "consultorNome": "",
+      "consultorEmail": "",
+      "representanteLegalNome": "",
+      "cpfRepresentante": "",
+      "segundoContatoNome": "",
+      "segundoContatoTelefone": "",
+      "segundoContatoCargo": "",
+      "cartoesAceitosIds": []
+    },
+    {
+      "id": 27,
+      "nome": "Vidrovan",
+      "razaoSocial": "Pavan e Vanzelli Ltda ME",
+      "cnpj": "08456136000112",
+      "rua": "Rua Dom Pedro II",
+      "numero": "1078",
+      "bairro": "Conserva",
+      "complemento": "",
+      "cep": "13466000",
+      "cidadeId": 1,
+      "telefone": "(19) 3408-1862",
+      "emailContato": "vidrovan.americana@uol.com.br",
+      "latitude": -22.75076894519894,
+      "longitude": -47.32454925734525,
+      "categoriaIds": [
+        16
+      ],
+      "imagens": [
+        {
+          "id": 33,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/ca766043-4a00-49be-b88c-2c70c0a5e118.png",
+          "principal": false,
+          "logo": false,
+          "fachada": true
+        },
+        {
+          "id": 34,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/c0c1bb8a-90ab-45c9-9d11-4854053e5d93.png",
+          "principal": true,
+          "logo": true,
+          "fachada": false
+        }
+      ],
+      "ativo": false,
+      "statusPublicacao": "Rascunho",
+      "statusOperacional": "Ativo",
+      "motivoCancelamento": "",
+      "mapaUrl": "",
+      "sobre": "",
+      "grupoId": null,
+      "consultorNome": "",
+      "consultorEmail": "",
+      "representanteLegalNome": "",
+      "cpfRepresentante": "",
+      "segundoContatoNome": "",
+      "segundoContatoTelefone": "",
+      "segundoContatoCargo": "",
+      "cartoesAceitosIds": []
+    },
+    {
+      "id": 28,
+      "nome": "Intensos Barbearia",
+      "razaoSocial": "Leonardo Ricardo da Costa",
+      "cnpj": "40336648000158",
+      "rua": "Rua João Bernestein",
+      "numero": "651",
+      "bairro": "Jardim São Vito ",
+      "complemento": "",
+      "cep": "13473200",
+      "cidadeId": 1,
+      "telefone": "(19) 9 9570-7839 / (19) 9 9962-1985 / (19) 9 8717-5421",
+      "emailContato": "email@email.com",
+      "latitude": -22.72229294596376,
+      "longitude": -47.308631857170425,
+      "categoriaIds": [
+        14
+      ],
+      "imagens": [
+        {
+          "id": 35,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/1c3409bc-dcd0-42d0-8746-69bc7afeee03.png",
+          "principal": false,
+          "logo": false,
+          "fachada": true
+        },
+        {
+          "id": 36,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/5f6f57af-c429-4706-aaeb-508a83f44b73.png",
+          "principal": true,
+          "logo": true,
+          "fachada": false
+        }
+      ],
+      "ativo": true,
+      "statusPublicacao": "Publicado",
+      "statusOperacional": "Ativo",
+      "motivoCancelamento": "",
+      "mapaUrl": "",
+      "sobre": "",
+      "grupoId": null,
+      "consultorNome": "",
+      "consultorEmail": "",
+      "representanteLegalNome": "",
+      "cpfRepresentante": "",
+      "segundoContatoNome": "",
+      "segundoContatoTelefone": "",
+      "segundoContatoCargo": "",
+      "cartoesAceitosIds": []
+    },
+    {
+      "id": 29,
+      "nome": "Pasteur",
+      "razaoSocial": "Laboratorio de Analises Clinicas Pasteur Ltda",
+      "cnpj": "51420081000110",
+      "rua": "Rua General Câmara ",
+      "numero": "1000",
+      "bairro": "Centro ",
+      "complemento": "",
+      "cep": "13450028",
+      "cidadeId": 2,
+      "telefone": "(19) 3471-2294",
+      "emailContato": "administrativo2@labpasteur.com.br",
+      "latitude": -22.753711940652355,
+      "longitude": -47.41671180763025,
+      "categoriaIds": [
+        15
+      ],
+      "imagens": [
+        {
+          "id": 37,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/5502dd0d-7c4e-4edb-b5b2-f8098b569d4e.png",
+          "principal": false,
+          "logo": false,
+          "fachada": true
+        },
+        {
+          "id": 38,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/eac56beb-b2e0-474d-9c78-188ce7c407fa.png",
+          "principal": true,
+          "logo": true,
+          "fachada": false
+        }
+      ],
+      "ativo": true,
+      "statusPublicacao": "Publicado",
+      "statusOperacional": "Ativo",
+      "motivoCancelamento": "",
+      "mapaUrl": "",
+      "sobre": "",
+      "grupoId": null,
+      "consultorNome": "",
+      "consultorEmail": "",
+      "representanteLegalNome": "",
+      "cpfRepresentante": "",
+      "segundoContatoNome": "",
+      "segundoContatoTelefone": "",
+      "segundoContatoCargo": "",
+      "cartoesAceitosIds": []
+    },
+    {
+      "id": 30,
+      "nome": "Pasteur Fortunato Basseto",
+      "razaoSocial": "Laboratorio de Analises Clinicas Pasteur Ltda",
+      "cnpj": "51420081000209",
+      "rua": "Rua Fortunato Basseto",
+      "numero": "37",
+      "bairro": "Vila Medon",
+      "complemento": "",
+      "cep": "13465160",
+      "cidadeId": 1,
+      "telefone": "(19) 3471-2294",
+      "emailContato": "administrativo2@labpasteur.com.br",
+      "latitude": -22.74466353831655,
+      "longitude": -47.332727888026724,
+      "categoriaIds": [
+        15
+      ],
+      "imagens": [
+        {
+          "id": 39,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/622f1bac-780a-4736-9fcd-3eb2441aa370.png",
+          "principal": false,
+          "logo": false,
+          "fachada": true
+        },
+        {
+          "id": 40,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/9f77d50c-c4e3-4b49-8f89-cbe45bfcb094.png",
+          "principal": true,
+          "logo": true,
+          "fachada": false
+        }
+      ],
+      "ativo": true,
+      "statusPublicacao": "Publicado",
+      "statusOperacional": "Ativo",
+      "motivoCancelamento": "",
+      "mapaUrl": "https://maps.app.goo.gl/BpYRVPxMu7rDf5W37",
+      "sobre": "",
+      "grupoId": null,
+      "consultorNome": "",
+      "consultorEmail": "",
+      "representanteLegalNome": "",
+      "cpfRepresentante": "",
+      "segundoContatoNome": "",
+      "segundoContatoTelefone": "",
+      "segundoContatoCargo": "",
+      "cartoesAceitosIds": []
+    },
+    {
+      "id": 31,
+      "nome": "Pasteur Cid Jardim",
+      "razaoSocial": "Laboratorio De Analises Clinicas Pasteur Ltda",
+      "cnpj": "51420081001353",
+      "rua": "Rua das Hortências",
+      "numero": "1882",
+      "bairro": " Cidade Jardim Ii ",
+      "complemento": "",
+      "cep": " 13467190",
+      "cidadeId": 1,
+      "telefone": "(19) 3471-2294",
+      "emailContato": "administrativo2@labpasteur.com.br",
+      "latitude": -22.764722287099758,
+      "longitude": -47.34187977656467,
+      "categoriaIds": [
+        15
+      ],
+      "imagens": [
+        {
+          "id": 41,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/e037d010-f2e5-4fd2-a20d-c7182ca9dfa2.jpg",
+          "principal": false,
+          "logo": false,
+          "fachada": true
+        },
+        {
+          "id": 42,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/1e6c0340-a800-4ddd-b0c5-18ee04b7f93a.png",
+          "principal": true,
+          "logo": true,
+          "fachada": false
+        }
+      ],
+      "ativo": true,
+      "statusPublicacao": "Publicado",
+      "statusOperacional": "Ativo",
+      "motivoCancelamento": "",
+      "mapaUrl": "https://maps.app.goo.gl/hCWhmZzAsxHWyjvx8",
+      "sobre": "",
+      "grupoId": null,
+      "consultorNome": "",
+      "consultorEmail": "",
+      "representanteLegalNome": "",
+      "cpfRepresentante": "",
+      "segundoContatoNome": "",
+      "segundoContatoTelefone": "",
+      "segundoContatoCargo": "",
+      "cartoesAceitosIds": []
+    },
+    {
+      "id": 32,
+      "nome": "Pasteur Centro Diagnostico",
+      "razaoSocial": "Laboratorio De Analises Clinicas Pasteur Ltda",
+      "cnpj": "51420081000977",
+      "rua": "Rua Domingos Nardini ",
+      "numero": "54",
+      "bairro": "Vila Medon",
+      "complemento": "",
+      "cep": "13465120",
+      "cidadeId": 1,
+      "telefone": "(19) 3471-2294",
+      "emailContato": "administrativo2@labpasteur.com.br",
+      "latitude": -22.745217122886878,
+      "longitude": -47.332377042575075,
+      "categoriaIds": [
+        15
+      ],
+      "imagens": [
+        {
+          "id": 43,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/71c8bf3c-3e83-4868-88e6-790a6a1c7052.png",
+          "principal": false,
+          "logo": false,
+          "fachada": true
+        },
+        {
+          "id": 44,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/d59767a9-55ad-4c6f-8fea-3db2cec7e9b0.png",
+          "principal": true,
+          "logo": true,
+          "fachada": false
+        }
+      ],
+      "ativo": true,
+      "statusPublicacao": "Publicado",
+      "statusOperacional": "Ativo",
+      "motivoCancelamento": "",
+      "mapaUrl": "https://maps.app.goo.gl/LJcdr8W7CQ5BEVtX9",
+      "sobre": "",
+      "grupoId": null,
+      "consultorNome": "",
+      "consultorEmail": "",
+      "representanteLegalNome": "",
+      "cpfRepresentante": "",
+      "segundoContatoNome": "",
+      "segundoContatoTelefone": "",
+      "segundoContatoCargo": "",
+      "cartoesAceitosIds": []
+    },
+    {
+      "id": 33,
+      "nome": "Pasteur São Gabriel",
+      "razaoSocial": "Laboratorio De Analises Clinicas Pasteur Ltda",
+      "cnpj": "51420081000624",
+      "rua": "Rua São Gabriel ",
+      "numero": "751",
+      "bairro": "São Vito",
+      "complemento": "",
+      "cep": "13472000",
+      "cidadeId": 1,
+      "telefone": "(19) 3471-2294",
+      "emailContato": "administrativo2@labpasteur.com.br",
+      "latitude": -22.73219898463926,
+      "longitude": -47.31052682666435,
+      "categoriaIds": [
+        15
+      ],
+      "imagens": [
+        {
+          "id": 45,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/4ea56030-9312-4ed7-b662-967d9a368b7e.jpg",
+          "principal": false,
+          "logo": false,
+          "fachada": true
+        },
+        {
+          "id": 46,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/9c3cea61-14f7-4c1e-8fd6-878be5b8e957.png",
+          "principal": true,
+          "logo": true,
+          "fachada": false
+        }
+      ],
+      "ativo": false,
+      "statusPublicacao": "Rascunho",
+      "statusOperacional": "Ativo",
+      "motivoCancelamento": "",
+      "mapaUrl": "https://maps.app.goo.gl/yRQKksjCTyAX4ynd7",
+      "sobre": "",
+      "grupoId": null,
+      "consultorNome": "",
+      "consultorEmail": "",
+      "representanteLegalNome": "",
+      "cpfRepresentante": "",
+      "segundoContatoNome": "",
+      "segundoContatoTelefone": "",
+      "segundoContatoCargo": "",
+      "cartoesAceitosIds": []
+    },
+    {
+      "id": 34,
+      "nome": "Pasteur Zanaga",
+      "razaoSocial": "Laboratorio De Analises Clinicas Pasteur Ltda",
+      "cnpj": "51420081001604",
+      "rua": "Avenida Cecília Meirelles",
+      "numero": "356",
+      "bairro": "Antônio Zanaga II",
+      "complemento": "",
+      "cep": "13474-470",
+      "cidadeId": 1,
+      "telefone": "(19) 3471-2294",
+      "emailContato": "administrativo2@labpasteur.com.br",
+      "latitude": -22.704297615173886,
+      "longitude": -47.29674707879642,
+      "categoriaIds": [
+        15
+      ],
+      "imagens": [
+        {
+          "id": 47,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/be71d087-93a4-48c6-b015-cd4785864c29.jpg",
+          "principal": false,
+          "logo": false,
+          "fachada": true
+        },
+        {
+          "id": 48,
+          "url": "http://apiclubedevantagens.vegascard.com.br/imagens/estabelecimentos/4ab6e2aa-1e50-4cbc-acdb-e70c3ea7ebc9.png",
+          "principal": true,
+          "logo": true,
+          "fachada": false
+        }
+      ],
+      "ativo": true,
+      "statusPublicacao": "Publicado",
+      "statusOperacional": "Ativo",
+      "motivoCancelamento": "",
+      "mapaUrl": "https://maps.app.goo.gl/ebEcP6c31FRTvJAr6",
+      "sobre": "",
+      "grupoId": null,
+      "consultorNome": "",
+      "consultorEmail": "",
+      "representanteLegalNome": "",
+      "cpfRepresentante": "",
+      "segundoContatoNome": "",
+      "segundoContatoTelefone": "",
+      "segundoContatoCargo": "",
+      "cartoesAceitosIds": []
     }
-  ]
+  ],
+  "cupons": []
 }

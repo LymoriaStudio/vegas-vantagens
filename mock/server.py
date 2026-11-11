@@ -85,21 +85,63 @@ def ints(valores):
 # ── Formatação das respostas (mesmo formato que o painel espera da API) ──────
 
 def montar_estab(db, e):
+    """GET /api/Estabelecimentos/{id} no MESMO formato da API de produção
+    (imagens como lista de URLs, categorias e cidade por nome), mais os campos
+    extras que o painel admin novo usa."""
     cidade = achar(db["cidades"], e.get("cidadeId"))
     uf = achar(db["unidadesFederativas"], cidade["unidadeFederativaId"]) if cidade else None
     imagens = e.get("imagens", [])
-    principal = next((i for i in imagens if i.get("fachada")), None) or next((i for i in imagens if i.get("principal")), None)
-    return {
-        **{k: v for k, v in e.items() if k not in ("categoriaIds", "cartoesAceitosIds")},
+    principal = next((i for i in imagens if i.get("principal")), None) or next((i for i in imagens if i.get("logo")), None)
+    producao = {
+        "id": e["id"],
+        "nome": e.get("nome", ""),
+        "razaoSocial": e.get("razaoSocial", ""),
+        "cnpj": e.get("cnpj", ""),
+        "rua": e.get("rua", ""),
+        "numero": e.get("numero", ""),
+        "bairro": e.get("bairro", ""),
+        "complemento": e.get("complemento", ""),
+        "cep": e.get("cep", ""),
+        "cidade": cidade["nome"] if cidade else "",
+        "telefone": e.get("telefone", ""),
+        "emailContato": e.get("emailContato", ""),
+        "latitude": e.get("latitude"),
+        "longitude": e.get("longitude"),
+        "categorias": [c["nome"] for c in db["categorias"] if c["id"] in e.get("categoriaIds", [])],
+        "imagens": [i["url"] for i in imagens],
+        "imagemPrincipal": principal["url"] if principal else None,
+    }
+    extras_painel = {
+        "ativo": e.get("ativo", True),
         "nomeFantasia": e.get("nome", ""),
         "status": e.get("statusPublicacao", ""),
+        "statusPublicacao": e.get("statusPublicacao", ""),
+        "statusOperacional": e.get("statusOperacional", ""),
+        "motivoCancelamento": e.get("motivoCancelamento", ""),
         "categoriaIds": e.get("categoriaIds", []),
-        "categorias": [c["nome"] for c in db["categorias"] if c["id"] in e.get("categoriaIds", [])],
-        "cidade": cidade["nome"] if cidade else "",
+        "cidadeId": e.get("cidadeId"),
         "unidadeFederativaId": uf["id"] if uf else None,
         "unidadeFederativa": uf["sigla"] if uf else "",
         "cartoesAceitos": [c for c in db["cartoes"] if c["id"] in e.get("cartoesAceitosIds", [])],
-        "imagemPrincipal": principal["url"] if principal else None,
+        "imagensDetalhe": imagens,  # objetos {id, url, logo, fachada} para edição no painel
+        **{k: e.get(k, "") for k in ("mapaUrl", "sobre", "consultorNome", "consultorEmail",
+                                     "representanteLegalNome", "cpfRepresentante", "segundoContatoNome",
+                                     "segundoContatoTelefone", "segundoContatoCargo")},
+        "grupoId": e.get("grupoId"),
+    }
+    return {**producao, **extras_painel}
+
+
+def resumo_estab(db, e):
+    """GET /api/Estabelecimentos (lista) no formato de produção."""
+    cidade = achar(db["cidades"], e.get("cidadeId"))
+    return {
+        "id": e["id"],
+        "nome": e.get("nome", ""),
+        "razaoSocial": e.get("razaoSocial", ""),
+        "cnpj": e.get("cnpj", ""),
+        "cidade": cidade["nome"] if cidade else "",
+        "ativo": e.get("ativo", True),
     }
 
 
@@ -272,7 +314,7 @@ def cidades(db, req, id, **_):
 # Estabelecimentos
 @rota("GET", r"/api/Estabelecimentos")
 def listar_estabs(db, req, **_):
-    return [montar_estab(db, e) for e in db["estabelecimentos"]]
+    return [resumo_estab(db, e) for e in db["estabelecimentos"]]
 
 
 @rota("GET", r"/api/Estabelecimentos/(?P<id>\d+)")
@@ -525,8 +567,11 @@ class Handler(SimpleHTTPRequestHandler):
         super().__init__(*args, directory=ROOT, **kwargs)
 
     def end_headers(self):
-        # Nunca deixar o navegador cachear durante o desenvolvimento
-        self.send_header("Cache-Control", "no-store")
+        # Código e API nunca em cache durante o desenvolvimento; imagens podem
+        # ficar em cache (como em produção), senão ficam lentas de recarregar.
+        caminho = urlparse(self.path).path.lower()
+        if not caminho.endswith((".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg", ".ico")):
+            self.send_header("Cache-Control", "no-store")
         # CORS liberado SOMENTE para páginas servidas em localhost (ex.: Live Server)
         origem = self.headers.get("Origin", "")
         if ORIGENS_LOCAIS.match(origem):
@@ -606,10 +651,17 @@ class Handler(SimpleHTTPRequestHandler):
         self._mock("DELETE")
 
 
+class Servidor(ThreadingHTTPServer):
+    # O padrão do Python é 5 conexões na fila: a home pede dezenas de arquivos
+    # ao mesmo tempo e as excedentes eram derrubadas ("Failed to fetch").
+    request_queue_size = 128
+    daemon_threads = True
+
+
 def main():
     porta = int(sys.argv[1]) if len(sys.argv) > 1 else 8765
     carregar_db()
-    servidor = ThreadingHTTPServer((HOST, porta), Handler)
+    servidor = Servidor((HOST, porta), Handler)
     print(f"Site + API MOCK em http://localhost:{porta}  (dados: {os.path.relpath(DB_PATH, ROOT)})")
     print("Somente para desenvolvimento local. Ctrl+C para parar.")
     try:
