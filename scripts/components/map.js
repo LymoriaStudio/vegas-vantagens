@@ -8,6 +8,10 @@ let markersGroup = null;
 
 let LOJAS_CACHE = [];
 
+// "Rua X, 123, Bairro" sem vírgulas sobrando quando falta algum campo
+const enderecoLoja = (loja) => [loja.rua, loja.numero, loja.bairro]
+  .map(v => String(v || '').trim()).filter(v => v && v !== '-').join(', ');
+
 // Perfil de cada loja no Google Maps (mesmo arquivo usado pelo botão dos cupons).
 // Prioridade: mapaUrl da API (se vier) > data/lojas-mapa.json > busca pelas coordenadas.
 let MAPAS_LOJAS = {};
@@ -49,7 +53,14 @@ async function fetchAllStores(accessToken) {
       })
     );
 
-    const completos = detalhes.filter(e => e && e.latitude && e.longitude);
+    // parceiros que ainda não estão na API (ex.: My Moment) — data/lojas-extras.json
+    let extras = [];
+    try {
+      const respExtras = await fetch('./data/lojas-extras.json', { cache: 'no-cache' });
+      if (respExtras.ok) extras = (await respExtras.json()).lojas || [];
+    } catch (e) { console.warn('lojas-extras.json indisponível:', e.message); }
+
+    const completos = [...detalhes, ...extras].filter(e => e && e.latitude && e.longitude);
     completos.forEach(l => {
       l._lat = corrigirCoordenada(l.latitude, "latitude");
       l._lng = corrigirCoordenada(l.longitude, "longitude");
@@ -304,7 +315,7 @@ function adicionarMarcador(loja) {
  const marker = L.marker([lat, lng]).addTo(markersGroup)
   .bindPopup(`
     <b>${loja.nome}</b><br>
-    ${loja.rua || ""}, ${loja.numero || ""}, ${loja.bairro || ""}<br>
+    ${enderecoLoja(loja)}<br>
     <i>${(loja.categorias || []).join(", ")}</i><br>
     <a href="${gmapView}" target="_blank" rel="noopener">Ver no Google Maps</a>
     &nbsp;•&nbsp;
@@ -387,12 +398,13 @@ async function updateMapaLista({ cidade="", segmento="", busca="" }) {
         </div>
         <div class="place-details">
           <h3>${loja.nome}</h3>
-          <p class="address">${loja.rua || ""}, ${loja.numero || ""}, ${loja.bairro || ""}</p>
+          <p class="address">${enderecoLoja(loja)}</p>
           <p class="distance"><img src="./imgs/icons/location.svg" /> 5.0 km</p>
           <button class="btn-card-map">Saiba Mais</button>
         </div>
       `;
       li.addEventListener("click", () => {
+        if (loja.link) { window.location.href = loja.link; return; }   // parceiro fora da API
         const hash = encodeURIComponent(`store-${loja.id}`);
         window.location.href = `detalhes.html#${hash}`;
       });

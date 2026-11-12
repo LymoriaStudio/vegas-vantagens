@@ -8,7 +8,9 @@
 .hero-prod {
     max-width: 100%;
     padding-inline: 104px;
-    height: 450px;
+    /* altura acompanha a proporção da arte: antes era fixa (450px/400px)
+       e o object-fit: cover cortava ~25% da imagem em telas comuns */
+    height: auto;
     border-radius: 16px;
     max-width: 1512px;
     margin: 0 auto;
@@ -20,7 +22,8 @@
 
 .hero-prod img {
     width: 100%;
-    height: 100%;
+    height: auto;
+    vertical-align: middle;   /* sem espaço embaixo; NÃO usar display aqui: esconderia/mostraria a .banner-mobile-prod errado */
     object-fit:cover;
     border-radius: 16px;
     
@@ -356,7 +359,7 @@ margin-top: 16px;
 
 @media screen and (max-width:1520px) {
    .hero-prod {
-    height: 400px;
+    height: auto;
    }
     .card-vantagens-prod {
     max-width: calc(25% - 20px);

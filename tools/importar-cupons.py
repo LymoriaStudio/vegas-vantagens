@@ -113,6 +113,10 @@ def main():
         lojas = cupom["lojas"]["estabelecimentoIds"]
         if args.loja:
             lojas = [l for l in lojas if l in args.loja]
+        nao_api = [l for l in lojas if not isinstance(l, int)]
+        if nao_api:
+            print(f"  Aviso [{cupom['chave']}]: lojas fora da API ignoradas {nao_api} (cadastre a loja na API e use o id numérico)")
+            lojas = [l for l in lojas if isinstance(l, int)]
         cartoes = [ids_cartao[normalizar(n)] for n in cupom.get("cartoesAceitos", []) if normalizar(n) in ids_cartao]
         faltando = [n for n in cupom.get("cartoesAceitos", []) if ids_cartao and normalizar(n) not in ids_cartao]
         if faltando:

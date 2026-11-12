@@ -21,6 +21,7 @@ function montarCarrossel() {
   { link: 'detalhes.html#store-26',                        src: './imgs/logos/mercadao-logo.png', nome: 'Parceiro 13' },
   { link: './rock-ensina.html', src: './imgs/logos/logo-rockensina-carrossel.png', nome: 'Rock Ensina' },
   { link: './my-moment.html', src: './imgs/logos/logo-mymoment.png', nome: 'My Moment' },
+  { link: './termassp.html', src: './imgs/logos/logo-termas.svg', nome: 'Thermas de São Pedro' },
 
 
 ];

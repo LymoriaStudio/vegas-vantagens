@@ -29,15 +29,26 @@ function createInlineLoader(targetEl) {
 
 
 
-async function fetchStoreDetails(token, storeId) {
-  const resp = await fetch(`${API_BASE}/api/Estabelecimentos/${storeId}`, {
-    headers: {
-      'Authorization': `Bearer ${token}`
-    }
-  });
+// Parceiros que ainda não estão na API (ex.: My Moment) ficam em data/lojas-extras.json
+async function buscarLojaExtra(storeId) {
+  const resp = await fetch("./data/lojas-extras.json", { cache: "no-cache" });
+  if (!resp.ok) return null;
+  const dados = await resp.json();
+  return (dados.lojas || []).find(l => String(l.id) === String(storeId)) || null;
+}
 
-  if (!resp.ok) throw new Error("Falha ao buscar estabelecimento");
-  return await resp.json();
+async function fetchStoreDetails(token, storeId) {
+  if (/^\d+$/.test(storeId)) {
+    const resp = await fetch(`${API_BASE}/api/Estabelecimentos/${storeId}`, {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    });
+    if (resp.ok) return await resp.json();
+  }
+  const extra = await buscarLojaExtra(storeId);
+  if (extra) return extra;
+  throw new Error("Falha ao buscar estabelecimento");
 }
 
 // ---- descrições por NOME (somente) ----
@@ -69,6 +80,10 @@ const DESCRICOES_POR_NOME = [
   },
 
     {
+    match: ["my moment", "mymoment"],
+    text: "Na My Moment, cada detalhe transforma seu atendimento em uma experiência de beleza, bem-estar e autocuidado. A marca reúne serviços de cabelo, unhas, olhar, maquiagem e spa dos pés, em um espaço pensado para você desacelerar e se sentir ainda melhor."
+  },
+    {
     match: ["pasteur", "Pasteur"],
     text: "O Laboratório Pasteur é especializado em análises clínicas, oferecendo exames com precisão, rapidez e tecnologia avançada. Conta com profissionais qualificados e serviços como coleta domiciliar e resultados online. Seu compromisso é garantir diagnóstico confiável e cuidado contínuo com a saúde dos pacientes."
   },
@@ -96,7 +111,7 @@ window.addEventListener("hashchange", () => window.location.reload());
 
 document.addEventListener("DOMContentLoaded", async () => {
   const hash = decodeURIComponent(window.location.hash).slice(1);
-  const idMatch = hash.match(/^store-(\d+)$/);
+  const idMatch = hash.match(/^store-([a-z0-9-]+)$/i);
 
   if (!idMatch) {
     console.warn("Formato de hash inválido:", hash);
@@ -154,7 +169,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
     const addressEl = document.querySelector(".adress");
-    if (addressEl) addressEl.textContent = `${loja.rua}, ${loja.numero}, ${loja.bairro} - ${loja.cidade}`;
+    if (addressEl) {
+      // "Rua X, 123, Bairro - Cidade" sem vírgulas sobrando quando falta algum campo
+      const partes = [loja.rua, loja.numero, loja.bairro].map(v => String(v || "").trim()).filter(v => v && v !== "-");
+      addressEl.textContent = partes.join(", ") + (loja.cidade ? ` - ${String(loja.cidade).trim()}` : "");
+    }
 
     const phoneEl = document.querySelector(".phone");
     if (phoneEl) phoneEl.textContent = loja.telefone;
@@ -268,7 +287,7 @@ function imagemDoTipo(cupom, tipo) {
 
 function cupomValeParaLoja(cupom, loja) {
   const ids = cupom.lojas?.estabelecimentoIds || [];
-  if (ids.includes(Number(loja.id))) return true;
+  if (ids.some(id => String(id) === String(loja.id))) return true;
   const trecho = normalizarTexto(cupom.lojas?.nomeContem || "");
   return Boolean(trecho) && normalizarTexto(loja.nome || "").includes(trecho);
 }
@@ -325,7 +344,7 @@ function htmlModalCupom(cupom) {
   <button class="cm-close" aria-label="Fechar">&times;</button>
   <div class="cm-wrap">
     <div class="cm-topchips">
-      <span class="cm-chip"><img src="./imgs/calender-icon.png" alt="">Válido até ${esc(validade)}</span>
+      <span class="cm-chip"><img src="${esc(caminho(site.iconeValidade || "imgs/calender-icon.png"))}" alt="">Válido até ${esc(validade)}</span>
       <span class="cm-chip"><img src="${esc(caminho(site.iconeCategoriaModal || "imgs/utils-icon.png"))}" alt="">${esc(site.categoriaModal || site.categoria)}</span>
     </div>
     <div class="cm-badge">${selo ? `<img src="${esc(caminho(selo))}" alt="${esc(site.selo)}" loading="lazy">` : ""}</div>
@@ -334,7 +353,7 @@ function htmlModalCupom(cupom) {
     ${site.aceitosTitulo ? `<p class="aceitos-cm">${esc(site.aceitosTitulo)}</p>` : ""}
     <div class="cm-pills">${aceitos}</div>
     <div class="cm-alert">
-      <div class="flex-alert"><img src="./imgs/alert-icon.png" alt=""><strong>Atenção!</strong></div>
+      <div class="flex-alert"><img src="${esc(caminho(site.iconeAlerta || "imgs/alert-icon.png"))}" alt=""><strong>Atenção!</strong></div>
       ${validade ? `<p class="valid-cm">Esta oferta é válida até ${esc(validade)}</p>` : ""}
       ${site.avisoAlerta ? `<p class="subvalid-cm">${esc(site.avisoAlerta)}</p>` : ""}
     </div>

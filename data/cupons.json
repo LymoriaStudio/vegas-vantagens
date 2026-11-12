@@ -700,79 +700,6 @@
       }
     },
     {
-      "chave": "pasteur-exames-60",
-      "lojas": {
-        "nomeContem": "pasteur",
-        "estabelecimentoIds": [
-          29,
-          30,
-          31,
-          32,
-          33,
-          34
-        ]
-      },
-      "post": {
-        "codigo": "VEGAS-PASTEUR60",
-        "titulo": "Cuide da saúde pagando até 60% mais barato!",
-        "descricao": "Na Pasteur diagnósticos, usuários Vegas contam com até 60% de descontos em exames selecionados!",
-        "modalTitulo": "Cuide da saúde pagando até 60% mais barato!",
-        "modalDescricao": "Na Pasteur diagnósticos, usuários Vegas contam com até 60% de descontos em exames selecionados!",
-        "tipo": "Percentual",
-        "valorDesconto": 60,
-        "valorMinimoCompra": 0,
-        "dataInicio": "2026-01-01T00:00:00.000Z",
-        "dataExpiracao": "2026-06-30T23:59:59.000Z",
-        "limiteUso": 0,
-        "limiteUsoPorUsuario": 0,
-        "ativo": true,
-        "status": "Publicado",
-        "estabelecimentoId": null,
-        "cartoesAceitosIds": [],
-        "tag": ""
-      },
-      "cartoesAceitos": [],
-      "imagens": [
-        {
-          "imagemTipoId": 1,
-          "arquivo": "imgs/pasteur-cupom.png"
-        },
-        {
-          "imagemTipoId": 2,
-          "arquivo": "imgs/icons/desconto61.png"
-        }
-      ],
-      "site": {
-        "tema": "padrao",
-        "selo": "60% De desconto!",
-        "categoria": "Saúde",
-        "iconeCategoria": "imgs/icons/hamb-icon.svg",
-        "pills": [
-          {
-            "texto": "Day",
-            "alt": false
-          },
-          {
-            "texto": "Plus",
-            "alt": true
-          }
-        ],
-        "maisCartoes": true,
-        "categoriaModal": "Saúde",
-        "iconeCategoriaModal": "imgs/utils-icon.png",
-        "aceitosTitulo": "Cartões Aceitos:",
-        "aceitos": [
-          {
-            "texto": "Consultar no local",
-            "classe": null,
-            "simples": true
-          }
-        ],
-        "avisoAlerta": "Não acumulável com outras promoções. Apresente o cupom no momento do pedido.",
-        "rodape": ""
-      }
-    },
-    {
       "chave": "mercadao-dos-oculos",
       "lojas": {
         "nomeContem": "mercadao dos oculos",
@@ -997,6 +924,376 @@
         ],
         "avisoAlerta": "Não acumulável com outras promoções. Apresente o cupom no momento do pedido.",
         "rodape": ""
+      }
+    },
+    {
+      "chave": "mymoment-brow-lamination",
+      "lojas": {
+        "nomeContem": "my moment",
+        "estabelecimentoIds": [
+          "my-moment"
+        ]
+      },
+      "_pendente": "Layout do Figma (node 1212:1084…1212:1508). Cartões Day/Plus e regra de não acumular: confirmar com o parceiro antes de publicar.",
+      "post": {
+        "codigo": "VEGAS-BF-BROW",
+        "titulo": "Realce seu olhar com Brow Lamination!",
+        "descricao": "Sobrancelhas mais alinhadas, definidas e sofisticadas! Aproveite a Black Friday da My Moment e faça seu Brow Lamination por apenas R$ 89,90.",
+        "modalTitulo": "Realce seu olhar com Brow Lamination!",
+        "modalDescricao": "Sobrancelhas mais alinhadas, definidas e sofisticadas! Aproveite a Black Friday da My Moment e faça seu Brow Lamination por apenas R$ 89,90.",
+        "tipo": "Percentual",
+        "valorDesconto": 0,
+        "valorMinimoCompra": 0,
+        "dataInicio": "2026-11-01T00:00:00.000Z",
+        "dataExpiracao": "2026-11-30T23:59:59.000Z",
+        "limiteUso": 0,
+        "limiteUsoPorUsuario": 0,
+        "ativo": true,
+        "status": "Publicado",
+        "estabelecimentoId": null,
+        "cartoesAceitosIds": [],
+        "tag": "Black Friday"
+      },
+      "cartoesAceitos": [
+        "Day",
+        "Plus"
+      ],
+      "imagens": [
+        {
+          "imagemTipoId": 1,
+          "arquivo": "imgs/cupom-mymoment-brow.jpg"
+        },
+        {
+          "imagemTipoId": 2,
+          "arquivo": "imgs/icons/selo-mymoment-brow.svg"
+        }
+      ],
+      "site": {
+        "tema": "nude",
+        "selo": "Combo especial",
+        "categoria": "Beleza",
+        "iconeCategoria": "imgs/icons/icon-beleza.svg",
+        "pills": [
+          {
+            "texto": "Black Friday",
+            "alt": false
+          }
+        ],
+        "maisCartoes": false,
+        "categoriaModal": "Beleza",
+        "iconeCategoriaModal": "imgs/icons/icon-beleza-nude.svg",
+        "aceitosTitulo": "Produtos aceitos:",
+        "aceitos": [
+          {
+            "texto": "Day",
+            "classe": "cm-pill-day"
+          },
+          {
+            "texto": "Plus",
+            "classe": "cm-farm"
+          }
+        ],
+        "avisoAlerta": "Não cumulativo com outras promoções. Consulte os serviços participantes e informe o benefício no momento do agendamento.",
+        "rodape": "",
+        "iconeValidade": "imgs/icons/icon-calendario-nude.svg",
+        "iconeAlerta": "imgs/icons/icon-alerta-nude.svg",
+        "descricaoHtml": "Sobrancelhas mais alinhadas, definidas e sofisticadas! <strong>Aproveite a Black Friday da My Moment e faça seu Brow Lamination por apenas R$ 89,90.</strong>"
+      }
+    },
+    {
+      "chave": "mymoment-gel-spa-pes",
+      "lojas": {
+        "nomeContem": "my moment",
+        "estabelecimentoIds": [
+          "my-moment"
+        ]
+      },
+      "_pendente": "Layout do Figma (node 1212:1084…1212:1508). Cartões Day/Plus e regra de não acumular: confirmar com o parceiro antes de publicar.",
+      "post": {
+        "codigo": "VEGAS-BF-GEL",
+        "titulo": "Unhas impecáveis e um cuidado extra para você!",
+        "descricao": "Aproveite a Black Friday da My Moment! Faça sua esmaltação em gel nos pés e mãos por apenas R$ 150,00 e ganhe um Spa dos Pés!",
+        "modalTitulo": "Unhas impecáveis e um cuidado extra para você!",
+        "modalDescricao": "Aproveite a Black Friday da My Moment! Faça sua esmaltação em gel nos pés e mãos por apenas R$ 150,00 e ganhe um Spa dos Pés!",
+        "tipo": "Percentual",
+        "valorDesconto": 0,
+        "valorMinimoCompra": 0,
+        "dataInicio": "2026-11-01T00:00:00.000Z",
+        "dataExpiracao": "2026-11-30T23:59:59.000Z",
+        "limiteUso": 0,
+        "limiteUsoPorUsuario": 0,
+        "ativo": true,
+        "status": "Publicado",
+        "estabelecimentoId": null,
+        "cartoesAceitosIds": [],
+        "tag": "Black Friday"
+      },
+      "cartoesAceitos": [
+        "Day",
+        "Plus"
+      ],
+      "imagens": [
+        {
+          "imagemTipoId": 1,
+          "arquivo": "imgs/cupom-mymoment-unhas.jpg"
+        },
+        {
+          "imagemTipoId": 2,
+          "arquivo": "imgs/icons/selo-mymoment-unhas.svg"
+        }
+      ],
+      "site": {
+        "tema": "nude",
+        "selo": "Combo especial",
+        "categoria": "Beleza",
+        "iconeCategoria": "imgs/icons/icon-beleza.svg",
+        "pills": [
+          {
+            "texto": "Black Friday",
+            "alt": false
+          }
+        ],
+        "maisCartoes": false,
+        "categoriaModal": "Beleza",
+        "iconeCategoriaModal": "imgs/icons/icon-beleza-nude.svg",
+        "aceitosTitulo": "Produtos aceitos:",
+        "aceitos": [
+          {
+            "texto": "Day",
+            "classe": "cm-pill-day"
+          },
+          {
+            "texto": "Plus",
+            "classe": "cm-farm"
+          }
+        ],
+        "avisoAlerta": "Não cumulativo com outras promoções. Consulte os serviços participantes e informe o benefício no momento do agendamento.",
+        "rodape": "",
+        "iconeValidade": "imgs/icons/icon-calendario-nude.svg",
+        "iconeAlerta": "imgs/icons/icon-alerta-nude.svg",
+        "descricaoHtml": "Aproveite a Black Friday da My Moment! <strong>Faça sua esmaltação em gel nos pés e mãos por apenas R$ 150,00 e ganhe um Spa dos Pés!</strong>"
+      }
+    },
+    {
+      "chave": "mymoment-corte-tratamento",
+      "lojas": {
+        "nomeContem": "my moment",
+        "estabelecimentoIds": [
+          "my-moment"
+        ]
+      },
+      "_pendente": "Layout do Figma (node 1212:1084…1212:1508). Cartões Day/Plus e regra de não acumular: confirmar com o parceiro antes de publicar.",
+      "post": {
+        "codigo": "VEGAS-BF-CORTE",
+        "titulo": "Renove seu visual e cuide dos seus fios!",
+        "descricao": "Aproveite a Black Friday da My Moment! Faça seu corte + tratamento capilar por apenas R$ 150,00 e dê aos seus cabelos o cuidado que merecem.",
+        "modalTitulo": "Renove seu visual e cuide dos seus fios!",
+        "modalDescricao": "Aproveite a Black Friday da My Moment! Faça seu corte + tratamento capilar por apenas R$ 150,00 e dê aos seus cabelos o cuidado que merecem.",
+        "tipo": "Percentual",
+        "valorDesconto": 0,
+        "valorMinimoCompra": 0,
+        "dataInicio": "2026-11-01T00:00:00.000Z",
+        "dataExpiracao": "2026-11-30T23:59:59.000Z",
+        "limiteUso": 0,
+        "limiteUsoPorUsuario": 0,
+        "ativo": true,
+        "status": "Publicado",
+        "estabelecimentoId": null,
+        "cartoesAceitosIds": [],
+        "tag": "Black Friday"
+      },
+      "cartoesAceitos": [
+        "Day",
+        "Plus"
+      ],
+      "imagens": [
+        {
+          "imagemTipoId": 1,
+          "arquivo": "imgs/cupom-mymoment-corte.jpg"
+        },
+        {
+          "imagemTipoId": 2,
+          "arquivo": "imgs/icons/selo-mymoment-corte.svg"
+        }
+      ],
+      "site": {
+        "tema": "nude",
+        "selo": "Combo especial",
+        "categoria": "Beleza",
+        "iconeCategoria": "imgs/icons/icon-beleza.svg",
+        "pills": [
+          {
+            "texto": "Black Friday",
+            "alt": false
+          }
+        ],
+        "maisCartoes": false,
+        "categoriaModal": "Beleza",
+        "iconeCategoriaModal": "imgs/icons/icon-beleza-nude.svg",
+        "aceitosTitulo": "Produtos aceitos:",
+        "aceitos": [
+          {
+            "texto": "Day",
+            "classe": "cm-pill-day"
+          },
+          {
+            "texto": "Plus",
+            "classe": "cm-farm"
+          }
+        ],
+        "avisoAlerta": "Não cumulativo com outras promoções. Consulte os serviços participantes e informe o benefício no momento do agendamento.",
+        "rodape": "",
+        "iconeValidade": "imgs/icons/icon-calendario-nude.svg",
+        "iconeAlerta": "imgs/icons/icon-alerta-nude.svg",
+        "descricaoHtml": "Aproveite a Black Friday da My Moment! Faça seu corte + tratamento capilar por apenas R$ 150,00 e dê aos seus cabelos o cuidado que merecem."
+      }
+    },
+    {
+      "chave": "mymoment-escova-tratamento",
+      "lojas": {
+        "nomeContem": "my moment",
+        "estabelecimentoIds": [
+          "my-moment"
+        ]
+      },
+      "_pendente": "Layout do Figma (node 1212:1084…1212:1508). Cartões Day/Plus e regra de não acumular: confirmar com o parceiro antes de publicar.",
+      "post": {
+        "codigo": "VEGAS-BF-ESCOVA",
+        "titulo": "Cabelos lindos, tratados e cheios de brilho!",
+        "descricao": "Aproveite a Black Friday da My Moment! Faça sua escova + tratamento capilar por apenas R$ 99,00 e conquiste fios mais bonitos e bem cuidados.",
+        "modalTitulo": "Cabelos lindos, tratados e cheios de brilho!",
+        "modalDescricao": "Aproveite a Black Friday da My Moment! Faça sua escova + tratamento capilar por apenas R$ 99,00 e conquiste fios mais bonitos e bem cuidados.",
+        "tipo": "Percentual",
+        "valorDesconto": 0,
+        "valorMinimoCompra": 0,
+        "dataInicio": "2026-11-01T00:00:00.000Z",
+        "dataExpiracao": "2026-11-30T23:59:59.000Z",
+        "limiteUso": 0,
+        "limiteUsoPorUsuario": 0,
+        "ativo": true,
+        "status": "Publicado",
+        "estabelecimentoId": null,
+        "cartoesAceitosIds": [],
+        "tag": "Black Friday"
+      },
+      "cartoesAceitos": [
+        "Day",
+        "Plus"
+      ],
+      "imagens": [
+        {
+          "imagemTipoId": 1,
+          "arquivo": "imgs/cupom-mymoment-escova.jpg"
+        },
+        {
+          "imagemTipoId": 2,
+          "arquivo": "imgs/icons/selo-mymoment-escova.svg"
+        }
+      ],
+      "site": {
+        "tema": "nude",
+        "selo": "Combo especial",
+        "categoria": "Beleza",
+        "iconeCategoria": "imgs/icons/icon-beleza.svg",
+        "pills": [
+          {
+            "texto": "Black Friday",
+            "alt": false
+          }
+        ],
+        "maisCartoes": false,
+        "categoriaModal": "Beleza",
+        "iconeCategoriaModal": "imgs/icons/icon-beleza-nude.svg",
+        "aceitosTitulo": "Produtos aceitos:",
+        "aceitos": [
+          {
+            "texto": "Day",
+            "classe": "cm-pill-day"
+          },
+          {
+            "texto": "Plus",
+            "classe": "cm-farm"
+          }
+        ],
+        "avisoAlerta": "Não cumulativo com outras promoções. Consulte os serviços participantes e informe o benefício no momento do agendamento.",
+        "rodape": "",
+        "iconeValidade": "imgs/icons/icon-calendario-nude.svg",
+        "iconeAlerta": "imgs/icons/icon-alerta-nude.svg",
+        "descricaoHtml": "Aproveite a Black Friday da My Moment! Faça sua escova + tratamento capilar por apenas R$ 99,00 e conquiste fios mais bonitos e bem cuidados."
+      }
+    },
+    {
+      "chave": "mymoment-cilios-design",
+      "lojas": {
+        "nomeContem": "my moment",
+        "estabelecimentoIds": [
+          "my-moment"
+        ]
+      },
+      "_pendente": "Layout do Figma (node 1212:1084…1212:1508). Cartões Day/Plus e regra de não acumular: confirmar com o parceiro antes de publicar.",
+      "post": {
+        "codigo": "VEGAS-BF-CILIOS",
+        "titulo": "Um olhar ainda mais marcante!",
+        "descricao": "Realce sua beleza nesta Black Friday da My Moment! Faça seus cílios clássicos + design essencial ou henna por apenas R$ 199,00.",
+        "modalTitulo": "Um olhar ainda mais marcante!",
+        "modalDescricao": "Realce sua beleza nesta Black Friday da My Moment! Faça seus cílios clássicos + design essencial ou henna por apenas R$ 199,00.",
+        "tipo": "Percentual",
+        "valorDesconto": 0,
+        "valorMinimoCompra": 0,
+        "dataInicio": "2026-11-01T00:00:00.000Z",
+        "dataExpiracao": "2026-11-30T23:59:59.000Z",
+        "limiteUso": 0,
+        "limiteUsoPorUsuario": 0,
+        "ativo": true,
+        "status": "Publicado",
+        "estabelecimentoId": null,
+        "cartoesAceitosIds": [],
+        "tag": "Black Friday"
+      },
+      "cartoesAceitos": [
+        "Day",
+        "Plus"
+      ],
+      "imagens": [
+        {
+          "imagemTipoId": 1,
+          "arquivo": "imgs/cupom-mymoment-cilios.jpg"
+        },
+        {
+          "imagemTipoId": 2,
+          "arquivo": "imgs/icons/selo-mymoment-cilios.svg"
+        }
+      ],
+      "site": {
+        "tema": "nude",
+        "selo": "Combo especial",
+        "categoria": "Beleza",
+        "iconeCategoria": "imgs/icons/icon-beleza.svg",
+        "pills": [
+          {
+            "texto": "Black Friday",
+            "alt": false
+          }
+        ],
+        "maisCartoes": false,
+        "categoriaModal": "Beleza",
+        "iconeCategoriaModal": "imgs/icons/icon-beleza-nude.svg",
+        "aceitosTitulo": "Produtos aceitos:",
+        "aceitos": [
+          {
+            "texto": "Day",
+            "classe": "cm-pill-day"
+          },
+          {
+            "texto": "Plus",
+            "classe": "cm-farm"
+          }
+        ],
+        "avisoAlerta": "Não cumulativo com outras promoções. Consulte os serviços participantes e informe o benefício no momento do agendamento.",
+        "rodape": "",
+        "iconeValidade": "imgs/icons/icon-calendario-nude.svg",
+        "iconeAlerta": "imgs/icons/icon-alerta-nude.svg",
+        "descricaoHtml": "Realce sua beleza nesta Black Friday da My Moment! Faça seus cílios clássicos + design essencial ou henna por apenas R$ 199,00."
       }
     }
   ]

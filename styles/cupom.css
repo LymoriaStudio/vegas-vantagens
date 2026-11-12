@@ -873,3 +873,40 @@ height: 14px;
   .cupons-topo { margin-top: 0; margin-bottom: 24px; }  /* a seção já tem 40px de padding */
   .rela-ofertas { margin-top: 24px; }   /* mesmo respiro do "Ofertas" no celular */
 }
+
+/* ============================================================
+   Variação NUDE do cupom (ex.: Black Friday My Moment)
+   Uso: "tema": "nude" no data/cupons.json (classe "cupom-nude").
+   Os ícones de validade/alerta/categoria vêm nude pelo JSON
+   (site.iconeValidade, site.iconeAlerta, site.iconeCategoriaModal).
+   ============================================================ */
+.cupom-nude {
+  --nude: #B58873;
+  --nude-claro: #F6F1EF;
+  --nude-chip: rgba(225, 207, 199, .3);
+}
+
+/* Card */
+.coupon-card.cupom-nude .coupon-badge { background: var(--nude-claro); color: var(--nude); font-size: 12px; }
+.coupon-card.cupom-nude .coupon-badge strong { font-weight: 600; }
+.coupon-card.cupom-nude .meta-cat     { color: #666; font-weight: 500; }
+.coupon-card.cupom-nude .pill         { background: var(--nude-claro); color: var(--nude); font-weight: 600; }
+.coupon-card.cupom-nude .coupon-title { color: #000; text-align: center; }
+.coupon-card.cupom-nude .coupon-sub   { color: #393540; text-align: center; }
+.coupon-card.cupom-nude .coupon-sub strong { font-weight: 500; }
+.coupon-card.cupom-nude .coupon-cta   { background: var(--nude); box-shadow: none; }
+
+/* Modal */
+.coupon-modal.cupom-nude .cm-close        { background: var(--nude); }
+.coupon-modal.cupom-nude .cm-close:hover  { background: #a3765f; }
+.coupon-modal.cupom-nude .cm-chip         { background: var(--nude-chip); color: var(--nude); }
+.coupon-modal.cupom-nude .cm-title        { color: var(--nude); }
+.coupon-modal.cupom-nude .cm-sub          { color: #181818; }
+.coupon-modal.cupom-nude .cm-pill-day     { background: rgba(219, 160, 146, .4); color: #E65C07; }
+.coupon-modal.cupom-nude .cm-farm         { background: rgba(157, 187, 253, .4); color: #008CFF; }
+.coupon-modal.cupom-nude .cm-alert        { background: var(--nude-claro); border-color: rgba(67, 77, 156, .05); }
+.coupon-modal.cupom-nude .valid-cm        { color: var(--nude); }
+.coupon-modal.cupom-nude .subvalid-cm     { color: rgba(0, 0, 0, .6); }
+.coupon-modal.cupom-nude .cm-cta          { background: var(--nude); box-shadow: none; }
+/* foto do card na proporção do Figma (376x228), mais alta que os 180px padrão */
+.coupon-card.cupom-nude .coupon-media { height: auto; aspect-ratio: 376 / 228; }

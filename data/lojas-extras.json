@@ -1,0 +1,31 @@
+{
+  "_leia": [
+    "Parceiros que ainda NÃO estão cadastrados na API, mas devem aparecer na busca e no mapa da home (map.js).",
+    "Mesmo formato do detalhe da API (GET /api/Estabelecimentos/{id}) + 'link' (para onde o card/pin da busca leva) + 'mapaUrl'. A página de cupons é detalhes.html#store-<id> (ex.: #store-my-moment).",
+    "Quando o parceiro for cadastrado na API, remova-o daqui para não aparecer duplicado."
+  ],
+  "lojas": [
+    {
+      "id": "my-moment",
+      "nome": "My Moment Beauty Concept",
+      "rua": "Rua Primo Pícoli",
+      "numero": "235",
+      "bairro": "Jardim Girassol",
+      "complemento": "",
+      "cep": "13465-640",
+      "cidade": "Americana",
+      "telefone": "(19) 99979-1498",
+      "latitude": -22.7418722,
+      "longitude": -47.3322203,
+      "categorias": [
+        "Salão de Beleza"
+      ],
+      "imagens": [
+        "./imgs/fachada-mymoment.jpg"
+      ],
+      "imagemPrincipal": "./imgs/logos/logo-mymoment.png",
+      "mapaUrl": "https://maps.app.goo.gl/sypUwQCGKnqS3jmm8",
+      "link": "./detalhes.html#store-my-moment"
+    }
+  ]
+}
